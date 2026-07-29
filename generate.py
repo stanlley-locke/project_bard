@@ -59,11 +59,10 @@ def generate_single(
     device: torch.device,
 ) -> dict:
     """Generate text for a single prompt with detailed metrics."""
-    bos = tokenizer.token_to_id("[BOS]")
     eos = tokenizer.token_to_id("[EOS]")
     
-    # Encode prompt
-    prompt_ids = [bos] + tokenizer.encode(prompt).ids
+    # Encode prompt (tokenizer post-processor already adds BOS/EOS)
+    prompt_ids = tokenizer.encode(prompt).ids
     idx = torch.tensor([prompt_ids], dtype=torch.long, device=device)
     
     prompt_len = len(prompt_ids)

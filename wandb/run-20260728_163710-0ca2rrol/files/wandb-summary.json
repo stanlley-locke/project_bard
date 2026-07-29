@@ -1,1 +1,0 @@
-{"step":2000,"lr":0.00010833113168464354,"gpu_mem_gb":3.640568832,"eval/train_perplexity":8.530504299732405,"eval/train_loss":2.143648480474949,"_runtime":6050.07946453,"eval/val_perplexity":211.18322587068482,"_timestamp":1.7852626726078646e+09,"_step":2000,"loss":6.9429318979382515,"eval/val_loss":5.352726125717163,"iter_time_ms":2723.0810046195984,"_wandb":{"runtime":6050}}

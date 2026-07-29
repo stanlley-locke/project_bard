@@ -19,9 +19,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from config import (
-    N_LAYER, N_HEAD, N_EMBD, MLP_HIDDEN, BLOCK_SIZE, DROPOUT,
+    N_LAYER, N_HEAD, N_KV_HEAD, N_EMBD, MLP_HIDDEN, BLOCK_SIZE, DROPOUT,
     USE_ROPE, USE_RMSNORM, USE_SWIGLU, USE_GRAD_CHECKPOINT,
-    USE_FLASH_ATTN, ROPE_THETA, VOCAB_SIZE
+    USE_FLASH_ATTN, ROPE_THETA, VOCAB_SIZE, USE_MOE, NUM_EXPERTS, NUM_EXPERTS_PER_TOK
 )
 
 
@@ -98,15 +98,20 @@ class GELU_MLP(nn.Module):
 # Attention with SDPA + KV Cache
 # -----------------------------
 class CausalSelfAttention(nn.Module):
-    def __init__(self, n_embd: int, n_head: int, dropout: float, use_rope: bool, use_flash: bool):
+    def __init__(self, n_embd: int, n_head: int, n_kv_head: int, dropout: float, use_rope: bool, use_flash: bool):
         super().__init__()
         assert n_embd % n_head == 0
+        assert n_head % n_kv_head == 0
         self.n_head = n_head
+        self.n_kv_head = n_kv_head
+        self.num_key_value_groups = n_head // n_kv_head
         self.head_dim = n_embd // n_head
         self.use_rope = use_rope
         self.use_flash = use_flash
 
-        self.qkv = nn.Linear(n_embd, 3 * n_embd, bias=False)
+        self.q_proj = nn.Linear(n_embd, n_head * self.head_dim, bias=False)
+        self.k_proj = nn.Linear(n_embd, n_kv_head * self.head_dim, bias=False)
+        self.v_proj = nn.Linear(n_embd, n_kv_head * self.head_dim, bias=False)
         self.out_proj = nn.Linear(n_embd, n_embd, bias=False)
         self.attn_drop = nn.Dropout(dropout)
         self.resid_drop = nn.Dropout(dropout)
@@ -120,12 +125,14 @@ class CausalSelfAttention(nn.Module):
         output_attentions: bool = False,
     ) -> Tuple[torch.Tensor, Optional[Tuple[torch.Tensor, torch.Tensor]], Optional[torch.Tensor]]:
         B, T, C = x.shape
-        q, k, v = self.qkv(x).split(C, dim=-1)
+        q = self.q_proj(x)
+        k = self.k_proj(x)
+        v = self.v_proj(x)
 
-        # Reshape: (B, nh, T, hd)
+        # Reshape for multi-head attention
         q = q.view(B, T, self.n_head, self.head_dim).transpose(1, 2)
-        k = k.view(B, T, self.n_head, self.head_dim).transpose(1, 2)
-        v = v.view(B, T, self.n_head, self.head_dim).transpose(1, 2)
+        k = k.view(B, T, self.n_kv_head, self.head_dim).transpose(1, 2)
+        v = v.view(B, T, self.n_kv_head, self.head_dim).transpose(1, 2)
 
         # Apply RoPE
         if self.use_rope and rope_cache is not None:
@@ -147,6 +154,11 @@ class CausalSelfAttention(nn.Module):
             v = torch.cat([past_v, v], dim=2)
         new_kv = (k, v) if use_kv_cache else None
 
+        # GQA: Repeat KV heads to match Query heads
+        if self.num_key_value_groups > 1:
+            k = k[:, :, None, :, :].expand(B, self.n_kv_head, self.num_key_value_groups, k.shape[2], self.head_dim).reshape(B, self.n_head, k.shape[2], self.head_dim)
+            v = v[:, :, None, :, :].expand(B, self.n_kv_head, self.num_key_value_groups, v.shape[2], self.head_dim).reshape(B, self.n_head, v.shape[2], self.head_dim)
+
         # Compute attention
         attn_weights = None
         if self.use_flash and T > 1:
@@ -161,9 +173,14 @@ class CausalSelfAttention(nn.Module):
             # Manual attention (for single-token generation or fallback)
             scale = 1.0 / math.sqrt(self.head_dim)
             att = (q @ k.transpose(-2, -1)) * scale
-            if T > 1:
-                mask = torch.triu(torch.ones(T, k.shape[2], device=x.device, dtype=torch.bool), diagonal=k.shape[2] - T + 1)
-                att = att.masked_fill(mask, float("-inf"))
+            # Proper causal mask: each query position can attend to
+            # all key positions up to and including its own position.
+            k_len = k.shape[2]
+            causal_mask = torch.triu(
+                torch.ones(T, k_len, device=x.device, dtype=torch.bool),
+                diagonal=k_len - T + 1
+            )
+            att = att.masked_fill(causal_mask, float("-inf"))
             
             if output_attentions:
                 attn_weights = att.clone()
@@ -179,16 +196,59 @@ class CausalSelfAttention(nn.Module):
 
 
 # -----------------------------
+# Sparse Mixture of Experts
+# -----------------------------
+class SparseMoE(nn.Module):
+    def __init__(self, n_embd: int, hidden: int, dropout: float, num_experts: int, top_k: int):
+        super().__init__()
+        self.num_experts = num_experts
+        self.top_k = top_k
+        self.router = nn.Linear(n_embd, num_experts, bias=False)
+        self.experts = nn.ModuleList([SwiGLU_MLP(n_embd, hidden, dropout) for _ in range(num_experts)])
+
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
+        B, T, C = x.shape
+        x_flat = x.view(-1, C)
+        
+        router_logits = self.router(x_flat)
+        routing_weights = F.softmax(router_logits, dim=-1, dtype=torch.float32).to(x.dtype)
+        routing_weights, selected_experts = torch.topk(routing_weights, self.top_k, dim=-1)
+        routing_weights = routing_weights / routing_weights.sum(dim=-1, keepdim=True)
+        
+        final_output = torch.zeros_like(x_flat)
+        
+        for i, expert in enumerate(self.experts):
+            expert_mask = (selected_experts == i)
+            token_indices = torch.any(expert_mask, dim=-1)
+            
+            if not token_indices.any():
+                continue
+                
+            expert_tokens = x_flat[token_indices]
+            expert_out = expert(expert_tokens)
+            
+            for k in range(self.top_k):
+                mask_k = selected_experts[:, k] == i
+                if mask_k.any():
+                    weights = routing_weights[mask_k, k].unsqueeze(-1)
+                    final_output[mask_k] += expert_out[mask_k[token_indices]] * weights
+                    
+        return final_output.view(B, T, C)
+
+# -----------------------------
 # Transformer Block
 # -----------------------------
 class Block(nn.Module):
-    def __init__(self, n_embd: int, n_head: int, hidden: int, dropout: float,
-                 use_rope: bool, use_flash: bool, use_swiglu: bool):
+    def __init__(self, cfg):
         super().__init__()
-        self.norm1 = RMSNorm(n_embd)
-        self.attn = CausalSelfAttention(n_embd, n_head, dropout, use_rope, use_flash)
-        self.norm2 = RMSNorm(n_embd)
-        self.mlp = SwiGLU_MLP(n_embd, hidden, dropout) if use_swiglu else GELU_MLP(n_embd, hidden, dropout)
+        self.norm1 = RMSNorm(cfg.n_embd)
+        self.attn = CausalSelfAttention(cfg.n_embd, cfg.n_head, cfg.n_kv_head, cfg.dropout, cfg.use_rope, cfg.use_flash_attn)
+        self.norm2 = RMSNorm(cfg.n_embd)
+        
+        if cfg.use_moe:
+            self.mlp = SparseMoE(cfg.n_embd, cfg.mlp_hidden, cfg.dropout, cfg.num_experts, cfg.num_experts_per_tok)
+        else:
+            self.mlp = SwiGLU_MLP(cfg.n_embd, cfg.mlp_hidden, cfg.dropout) if cfg.use_swiglu else GELU_MLP(cfg.n_embd, cfg.mlp_hidden, cfg.dropout)
 
     def forward(self, x, rope_cache, past_kv=None, use_kv_cache=False, output_attentions=False):
         attn_out, new_kv, attn_weights = self.attn(
@@ -208,6 +268,7 @@ class ModelConfig:
     block_size: int = BLOCK_SIZE
     n_layer: int = N_LAYER
     n_head: int = N_HEAD
+    n_kv_head: int = N_KV_HEAD
     n_embd: int = N_EMBD
     mlp_hidden: int = MLP_HIDDEN
     dropout: float = DROPOUT
@@ -217,6 +278,9 @@ class ModelConfig:
     use_grad_checkpoint: bool = USE_GRAD_CHECKPOINT
     use_flash_attn: bool = USE_FLASH_ATTN
     rope_theta: float = ROPE_THETA
+    use_moe: bool = USE_MOE
+    num_experts: int = NUM_EXPERTS
+    num_experts_per_tok: int = NUM_EXPERTS_PER_TOK
 
 
 class ShakespeareGPT(nn.Module):
@@ -226,9 +290,7 @@ class ShakespeareGPT(nn.Module):
         self.token_emb = nn.Embedding(cfg.vocab_size, cfg.n_embd)
         self.drop = nn.Dropout(cfg.dropout)
         self.blocks = nn.ModuleList([
-            Block(cfg.n_embd, cfg.n_head, cfg.mlp_hidden, cfg.dropout,
-                  cfg.use_rope, cfg.use_flash_attn, cfg.use_swiglu)
-            for _ in range(cfg.n_layer)
+            Block(cfg) for _ in range(cfg.n_layer)
         ])
         self.norm_f = RMSNorm(cfg.n_embd)
         self.lm_head = nn.Linear(cfg.n_embd, cfg.vocab_size, bias=False)

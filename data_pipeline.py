@@ -22,7 +22,8 @@ import time
 from datasketch import MinHash, MinHashLSH
 
 from config import (
-    DATA_SOURCES, RAW_DIR, CLEAN_TEXT_PATH, RAW_TEXT_PATH, DATA_DIR
+    DATA_SOURCES, RAW_DIR, CLEAN_TEXT_PATH, RAW_TEXT_PATH, DATA_DIR,
+    SHAKESPEARE_TEXT_PATH, FINEWEB_TEXT_PATH
 )
 
 # Expanded data sources for a larger, richer token base
@@ -50,15 +51,30 @@ EXPANDED_DATA_SOURCES = [
 # Metadata tracking
 METADATA_PATH = DATA_DIR / "pipeline_metadata.json"
 
-# Regex patterns
-GUTENBERG_HEADER_RE = re.compile(
-    r"\*\*\*START OF (THE|THIS) PROJECT GUTENBERG.*?\*\*\*(.+?)\*\*\*END OF",
-    re.DOTALL | re.IGNORECASE,
+# Regex patterns for Gutenberg header/footer markers
+GUTENBERG_START_RE = re.compile(
+    r"\*\*\*\s*START OF (THE |THIS )?PROJECT GUTENBERG.*?\*\*\*",
+    re.IGNORECASE,
+)
+GUTENBERG_END_RE = re.compile(
+    r"\*\*\*\s*END OF (THE |THIS )?PROJECT GUTENBERG.*?\*\*\*",
+    re.IGNORECASE,
 )
 WIKI_HEADER_RE = re.compile(
     r"<mediawiki.*?>.*?</mediawiki>",
     re.DOTALL | re.IGNORECASE,
 )
+
+
+def extract_gutenberg_content(text: str) -> str:
+    """Extract the actual book content between Gutenberg START and END markers."""
+    start_match = GUTENBERG_START_RE.search(text)
+    end_match = GUTENBERG_END_RE.search(text)
+    if start_match and end_match:
+        return text[start_match.end():end_match.start()]
+    elif start_match:
+        return text[start_match.end():]
+    return text
 
 
 def download_single_source(url: str, index: int, max_retries: int = 3) -> Tuple[int, str, bool]:
@@ -146,16 +162,19 @@ def download_all_sources_parallel() -> Dict:
     for source in stats["sources"]:
         filepath = Path(source["file"])
         if filepath.exists():
-            all_text.append(filepath.read_text(encoding="utf-8"))
+            text = filepath.read_text(encoding="utf-8")
+            # CRITICAL FIX: Extract Gutenberg content PER FILE before concatenating
+            text = extract_gutenberg_content(text)
+            all_text.append(text)
     
     combined = "\n\n".join(all_text)
-    RAW_TEXT_PATH.write_text(combined, encoding="utf-8")
+    SHAKESPEARE_TEXT_PATH.write_text(combined, encoding="utf-8")
     
     print(f"\n[+] Download complete:")
     print(f"    Successful: {stats['successful']}/{stats['total_sources']}")
     print(f"    Failed: {stats['failed']}")
     print(f"    Total characters: {stats['total_chars']:,}")
-    print(f"    Combined file: {RAW_TEXT_PATH} ({len(combined):,} chars)")
+    print(f"    Combined Gutenberg file: {SHAKESPEARE_TEXT_PATH} ({len(combined):,} chars)")
     
     return stats
 
@@ -169,13 +188,19 @@ def heuristic_filter(text: str) -> str:
     Advanced heuristic filtering with multiple rules.
     CRITICAL FIX: Preserves paragraph structure (\n\n) instead of collapsing everything.
     """
-    # Remove Gutenberg headers/footers
-    text = GUTENBERG_HEADER_RE.sub("", text)
+    # Extract Gutenberg book content (strip headers/footers)
+    # (Moved to download_all_sources_parallel to process per-file)
     text = re.sub(r"^\*{3,}.*\*{3,}$", "", text, flags=re.MULTILINE)
     
     # Remove Wikipedia XML tags and HTML
     text = WIKI_HEADER_RE.sub("", text)
     text = re.sub(r"<[^>]+>", "", text)
+    
+    # Remove Wikipedia markup (citations, links, headers)
+    text = re.sub(r"\{\{.*?\}\}", "", text, flags=re.DOTALL)
+    text = re.sub(r"\[\[.*?\]\]", "", text, flags=re.DOTALL)
+    text = re.sub(r"={2,}.*?={2,}", "", text)
+    text = re.sub(r"''+", "", text)  # italic/bold markup
     
     paragraphs = []
     # CRITICAL FIX: Split by double newline to preserve paragraph structure
@@ -271,10 +296,16 @@ def _minhash(text: str, num_perm: int = 128):
 
 def fuzzy_dedup(paragraphs: List[str], threshold: float = 0.8) -> List[str]:
     """Remove near-duplicate paragraphs using MinHash LSH."""
+    try:
+        from tqdm import tqdm
+        iterator = tqdm(enumerate(paragraphs), total=len(paragraphs), desc="    MinHash LSH", leave=False)
+    except ImportError:
+        iterator = enumerate(paragraphs)
+        
     lsh = MinHashLSH(threshold=threshold, num_perm=128)
     kept = []
     
-    for idx, p in enumerate(paragraphs):
+    for idx, p in iterator:
         if len(p) < 50:  # Skip very short paragraphs
             kept.append(p)
             continue
@@ -403,6 +434,39 @@ def save_metadata(stats: Dict):
 # MAIN PIPELINE
 # ============================================================================
 
+def download_hf_dataset(max_chars: int = 1_000_000_000):
+    """Download and stream a subset of FineWeb-Edu from HuggingFace."""
+    # Check if already downloaded
+    if FINEWEB_TEXT_PATH.exists() and FINEWEB_TEXT_PATH.stat().st_size >= max_chars * 0.9: # 90% tolerance
+        print(f"\n[*] HuggingFace dataset already downloaded at {FINEWEB_TEXT_PATH}. Skipping download.")
+        return
+
+    try:
+        from datasets import load_dataset
+    except ImportError:
+        print("[!] The 'datasets' library is not installed. Skipping HuggingFace datasets.")
+        print("    Run: pip install datasets")
+        return
+
+    print(f"\n[*] Streaming HuggingFace dataset (HuggingFaceFW/fineweb-edu) up to {max_chars:,} chars...")
+    # Stream to avoid downloading massive caches
+    try:
+        ds = load_dataset("HuggingFaceFW/fineweb-edu", name="sample-10BT", split="train", streaming=True)
+        total_chars = 0
+        with open(FINEWEB_TEXT_PATH, "w", encoding="utf-8") as f:
+            for row in ds:
+                text = row.get("text", "")
+                if text:
+                    f.write(text + "\n\n")
+                    total_chars += len(text)
+                
+                if total_chars >= max_chars:
+                    break
+        print(f"[+] Downloaded {total_chars:,} characters from HuggingFace to {FINEWEB_TEXT_PATH}.")
+    except Exception as e:
+        print(f"[!] Failed to stream HuggingFace dataset: {e}")
+
+
 def run_data_pipeline() -> Path:
     """Execute the complete data pipeline with comprehensive tracking."""
     print("=" * 70)
@@ -412,8 +476,21 @@ def run_data_pipeline() -> Path:
     # Step 1: Download sources in parallel
     download_stats = download_all_sources_parallel()
     
+    # Step 1.5: Download massive huggingface datasets
+    download_hf_dataset(max_chars=1_000_000_000)
+    
+    # Step 1.8: Combine raw sources
+    print("\n[*] Combining raw sources...")
+    all_raw_text = ""
+    if SHAKESPEARE_TEXT_PATH.exists():
+        all_raw_text += SHAKESPEARE_TEXT_PATH.read_text(encoding="utf-8") + "\n\n"
+    if FINEWEB_TEXT_PATH.exists():
+        all_raw_text += FINEWEB_TEXT_PATH.read_text(encoding="utf-8") + "\n\n"
+        
+    RAW_TEXT_PATH.write_text(all_raw_text, encoding="utf-8")
+    
     # Step 2: Read raw text
-    raw = RAW_TEXT_PATH.read_text(encoding="utf-8")
+    raw = all_raw_text
     raw_stats = calculate_statistics(raw)
     
     print(f"\n[*] Raw text statistics:")

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Bard | Inference Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        :root {
+            --bg-main: #0d1117;
+            --bg-panel: #161b22;
+            --border-color: #30363d;
+            --primary: #58a6ff;
+            --primary-hover: #3182ce;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --success: #2ea043;
+            --error: #f85149;
+            --font-ui: 'Roboto', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-ui);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-panel);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        /* Main Dashboard Layout */
+        .dashboard {
+            display: flex;
+            flex: 1;
+            padding: 24px;
+            gap: 24px;
+            height: calc(100vh - 65px);
+        }
+
+        /* Left Panel - Inference Parameters */
+        .sidebar {
+            width: 320px;
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            overflow-y: auto;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .model-stats {
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+            padding: 16px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+        .model-stats span {
+            color: var(--text-main);
+        }
+
+        .param-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .param-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .param-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        .param-value {
+            font-family: var(--font-mono);
+            color: var(--primary);
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: var(--border-color);
+            height: 4px;
+            border-radius: 2px;
+            outline: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Right Panel - Playground */
+        .playground {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background-color: var(--bg-panel);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .editor-header {
+            background-color: rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .editor-header-title {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .metrics {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .editor-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: relative;
+        }
+
+        textarea {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding: 24px;
+            resize: none;
+            outline: none;
+        }
+
+        textarea::placeholder {
+            color: var(--border-color);
+        }
+
+        /* We will overlay the generated text in the same textarea to allow continuous editing */
+        .generated-highlight {
+            color: var(--primary);
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 2px;
+            background: var(--bg-main);
+            border-bottom: 1px solid var(--border-color);
+            padding: 0 16px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            color: var(--text-muted);
+            border: none;
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .tab-pane {
+            display: none;
+            flex-direction: column;
+            flex: 1;
+            height: 100%;
+            overflow-y: auto;
+            padding: 16px;
+        }
+        
+        .tab-pane.active {
+            display: flex;
+        }
+        
+        .history-item, .dataset-item {
+            background: rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-main);
+            white-space: pre-wrap;
+        }
+
+        /* Action Bar */
+        .action-bar {
+            padding: 16px 24px;
+            background-color: rgba(0,0,0,0.2);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: #ffffff;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn:disabled {
+            background-color: var(--border-color);
+            color: var(--text-muted);
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top: 2px solid #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            padding: 16px 24px;
+            background: var(--error);
+            color: white;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+            </svg>
+            Project Bard Inference
+        </div>
+        <div class="status-indicator">
+            <div class="dot"></div>
+            API Connected
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <!-- Sidebar Settings -->
+        <div class="sidebar">
+            <div>
+                <div class="section-title">Model Selection</div>
+                <div class="param-item" style="margin-bottom: 16px;">
+                    <select id="model-select" style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: var(--text-main); padding: 8px; border-radius: 4px; outline: none; font-family: var(--font-mono); width: 100%;">
+                        <option>Loading models...</option>
+                    </select>
+                </div>
+                <div class="section-title">Model Architecture</div>
+                <div class="model-stats" id="model-info-box">
+                    Loading stats...
+                </div>
+            </div>
+
+            <div>
+                <div class="section-title">Generation Parameters</div>
+                <div class="param-group">
+                    <div class="param-item">
+                        <div class="param-label">
+                            <span>Temperature</span>
+                            <span class="param-value" id="temp-val">0.8</span>
+                        </div>
+                        <input type="range" id="temp-slider" min="0.01" max="2.0" step="0.01" value="0.8">
+                    </div>
+
+                    <div class="param-item">
+                        <div class="param-label">
+                            <span>Top-P</span>
+                            <span class="param-value" id="topp-val">0.95</span>
+                        </div>
+                        <input type="range" id="topp-slider" min="0.0" max="1.0" step="0.01" value="0.95">
+                    </div>
+
+                    <div class="param-item">
+                        <div class="param-label">
+                            <span>Top-K</span>
+                            <span class="param-value" id="topk-val">50</span>
+                        </div>
+                        <input type="range" id="topk-slider" min="1" max="100" step="1" value="50">
+                    </div>
+
+                    <div class="param-item">
+                        <div class="param-label">
+                            <span>Repetition Penalty</span>
+                            <span class="param-value" id="rep-val">1.15</span>
+                        </div>
+                        <input type="range" id="rep-slider" min="1.0" max="3.0" step="0.05" value="1.15">
+                    </div>
+
+                    <div class="param-item">
+                        <div class="param-label">
+                            <span>Max Output Tokens</span>
+                            <span class="param-value" id="max-val">250</span>
+                        </div>
+                        <input type="range" id="max-slider" min="10" max="1000" step="10" value="250">
+                    </div>
+                    
+                    <div class="param-item" style="margin-top: 8px;">
+                        <div class="param-label" style="justify-content: flex-start; gap: 8px;">
+                            <input type="checkbox" id="stop-chk">
+                            <span>Custom Stop Sequence</span>
+                        </div>
+                        <input type="text" id="stop-val" placeholder="e.g. SCENE" style="background: rgba(0,0,0,0.2); border: 1px solid var(--border-color); color: var(--text-main); padding: 8px; border-radius: 4px; outline: none; font-family: var(--font-mono); margin-top: 4px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Playground Area -->
+        <div class="playground">
+            <div class="editor-container" style="flex: 1; display: flex; flex-direction: column;">
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('inference')">Inference</button>
+                    <button class="tab-btn" onclick="switchTab('dataset')">Dataset Explorer</button>
+                    <button class="tab-btn" onclick="switchTab('mlops')">MLOps Dashboard</button>
+                    <button class="tab-btn" onclick="switchTab('history')">History</button>
+                </div>
+
+                <!-- Inference Tab -->
+                <div id="tab-inference" class="tab-pane active" style="padding: 0;">
+                    <div class="editor-header">
+                        <div class="editor-header-title">Context & Generation (Interactive Document)</div>
+                        <div class="metrics" id="metrics-display">Ready</div>
+                    </div>
+                    
+                    <div class="editor-content">
+                    <textarea 
+                        id="prompt-input" 
+                        placeholder="Enter context prompt here...&#10;&#10;Example:&#10;HAMLET: To be, or not to be, that is the question:&#10;Whether 'tis nobler in the mind to suffer"
+                    ></textarea>
+                </div>
+
+                <div class="action-bar">
+                    <button class="btn btn-secondary" onclick="clearEditor()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        Clear
+                    </button>
+                    
+                    <button class="btn" id="generate-btn" onclick="generateText()">
+                        <div class="spinner" id="btn-spinner"></div>
+                        <span id="btn-text">Generate Completion</span>
+                    </button>
+                </div>
+                </div>
+
+                <!-- Dataset Explorer Tab -->
+                <div id="tab-dataset" class="tab-pane">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div class="section-title" style="margin-bottom: 0; border: none;">Random Dataset Samples</div>
+                        <button class="btn btn-secondary" onclick="fetchDatasetSamples()" style="padding: 6px 12px; font-size: 0.8rem;">Refresh Samples</button>
+                    </div>
+                    <div id="dataset-content">
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">Click "Refresh Samples" to view raw paragraphs from the training data.</div>
+                    </div>
+                </div>
+                
+                <!-- MLOps Dashboard Tab -->
+                <div id="tab-mlops" class="tab-pane">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div class="section-title" style="margin-bottom: 0; border: none;">MLOps Pipeline Status</div>
+                        <button class="btn btn-secondary" onclick="fetchPipelineStatus()" style="padding: 6px 12px; font-size: 0.8rem;">Refresh Status</button>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+                        <div class="dataset-item" style="margin-bottom: 0;">
+                            <div style="color: var(--text-muted); font-size: 0.75rem;">Raw Data</div>
+                            <div id="mlops-raw-sz" style="font-size: 1.25rem; font-weight: 500; color: #fff;">0 MB</div>
+                        </div>
+                        <div class="dataset-item" style="margin-bottom: 0;">
+                            <div style="color: var(--text-muted); font-size: 0.75rem;">Cleaned Data</div>
+                            <div id="mlops-clean-sz" style="font-size: 1.25rem; font-weight: 500; color: #fff;">0 MB</div>
+                        </div>
+                        <div class="dataset-item" style="margin-bottom: 0;">
+                            <div style="color: var(--text-muted); font-size: 0.75rem;">Est. Tokens</div>
+                            <div id="mlops-tokens" style="font-size: 1.25rem; font-weight: 500; color: #fff;">0</div>
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                        <div class="dataset-item" style="margin-bottom: 0;">
+                            <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Training Loss</div>
+                            <canvas id="lossChart" width="400" height="200"></canvas>
+                        </div>
+                        <div class="dataset-item" style="margin-bottom: 0;">
+                            <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Learning Rate</div>
+                            <canvas id="lrChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                        <div class="dataset-item" style="margin-bottom: 0;">
+                            <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">GPU Memory (GB)</div>
+                            <canvas id="memChart" width="400" height="200"></canvas>
+                        </div>
+                        <div class="dataset-item" style="margin-bottom: 0;">
+                            <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Tokens/sec</div>
+                            <canvas id="tokChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="dataset-item" style="margin-bottom: 0;">
+                        <div style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 12px;">Available Checkpoints</div>
+                        <div id="mlops-checkpoints" style="font-size: 0.85rem;">None</div>
+                    </div>
+                </div>
+
+                <!-- History Tab -->
+                <div id="tab-history" class="tab-pane">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div class="section-title" style="margin-bottom: 0; border: none;">Generation History</div>
+                        <button class="btn btn-secondary" onclick="clearHistory()" style="padding: 6px 12px; font-size: 0.8rem;">Clear History</button>
+                    </div>
+                    <div id="history-content">
+                        <div style="color: var(--text-muted); font-size: 0.9rem;">No history yet.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Error message</div>
+
+    <script>
+        // Setup sliders
+        const sliders = ['temp', 'topp', 'topk', 'rep', 'max'];
+        sliders.forEach(id => {
+            const slider = document.getElementById(`${id}-slider`);
+            const val = document.getElementById(`${id}-val`);
+            slider.addEventListener('input', (e) => val.textContent = e.target.value);
+        });
+
+        // Auto-fetch model info
+        async function fetchModelInfo() {
+            try {
+                const res = await fetch('/model/info');
+                if (res.ok) {
+                    const data = await res.json();
+                    document.getElementById('model-info-box').innerHTML = `
+                        Name: <span>${data.model_name}</span><br>
+                        Params: <span>${(data.parameters / 1000000).toFixed(1)}M</span><br>
+                        Context: <span>${data.context_window} tokens</span><br>
+                        Device: <span>${data.device}</span><br>
+                        Arch: <span>${data.architecture.type}</span>
+                    `;
+                }
+            } catch (e) {
+                console.error("Could not fetch model info.");
+            }
+        }
+
+        async function fetchModels() {
+            try {
+                const res = await fetch('/models');
+                if (res.ok) {
+                    const data = await res.json();
+                    const select = document.getElementById('model-select');
+                    select.innerHTML = '';
+                    if (data.available_models.length === 0) {
+                        select.innerHTML = '<option>No models found</option>';
+                        return;
+                    }
+                    data.available_models.forEach(model => {
+                        const opt = document.createElement('option');
+                        opt.value = model;
+                        opt.textContent = model;
+                        if (model === data.current_model) opt.selected = true;
+                        select.appendChild(opt);
+                    });
+
+                    select.addEventListener('change', async (e) => {
+                        const modelName = e.target.value;
+                        showToast(`Loading ${modelName}...`);
+                        select.disabled = true;
+                        try {
+                            const loadRes = await fetch('/models/load', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ model_name: modelName })
+                            });
+                            if (loadRes.ok) {
+                                showToast(`${modelName} loaded successfully!`);
+                                fetchModelInfo();
+                            } else {
+                                showToast(`Failed to load ${modelName}`);
+                            }
+                        } catch (err) {
+                            showToast(`Error: ${err.message}`);
+                        } finally {
+                            select.disabled = false;
+                        }
+                    });
+                }
+            } catch (e) {
+                console.error("Could not fetch models list.");
+            }
+        }
+        
+        fetchModelInfo();
+        fetchModels();
+
+        const input = document.getElementById('prompt-input');
+        const generateBtn = document.getElementById('generate-btn');
+        const btnSpinner = document.getElementById('btn-spinner');
+        const btnText = document.getElementById('btn-text');
+        const metricsDisplay = document.getElementById('metrics-display');
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+        
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+            
+            document.querySelector(`button[onclick="switchTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+
+            if (tabId === 'dataset') {
+                if (document.getElementById('dataset-content').children.length <= 1) {
+                    fetchDatasetSamples();
+                }
+            }
+            if (tabId === 'mlops') {
+                fetchPipelineStatus();
+            }
+        }
+
+        async function fetchDatasetSamples() {
+            const container = document.getElementById('dataset-content');
+            container.innerHTML = '<div class="spinner" style="display: block; margin: 20px auto;"></div>';
+            try {
+                const res = await fetch('/dataset/sample?n=5');
+                if (res.ok) {
+                    const data = await res.json();
+                    container.innerHTML = '';
+                    data.samples.forEach(sample => {
+                        const div = document.createElement('div');
+                        div.className = 'dataset-item';
+                        div.textContent = sample;
+                        container.appendChild(div);
+                    });
+                } else {
+                    container.innerHTML = '<div class="toast show" style="position:static; margin-bottom:16px;">Failed to load dataset.</div>';
+                }
+            } catch (err) {
+                container.innerHTML = `<div class="toast show" style="position:static; margin-bottom:16px;">Error: ${err.message}</div>`;
+            }
+        }
+
+        let generationHistory = [];
+        let lossChart = null;
+        let lrChart = null;
+        let memChart = null;
+        let tokChart = null;
+
+        async function fetchPipelineStatus() {
+            try {
+                const res = await fetch('/pipeline/status');
+                if (res.ok) {
+                    const data = await res.json();
+                    
+                    document.getElementById('mlops-raw-sz').textContent = data.data.raw_size_mb + ' MB';
+                    document.getElementById('mlops-clean-sz').textContent = data.data.clean_size_mb + ' MB';
+                    document.getElementById('mlops-tokens').textContent = (data.data.tokens_approx / 1000000).toFixed(1) + 'M';
+                    
+                    const ckptContainer = document.getElementById('mlops-checkpoints');
+                    if (data.training.checkpoints.length > 0) {
+                        ckptContainer.innerHTML = data.training.checkpoints.map(c => `<div>- ${c.name} (${c.size_mb} MB)</div>`).join('');
+                    } else {
+                        ckptContainer.innerHTML = 'None';
+                    }
+                    
+                    if (data.training.metrics.length > 0) {
+                        const steps = data.training.metrics.map(m => m.step);
+                        const losses = data.training.metrics.map(m => m.loss);
+                        
+                        if (lossChart) lossChart.destroy();
+                        if (lrChart) lrChart.destroy();
+                        if (memChart) memChart.destroy();
+                        if (tokChart) tokChart.destroy();
+                        
+                        const chartOptions = {
+                            responsive: true,
+                            plugins: { legend: { display: false } },
+                            scales: { 
+                                y: { grid: { color: '#30363d' }, ticks: { color: '#8b949e' } },
+                                x: { grid: { color: '#30363d' }, ticks: { color: '#8b949e' } }
+                            }
+                        };
+                        
+                        lossChart = new Chart(document.getElementById('lossChart').getContext('2d'), {
+                            type: 'line', data: { labels: steps, datasets: [{ data: losses, borderColor: '#58a6ff', backgroundColor: 'rgba(88, 166, 255, 0.1)', borderWidth: 2, fill: true, tension: 0.2 }] }, options: chartOptions
+                        });
+                        lrChart = new Chart(document.getElementById('lrChart').getContext('2d'), {
+                            type: 'line', data: { labels: steps, datasets: [{ data: data.training.metrics.map(m => m.lr), borderColor: '#3fb950', backgroundColor: 'rgba(63, 185, 80, 0.1)', borderWidth: 2, fill: true, tension: 0.2 }] }, options: chartOptions
+                        });
+                        memChart = new Chart(document.getElementById('memChart').getContext('2d'), {
+                            type: 'line', data: { labels: steps, datasets: [{ data: data.training.metrics.map(m => m.gpu_mem_gb), borderColor: '#f85149', backgroundColor: 'rgba(248, 81, 73, 0.1)', borderWidth: 2, fill: true, tension: 0.2 }] }, options: chartOptions
+                        });
+                        tokChart = new Chart(document.getElementById('tokChart').getContext('2d'), {
+                            type: 'line', data: { labels: steps, datasets: [{ data: data.training.metrics.map(m => m.tokens_per_sec), borderColor: '#a371f7', backgroundColor: 'rgba(163, 113, 247, 0.1)', borderWidth: 2, fill: true, tension: 0.2 }] }, options: chartOptions
+                        });
+                    }
+                }
+            } catch(err) {
+                console.error(err);
+            }
+        }
+        
+        function updateHistoryUI() {
+            const container = document.getElementById('history-content');
+            if (generationHistory.length === 0) {
+                container.innerHTML = '<div style="color: var(--text-muted); font-size: 0.9rem;">No history yet.</div>';
+                return;
+            }
+            container.innerHTML = '';
+            generationHistory.slice().reverse().forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'history-item';
+                div.innerHTML = `<div style="color: var(--text-muted); margin-bottom: 8px; font-size: 0.75rem;">Prompt</div>
+                                 <div style="margin-bottom: 12px; color: #fff;">${item.prompt}</div>
+                                 <div style="color: var(--text-muted); margin-bottom: 8px; font-size: 0.75rem;">Generated (${item.tokens} tokens)</div>
+                                 <div style="color: var(--primary);">${item.generation}</div>`;
+                container.appendChild(div);
+            });
+        }
+
+        function clearHistory() {
+            generationHistory = [];
+            updateHistoryUI();
+        }
+        
+        function clearEditor() {
+            input.value = "";
+            metricsDisplay.textContent = "Ready";
+        }
+
+        async function generateText() {
+            const prompt = input.value;
+            if (!prompt.trim()) {
+                showToast("Please provide some context text first.");
+                return;
+            }
+
+            generateBtn.disabled = true;
+            btnSpinner.style.display = 'block';
+            btnText.textContent = 'Generating...';
+            metricsDisplay.textContent = "Connecting...";
+
+            const stopChk = document.getElementById('stop-chk').checked;
+            const stopVal = document.getElementById('stop-val').value;
+
+            const reqBody = {
+                prompt: prompt,
+                max_tokens: parseInt(document.getElementById('max-slider').value),
+                temperature: parseFloat(document.getElementById('temp-slider').value),
+                top_p: parseFloat(document.getElementById('topp-slider').value),
+                top_k: parseInt(document.getElementById('topk-slider').value),
+                repetition_penalty: parseFloat(document.getElementById('rep-slider').value),
+                stop_sequence: stopChk && stopVal ? stopVal : null,
+                stream: true
+            };
+
+            try {
+                const res = await fetch('/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(reqBody)
+                });
+
+                if (!res.ok) {
+                    throw new Error(await res.text());
+                }
+
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder('utf-8');
+                
+                // Add a space if the user didn't end with whitespace, though base model handles it.
+                // We will stream directly into the textarea.
+                
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    
+                    const chunk = decoder.decode(value);
+                    const lines = chunk.split('\n');
+                    
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            const data = JSON.parse(line.substring(6));
+                            if (data.done) {
+                                metricsDisplay.textContent = `${data.tokens_generated} tokens • ${(data.tokens_per_second).toFixed(1)} t/s • ${(data.time_seconds).toFixed(2)}s`;
+                                
+                                // Save to history
+                                const fullOutput = input.value;
+                                const promptStr = reqBody.prompt;
+                                const generatedStr = fullOutput.substring(promptStr.length);
+                                generationHistory.push({
+                                    prompt: promptStr,
+                                    generation: generatedStr,
+                                    tokens: data.tokens_generated
+                                });
+                                updateHistoryUI();
+                                
+                            } else {
+                                input.value += data.token;
+                                input.scrollTop = input.scrollHeight; // Auto-scroll
+                            }
+                        }
+                    }
+                }
+
+            } catch (err) {
+                showToast(err.message || "Connection failed.");
+                metricsDisplay.textContent = "Error";
+            } finally {
+                generateBtn.disabled = false;
+                btnSpinner.style.display = 'none';
+                btnText.textContent = 'Generate Completion';
+                input.focus();
+            }
+        }
+    </script>
+</body>
+</html>

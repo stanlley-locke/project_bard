@@ -13,6 +13,7 @@ import torch
 import argparse
 import time
 import json
+import os
 from pathlib import Path
 from typing import List
 
@@ -88,12 +89,18 @@ def chat_loop(model: ShakespeareGPT, tokenizer, device: torch.device, args):
         if lower_input in ["/quit", "/exit", "q"]:
             print("Exiting interface.")
             break
+        elif lower_input in ["/help", "/h"]:
+            print("Commands: /quit, /clear, /stats, /save <file>, /load <file>, /temp <val>, /topk <val>, /topp <val>, /reppen <val>, /maxtok <val>")
+            continue
         elif lower_input == "/clear":
             history = []
             print("History cleared.")
             continue
         elif lower_input.startswith("/save "):
-            filename = user_input.split(" ", 1)[1].strip()
+            filename = os.path.basename(user_input.split(" ", 1)[1].strip())
+            if not filename:
+                print("Invalid filename.")
+                continue
             try:
                 with open(filename, "w", encoding="utf-8") as f:
                     json.dump(history, f, indent=2, ensure_ascii=False)
@@ -102,7 +109,10 @@ def chat_loop(model: ShakespeareGPT, tokenizer, device: torch.device, args):
                 print(f"Error saving history: {e}")
             continue
         elif lower_input.startswith("/load "):
-            filename = user_input.split(" ", 1)[1].strip()
+            filename = os.path.basename(user_input.split(" ", 1)[1].strip())
+            if not filename:
+                print("Invalid filename.")
+                continue
             try:
                 with open(filename, "r", encoding="utf-8") as f:
                     history = json.load(f)
@@ -166,6 +176,9 @@ def chat_loop(model: ShakespeareGPT, tokenizer, device: torch.device, args):
         if len(ids) > max_prompt_len:
             print(f"Warning: Context too long ({len(ids)} tokens). Truncating oldest messages...")
             ids = ids[-max_prompt_len:]
+            # Trim history to prevent re-encoding oversized context
+            if len(history) > 1:
+                history = history[-2:]
 
         idx = torch.tensor([ids], dtype=torch.long, device=device)
 

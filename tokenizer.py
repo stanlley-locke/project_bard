@@ -213,27 +213,48 @@ def calculate_coverage(tokenizer: Tokenizer, sample_size: int = 100000) -> Dict:
 
 
 def digitize_and_save(tokenizer: Tokenizer) -> np.memmap:
-    """Convert the cleaned corpus to token IDs. (Threading is handled automatically by the Rust backend)."""
+    """Convert the cleaned corpus to token IDs using memory-safe chunking."""
     print("\n[*] Digitizing corpus...")
     
-    text = CLEAN_TEXT_PATH.read_text(encoding="utf-8")
-    print(f"    Corpus size: {len(text):,} characters")
+    print("[*] Encoding text to token IDs in chunks...")
     
-    print("[*] Encoding text to token IDs...")
-    encoding = tokenizer.encode(text)
-    ids = np.array(encoding.ids, dtype=np.uint16)  # uint16 supports up to 65535 tokens
+    import os
+    from tqdm import tqdm
     
-    # Save as raw binary for fast memmap reads
-    ids.tofile(str(TOKEN_IDS_PATH))
+    chunk_size = 10 * 1024 * 1024  # 10MB approx chunks
+    total_tokens = 0
+    total_bytes = os.path.getsize(str(CLEAN_TEXT_PATH))
+    
+    pbar = tqdm(total=total_bytes, desc="Digitizing", unit="B", unit_scale=True, dynamic_ncols=True)
+    
+    with open(CLEAN_TEXT_PATH, "r", encoding="utf-8") as f, \
+         open(TOKEN_IDS_PATH, "wb") as out_f:
+         
+        while True:
+            lines = f.readlines(chunk_size)
+            if not lines:
+                break
+                
+            chunk = "".join(lines)
+            encoding = tokenizer.encode(chunk)
+            ids = np.array(encoding.ids, dtype=np.uint16)
+            
+            out_f.write(ids.tobytes())
+            total_tokens += len(ids)
+            
+            pbar.update(len(chunk.encode("utf-8")))
+            
+    pbar.close()
+    
     print(f"[+] Token IDs saved: {TOKEN_IDS_PATH}")
-    print(f"    Total tokens: {ids.shape[0]:,}")
-    print(f"    File size: {ids.nbytes / 1024 / 1024:.2f} MB")
+    print(f"    Total tokens: {total_tokens:,}")
+    print(f"    File size: {os.path.getsize(str(TOKEN_IDS_PATH)) / 1024 / 1024:.2f} MB")
     
     # Calculate coverage metrics
     calculate_coverage(tokenizer)
     
     # Return a memory-mapped view (zero-copy, disk-backed)
-    mmap = np.memmap(str(TOKEN_IDS_PATH), dtype=np.uint16, mode="r", shape=ids.shape)
+    mmap = np.memmap(str(TOKEN_IDS_PATH), dtype=np.uint16, mode="r", shape=(total_tokens,))
     return mmap
 
 

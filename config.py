@@ -1,10 +1,34 @@
 """
 config.py - Production-Grade T4-Optimized Configuration
 Centralized configuration for ~100M parameter model training and inference.
+
+Supports environment variable overrides for production deployments:
+  BARD_DEVICE, BARD_DTYPE, BARD_USE_WANDB, BARD_BATCH_SIZE,
+  BARD_MAX_STEPS, BARD_LEARNING_RATE, BARD_CHECKPOINT_DIR
 """
+import os
+import logging
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import List
+
+
+# -----------------------------
+# Logging Configuration
+# -----------------------------
+def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
+    """Get a configured logger for any module in the project."""
+    logger = logging.getLogger(name)
+    if not logger.handlers:
+        handler = logging.StreamHandler()
+        formatter = logging.Formatter(
+            "[%(asctime)s] %(levelname)s %(name)s: %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S"
+        )
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+    logger.setLevel(level)
+    return logger
 
 # -----------------------------
 # Paths
@@ -21,7 +45,9 @@ LOG_DIR = PROJECT_ROOT / "logs"
 for d in [RAW_DIR, CLEAN_DIR, TOKENIZER_DIR, CHECKPOINT_DIR, LOG_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
-RAW_TEXT_PATH = RAW_DIR / "shakespeare.txt"
+RAW_TEXT_PATH = RAW_DIR / "combined_raw.txt"
+SHAKESPEARE_TEXT_PATH = RAW_DIR / "shakespeare.txt"
+FINEWEB_TEXT_PATH = RAW_DIR / "fineweb.txt"
 CLEAN_TEXT_PATH = CLEAN_DIR / "shakespeare_clean.txt"
 TOKEN_IDS_PATH = CLEAN_DIR / "token_ids.bin"
 SPLIT_DIR = DATA_DIR / "splits"
@@ -62,37 +88,40 @@ UNK_TOKEN = "[UNK]"
 # -----------------------------
 # Data Splitting & Loading
 # -----------------------------
-BLOCK_SIZE = 512           # Context window size
+BLOCK_SIZE = 2048          # Increased Context window size for deep reasoning
 TRAIN_RATIO = 0.95
 VAL_RATIO = 0.025
 TEST_RATIO = 0.025
 NUM_WORKERS = 2            # DataLoader workers (adjust based on CPU cores)
 
 # -----------------------------
-# Model Architecture (~100M parameters)
+# Model Architecture (~350M parameters + MoE)
 # -----------------------------
-N_LAYER = 12               # Number of Transformer blocks
-N_HEAD = 12                # Number of attention heads
-N_EMBD = 768               # Embedding dimension
-HEAD_DIM = N_EMBD // N_HEAD
-
-# SwiGLU ratio (8/3 * embd), rounded up to multiple of 64 for hardware efficiency
-MLP_HIDDEN = int(2.6667 * N_EMBD)
-MLP_HIDDEN = ((MLP_HIDDEN + 63) // 64) * 64
-
+N_LAYER = 16               # Number of Transformer blocks
+N_HEAD = 16                # Number of attention heads (Queries)
+N_KV_HEAD = 4              # Number of KV heads (Grouped-Query Attention)
+N_EMBD = 1024              # Embedding dimension
+MLP_HIDDEN = 4096          # Hidden dimension for FFNs
 DROPOUT = 0.1
-USE_ROPE = True            # Rotary Position Embeddings
-USE_RMSNORM = True         # Root Mean Square Layer Normalization
-USE_SWIGLU = True          # SwiGLU activation function
-USE_GRAD_CHECKPOINT = True # Gradient checkpointing for memory efficiency
-USE_FLASH_ATTN = True      # PyTorch SDPA (Flash Attention)
+
+# -----------------------------
+# Feature Flags
+# -----------------------------
+USE_ROPE = True
+USE_RMSNORM = True
+USE_SWIGLU = True
+USE_FLASH_ATTN = True      # Requires PyTorch 2.0+
+USE_GRAD_CHECKPOINT = True # Trade compute for memory
+USE_MOE = True             # Mixture of Experts
+NUM_EXPERTS = 4            # Reduced from 8 to 4 to fit in 16GB VRAM
+NUM_EXPERTS_PER_TOK = 2    # Experts routed to per token
 ROPE_THETA = 10000.0       # Base frequency for RoPE
 
 # -----------------------------
 # Training Configuration (T4-optimized)
 # -----------------------------
-BATCH_SIZE = 8             # Per-device batch size
-GRAD_ACCUM_STEPS = 8       # Gradient accumulation steps
+BATCH_SIZE = 2             # Reduced to fit the 1GB float32 logits gradient in backward pass
+GRAD_ACCUM_STEPS = 32      # Adjusted to maintain effective batch size
 BATCH_SIZE_EFFECTIVE = BATCH_SIZE * GRAD_ACCUM_STEPS  # Effective batch size = 64
 
 NUM_EPOCHS = 3
@@ -103,16 +132,16 @@ BETA2 = 0.95
 GRAD_CLIP = 1.0
 
 WARMUP_STEPS = 200
-MAX_STEPS = 5000
+MAX_STEPS = 2500
 MIN_LR_RATIO = 0.1         # Final LR will be LEARNING_RATE * MIN_LR_RATIO
 
-LOG_INTERVAL = 20
+LOG_INTERVAL = 1           # Log every step (since 1 step takes ~48s)
 EVAL_INTERVAL = 250
 SAVE_INTERVAL = 500
 
 SEED = 42
-DTYPE = "float16"          # CRITICAL: T4 uses fp16 natively, not bf16
-DEVICE = "cuda"
+DTYPE = os.environ.get("BARD_DTYPE", "float16")       # T4 uses fp16 natively
+DEVICE = os.environ.get("BARD_DEVICE", "cuda")
 
 # -----------------------------
 # Generation Configuration
@@ -137,6 +166,14 @@ DPO_BETA = 0.1
 # -----------------------------
 # Weights & Biases (WandB) Logging
 # -----------------------------
-USE_WANDB = True
-WANDB_PROJECT = "project-bard"
-WANDB_ENTITY = "stanlleylocke-ai"  # Update if your team name differs
+USE_WANDB = os.environ.get("BARD_USE_WANDB", "true").lower() == "true"
+WANDB_PROJECT = os.environ.get("BARD_WANDB_PROJECT", "project-bard")
+WANDB_ENTITY = os.environ.get("BARD_WANDB_ENTITY", "stanlleylocke-ai")
+os.environ["WANDB_MODE"] = "online"
+
+# -----------------------------
+# API Server Configuration
+# -----------------------------
+API_HOST = os.environ.get("BARD_API_HOST", "0.0.0.0")
+API_PORT = int(os.environ.get("BARD_API_PORT", "8000"))
+API_RATE_LIMIT = int(os.environ.get("BARD_RATE_LIMIT", "30"))  # requests per minute

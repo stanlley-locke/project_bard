@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-28 16:28:04",
+  "timestamp": "2026-07-29 11:07:33",
   "statistics": {
     "download": {
       "total_sources": 16,
@@ -7,6 +7,18 @@
       "failed": 0,
       "total_chars": 16393256,
       "sources": [
+        {
+          "index": 6,
+          "url": "https://www.gutenberg.org/cache/epub/1400/pg1400.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_6.txt",
+          "chars": 1013928
+        },
+        {
+          "index": 5,
+          "url": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_5.txt",
+          "chars": 581601
+        },
         {
           "index": 3,
           "url": "https://www.gutenberg.org/cache/epub/11/pg11.txt",
@@ -20,22 +32,10 @@
           "chars": 748167
         },
         {
-          "index": 1,
-          "url": "https://www.gutenberg.org/cache/epub/84/pg84.txt",
-          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_1.txt",
-          "chars": 438841
-        },
-        {
           "index": 0,
           "url": "https://www.gutenberg.org/cache/epub/100/pg100.txt",
           "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_0.txt",
           "chars": 5378701
-        },
-        {
-          "index": 5,
-          "url": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt",
-          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_5.txt",
-          "chars": 581601
         },
         {
           "index": 4,
@@ -44,10 +44,10 @@
           "chars": 2318585
         },
         {
-          "index": 6,
-          "url": "https://www.gutenberg.org/cache/epub/1400/pg1400.txt",
-          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_6.txt",
-          "chars": 1013928
+          "index": 1,
+          "url": "https://www.gutenberg.org/cache/epub/84/pg84.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_1.txt",
+          "chars": 438841
         },
         {
           "index": 7,
@@ -62,12 +62,6 @@
           "chars": 624012
         },
         {
-          "index": 9,
-          "url": "https://www.gutenberg.org/cache/epub/76/pg76.txt",
-          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_9.txt",
-          "chars": 590402
-        },
-        {
           "index": 10,
           "url": "https://www.gutenberg.org/cache/epub/215/pg215.txt",
           "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_10.txt",
@@ -80,16 +74,10 @@
           "chars": 378800
         },
         {
-          "index": 13,
-          "url": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt",
-          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_13.txt",
-          "chars": 1041730
-        },
-        {
-          "index": 11,
-          "url": "https://www.gutenberg.org/cache/epub/98/pg98.txt",
-          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_11.txt",
-          "chars": 776912
+          "index": 9,
+          "url": "https://www.gutenberg.org/cache/epub/76/pg76.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_9.txt",
+          "chars": 590402
         },
         {
           "index": 15,
@@ -102,39 +90,51 @@
           "url": "https://www.gutenberg.org/cache/epub/1727/pg1727.txt",
           "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_14.txt",
           "chars": 698117
+        },
+        {
+          "index": 13,
+          "url": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_13.txt",
+          "chars": 1041730
+        },
+        {
+          "index": 11,
+          "url": "https://www.gutenberg.org/cache/epub/98/pg98.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_11.txt",
+          "chars": 776912
         }
       ]
     },
     "raw": {
-      "total_characters": 16393286,
-      "total_words": 2965363,
-      "total_lines": 422106,
-      "total_paragraphs": 79356,
-      "unique_words": 153111,
-      "avg_word_length": 4.48674782817483,
-      "avg_words_per_paragraph": 37.36784868188921,
-      "vocabulary_richness": 0.05163313901198605
+      "total_characters": 1016529546,
+      "total_words": 165559621,
+      "total_lines": 5121220,
+      "total_paragraphs": 289509,
+      "unique_words": 3792819,
+      "avg_word_length": 5.137821788079594,
+      "avg_words_per_paragraph": 571.8634688386198,
+      "vocabulary_richness": 0.022909082402405356
     },
     "filtered": {
-      "total_characters": 16010257,
-      "total_words": 2920441,
-      "total_lines": 375287,
-      "total_paragraphs": 73696,
-      "unique_words": 149324,
-      "avg_word_length": 4.4558948460181185,
-      "avg_words_per_paragraph": 39.62821591402518,
-      "vocabulary_richness": 0.051130634037804566
+      "total_characters": 638322605,
+      "total_words": 104228493,
+      "total_lines": 3256975,
+      "total_paragraphs": 205689,
+      "unique_words": 2642087,
+      "avg_word_length": 5.1222044820316075,
+      "avg_words_per_paragraph": 506.7285708034946,
+      "vocabulary_richness": 0.025348989743140583
     },
     "final": {
-      "total_characters": 13562290,
-      "total_words": 2495645,
-      "total_lines": 274971,
-      "total_paragraphs": 34460,
-      "unique_words": 133950,
-      "avg_word_length": 4.419538836653451,
-      "avg_words_per_paragraph": 72.4215031921068,
-      "vocabulary_richness": 0.05367349923566853
+      "total_characters": 376188367,
+      "total_words": 61661249,
+      "total_lines": 2151937,
+      "total_paragraphs": 151608,
+      "unique_words": 1707810,
+      "avg_word_length": 5.098347683485945,
+      "avg_words_per_paragraph": 406.7150084428262,
+      "vocabulary_richness": 0.027696649479156673
     },
-    "retention_rate": 0.827307594096754
+    "retention_rate": 0.37007125713195943
   }
 }

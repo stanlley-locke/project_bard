@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "project-bard"
+version = "1.0.0"
+description = "Production-grade Shakespeare LLM with full training pipeline and API"
+requires-python = ">=3.10"
+readme = "README.md"
+
+[project.scripts]
+bard-train = "train:train"
+bard-chat = "chat:main"
+bard-generate = "generate:main"
+bard-pipeline = "data_pipeline:run_data_pipeline"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"

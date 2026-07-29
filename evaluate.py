@@ -96,8 +96,8 @@ class SFTDataset(Dataset):
         with path.open("r", encoding="utf-8") as f:
             for line in f:
                 obj = json.loads(line)
-                # Format: [BOS] User: {prompt} \n Assistant: {completion} [EOS]
-                text = f"[BOS]User: {obj['prompt'].strip()}\nAssistant: {obj['completion'].strip()}[EOS]"
+                # Format: User: {prompt} \n Assistant: {completion} (tokenizer handles BOS/EOS)
+                text = f"User: {obj['prompt'].strip()}\nAssistant: {obj['completion'].strip()}"
                 ids = tokenizer.encode(text).ids
                 if len(ids) > block_size + 1:
                     ids = ids[: block_size + 1]
@@ -108,8 +108,11 @@ class SFTDataset(Dataset):
 
     def __getitem__(self, idx):
         ids = self.examples[idx]
-        pad_len = self.block_size + 1 - len(ids)
+        actual_len = len(ids)
+        pad_len = self.block_size + 1 - actual_len
         pad_token_id = self.tokenizer.token_to_id("[PAD]")
+        if pad_token_id is None:
+            pad_token_id = 0
         ids = ids + [pad_token_id] * pad_len
         
         t = torch.tensor(ids, dtype=torch.long)
@@ -117,7 +120,8 @@ class SFTDataset(Dataset):
         y = t[1:].clone()
         
         # Mask loss on padding tokens
-        y[x == pad_token_id] = -100
+        if actual_len <= self.block_size:
+            y[actual_len - 1:] = -100
         return x, y
 
 

@@ -22,7 +22,7 @@ from config import (
     GRAD_CLIP, WARMUP_STEPS, MAX_STEPS, MIN_LR_RATIO,
     LOG_INTERVAL, EVAL_INTERVAL, SAVE_INTERVAL, CHECKPOINT_DIR, SEED,
     BATCH_SIZE, GRAD_ACCUM_STEPS, VOCAB_SIZE, USE_WANDB,
-    WANDB_PROJECT, WANDB_ENTITY
+    WANDB_PROJECT, WANDB_ENTITY, BLOCK_SIZE, LOG_DIR
 )
 from model import ShakespeareGPT, ModelConfig, count_parameters
 from dataset import get_dataloader, split_data
@@ -90,6 +90,15 @@ def save_checkpoint(model, optimizer, step, val_loss, cfg, filename="last.pt"):
         "val_loss": val_loss,
         "config": cfg,
     }, ckpt_path)
+    
+    # Export Safetensors for production inference
+    try:
+        from safetensors.torch import save_model
+        st_filename = filename.replace(".pt", ".safetensors")
+        save_model(model, CHECKPOINT_DIR / st_filename)
+    except ImportError:
+        pass
+        
     return ckpt_path
 
 
@@ -129,13 +138,23 @@ def train():
     model = ShakespeareGPT(cfg).to(device)
     print(f"[+] Model parameters: {count_parameters(model):,}")
 
-    optimizer = torch.optim.AdamW(
-        model.parameters(),
-        lr=LEARNING_RATE,
-        betas=(BETA1, BETA2),
-        weight_decay=WEIGHT_DECAY,
-        fused=True,  # Faster on modern PyTorch
-    )
+    try:
+        import bitsandbytes as bnb
+        optimizer = bnb.optim.AdamW8bit(
+            model.parameters(),
+            lr=LEARNING_RATE,
+            betas=(BETA1, BETA2),
+            weight_decay=WEIGHT_DECAY,
+        )
+        print("[*] Using 8-bit AdamW optimizer (massive memory savings!)")
+    except ImportError:
+        optimizer = torch.optim.AdamW(
+            model.parameters(),
+            lr=LEARNING_RATE,
+            betas=(BETA1, BETA2),
+            weight_decay=WEIGHT_DECAY,
+            fused=(device.type == "cuda"),
+        )
 
     scaler = GradScaler(enabled=(dtype == torch.float16))
 
@@ -163,6 +182,12 @@ def train():
     step = start_step
     t0 = time.time()
     accumulated_loss = 0.0
+
+    try:
+        from tqdm import tqdm
+        pbar = tqdm(initial=start_step, total=MAX_STEPS, desc="Training (~880M MoE)", dynamic_ncols=True, smoothing=0.1)
+    except ImportError:
+        pbar = None
 
     while step < MAX_STEPS and not shutdown_requested:
         # Update LR per optimizer step
@@ -192,7 +217,7 @@ def train():
 
             if is_last_accum:
                 scaler.unscale_(optimizer)
-                torch.nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP)
+                grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), GRAD_CLIP)
                 scaler.step(optimizer)
                 scaler.update()
                 optimizer.zero_grad(set_to_none=True)
@@ -201,58 +226,97 @@ def train():
         if step % LOG_INTERVAL == 0:
             dt = time.time() - t0
             t0 = time.time()
-            avg_loss = accumulated_loss / GRAD_ACCUM_STEPS
+            
+            steps_since_log = LOG_INTERVAL if step > 0 else 1
+            avg_loss = accumulated_loss / steps_since_log
             accumulated_loss = 0.0
             mem_gb = torch.cuda.max_memory_allocated() / 1e9 if device.type == "cuda" else 0
             
-            # Reset max memory tracking for accurate per-interval measurement
+            # Calculate tokens per second
+            tokens_per_step = BATCH_SIZE * BLOCK_SIZE * GRAD_ACCUM_STEPS
+            tokens_per_sec = (tokens_per_step * steps_since_log) / dt if dt > 0 else 0
+            
             if device.type == "cuda":
                 torch.cuda.reset_max_memory_allocated()
+
+            if pbar:
+                pbar.set_postfix({
+                    "loss": f"{avg_loss:.4f}",
+                    "lr": f"{lr:.2e}",
+                    "tok/s": f"{tokens_per_sec:.0f}",
+                    "mem": f"{mem_gb:.1f}GB",
+                    "gnorm": f"{grad_norm.item():.2f}" if 'grad_norm' in locals() else "0.0"
+                })
+            else:
+                print(
+                    f"[step {step:04d}] loss={avg_loss:.4f} | lr={lr:.2e} | "
+                    f"tok/s={tokens_per_sec:.0f} | "
+                    f"gpu_mem={mem_gb:.2f}GB | gnorm={grad_norm.item():.2f}" if 'grad_norm' in locals() else "0.0"
+                )
 
             log_data = {
                 "step": step,
                 "loss": avg_loss,
                 "lr": lr,
                 "iter_time_ms": dt * 1000 / LOG_INTERVAL,
+                "tokens_per_sec": tokens_per_sec,
                 "gpu_mem_gb": mem_gb,
+                "grad_norm": grad_norm.item() if 'grad_norm' in locals() else 0.0
             }
-            print(
-                f"[step {step:04d}] loss={avg_loss:.4f} | lr={lr:.2e} | "
-                f"iter_time={dt * 1000 / LOG_INTERVAL:.1f}ms | "
-                f"gpu_mem={mem_gb:.2f}GB"
-            )
             if wandb_run:
                 wandb_run.log(log_data, step=step)
+                
+            # Log to local JSONL for the web dashboard
+            import json
+            log_file = LOG_DIR / "training_metrics.jsonl"
+            with open(log_file, "a") as f:
+                f.write(json.dumps(log_data) + "\n")
+
+        if pbar:
+            pbar.update(1)
 
         # Evaluation
         if step > 0 and step % EVAL_INTERVAL == 0:
             metrics = evaluate(model, device, dtype)
-            print(
-                f"[eval step {step}] "
+            eval_msg = (
+                f"\n[eval step {step}] "
                 f"train_loss={metrics['train_loss']:.4f} train_ppl={metrics['train_perplexity']:.2f} | "
                 f"val_loss={metrics['val_loss']:.4f} val_ppl={metrics['val_perplexity']:.2f}"
             )
+            if pbar:
+                pbar.write(eval_msg)
+            else:
+                print(eval_msg)
+            
             if wandb_run:
                 wandb_run.log({f"eval/{k}": v for k, v in metrics.items()}, step=step)
 
-            # Early Stopping & Best Model Check
             if metrics["val_loss"] < best_val_loss:
                 best_val_loss = metrics["val_loss"]
                 steps_without_improvement = 0
                 ckpt_path = save_checkpoint(model, optimizer, step, best_val_loss, cfg, "best.pt")
-                print(f"[+] New best model saved: {ckpt_path}")
+                msg = f"[+] New best model saved: {ckpt_path}"
+                if pbar: pbar.write(msg)
+                else: print(msg)
             else:
                 steps_without_improvement += EVAL_INTERVAL
                 if steps_without_improvement >= EARLY_STOPPING_PATIENCE:
-                    print(f"[!] Early stopping triggered. No improvement in {EARLY_STOPPING_PATIENCE} steps.")
+                    msg = f"[!] Early stopping triggered. No improvement in {EARLY_STOPPING_PATIENCE} steps."
+                    if pbar: pbar.write(msg)
+                    else: print(msg)
                     shutdown_requested = True
 
         # Periodic Checkpoint (acts as the resume point)
         if step > 0 and step % SAVE_INTERVAL == 0:
             ckpt_path = save_checkpoint(model, optimizer, step, best_val_loss, cfg, "last.pt")
-            print(f"[*] Checkpoint saved: {ckpt_path}")
+            msg = f"[*] Checkpoint saved: {ckpt_path}"
+            if pbar: pbar.write(msg)
+            else: print(msg)
 
         step += 1
+
+    if pbar:
+        pbar.close()
 
     # Final save on exit (normal completion or interrupted)
     if step > start_step:
