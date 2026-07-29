@@ -1,0 +1,1944 @@
+{{Short description|English playwright and poet (1564–1616)}}
+{{Redirect|Shakespeare|other uses|Shakespeare (disambiguation)|and|William Shakespeare (disambiguation)|the British explorer|William Shakespear (explorer)}}
+{{featured article}}
+{{pp-semi-indef}}
+{{Use dmy dates|date=June 2026}}
+{{Use British English|date=June 2026}}
+{{Infobox person
+| image         = William Shakespeare by John Taylor, edited.jpg<!--Please see the talk page before making any changes to the portrait-->
+| caption       = {{nowraplinks|The [[Chandos portrait]], likely depicting Shakespeare, {{circa|1611}}}}
+| birth_date    = {{circa}} 23 April 1564
+| birth_place   = [[Stratford-upon-Avon]], Warwickshire, England
+| death_date    = {{death date and given age|df=yes|1616|04|23|52}}
+| death_place   = Stratford-upon-Avon, Warwickshire, England
+| resting_place = [[Church of the Holy Trinity, Stratford-upon-Avon]]
+| occupation    = {{hlist|Playwright|poet|actor}}
+| era           = {{hlist|[[Elizabethan era|Elizabethan]]|[[Jacobean era|Jacobean]]}}
+| works         = [[Shakespeare bibliography]]
+| movement      = [[English Renaissance]]
+| organisation  = {{hlist|[[Lord Chamberlain's Men]]|[[King's Men (playing company)|King's Men]]}}
+| years_active  = {{circa|1585–1613}}
+| spouse        = {{marriage|[[Anne Hathaway (wife of Shakespeare)|Anne Hathaway]]|1582}}
+| children      = {{unbulleted list|[[Susanna Hall]]|[[Hamnet Shakespeare]]|[[Judith Quiney]]}}
+| parents       = {{unbulleted list|[[John Shakespeare]]|[[Mary Shakespeare|Mary Arden]]}}
+| module        = {{Infobox writer
+| embed    = yes
+| language = [[Early Modern English]]
+| genres   = {{hlist|[[Shakespeare's plays|Play]] ([[Shakespearean comedy|comedy]]|[[Shakespearean history|history]]|[[Shakespearean tragedy|tragedy]])}}{{hlist|Poetry ([[Shakespeare's sonnets|sonnet]]|[[narrative poetry|narrative poem]]|[[epitaph]])}}
+}}
+| signature     = William Shakespeare Signature.svg
+}}
+
+'''William Shakespeare'''{{efn|{{IPAc-en|ˈ|ʃ|eɪ|k|s|p|ɪər}}}} ({{circa}} 23 April 1564{{efn|The belief that Shakespeare was born on 23 April is a tradition and not a verified fact;{{sfn|Schoenbaum|1987|pp=24–26}} see [[#Early life|§ Early life]] below. He was [[Baptism|baptised]] 26 April.{{sfn|Schoenbaum|1987|pp=24–26}} }} – 23 April 1616){{efn|Dates follow the [[Julian calendar]], used in England throughout Shakespeare's lifespan, but with the start of the year adjusted to 1 January (see [[Old Style and New Style dates]]). Under the [[Gregorian calendar]], adopted in Catholic countries in 1582, Shakespeare died on 3 May.{{sfn|Schoenbaum|1987|p=xv}}}} was an English playwright, poet and actor. He is widely regarded as the greatest writer in the English language and the world's pre-eminent dramatist. He is often called England's [[national poet]] and the "[[Bard]] of [[River Avon, Warwickshire|Avon]]" or simply "the Bard". His extant works, including [[William Shakespeare's collaborations|collaborations]], consist of some [[Shakespeare's plays|39 plays]], [[Shakespeare's sonnets|154 sonnets]], three long [[narrative poem]]s and a few other verses, some of uncertain authorship. His plays [[List of translations of works by William Shakespeare|have been translated]] into every major [[modern language|living language]] and are performed more often than those of any other playwright. Shakespeare remains arguably the most influential writer in the English language, and his works continue to be studied and reinterpreted.
+
+Shakespeare was born and raised in [[Stratford-upon-Avon]], Warwickshire. At the age of 18, he married [[Anne Hathaway (wife of Shakespeare)|Anne Hathaway]], with whom he had three children: [[Susanna Hall|Susanna]], and twins [[Hamnet Shakespeare|Hamnet]] and [[Judith Quiney|Judith]]. Sometime between 1585 and 1592 he began a successful career in London as an actor, writer, and [[Shareholder|part-owner]] ("sharer") of a [[playing company]] called the [[Lord Chamberlain's Men]], later known as the [[King's Men (playing company)|King's Men]] after the ascension of [[James VI and I|King James VI of Scotland]] to the English throne. At age 49 (around 1613) he appears to have retired to Stratford, where he died three years later. Few records of Shakespeare's private life survive; this has stimulated considerable speculation about such matters as [[Portraits of Shakespeare|his physical appearance]], [[Sexuality of William Shakespeare|his sexuality]], [[Religious views of William Shakespeare|his religious beliefs]] and even certain fringe theories as to whether the works attributed to him were [[Shakespeare authorship question|written by others]].
+
+Shakespeare produced most of his known works between 1589 and 1613. His early plays were primarily [[Shakespearean comedy|comedies]] and [[Shakespearean history|histories]] and are regarded as some of the best works produced in these genres. He then wrote mainly [[Shakespearean tragedy|tragedies]] until 1608, among them ''[[Hamlet]]'', ''[[Othello]]'', ''[[King Lear]]'' and ''[[Macbeth]]'', which are considered to be among the finest works in English. In the last phase of his career, he wrote [[tragicomedy|tragicomedies]] (also known as [[Shakespeare's late romances|romances]]), such as ''[[The Winter's Tale]]'' and ''[[The Tempest]]'', and collaborated with other playwrights.
+
+Many of Shakespeare's plays were published in editions of varying quality and accuracy during his lifetime. However, in 1623 [[John Heminges]] and [[Henry Condell]], two fellow actors and friends of Shakespeare's, published a more definitive text known as the [[First Folio]], a posthumous collected edition of Shakespeare's dramatic works that includes 36 of his plays. Its preface includes a prescient poem by [[Ben Jonson]], a former rival of Shakespeare, who hailed Shakespeare with the now-famous epithet: "not of an age, but for all time".
+
+==Life==
+<!-- This is a SUMMARY. Please don't add new information or details here, but instead at the main article [[William Shakespeare's life]]! -->
+{{Main|Life of William Shakespeare}}
+
+===Early life===
+[[File:William Shakespeares birthplace, Stratford-upon-Avon 26l2007.jpg|thumb|left|[[John Shakespeare]]'s house, believed to be [[Shakespeare's Birthplace|Shakespeare's birthplace]], in [[Stratford-upon-Avon]]]]
+William Shakespeare was the son of [[John Shakespeare]], an [[alderman]] and a successful glover (glove-maker) originally from [[Snitterfield]] in [[Warwickshire]], and [[Mary Shakespeare|Mary Arden]], the daughter of an [[Arden family|affluent landowning family]] that was influential in the [[Recusancy|Recusant Catholic]] community.<ref>{{Cite book |last=Stockton |first=Will |url=https://books.google.com/books?id=sC6bEQAAQBAJ&dq=shakespeare+The+Ardens+were++a+Catholic+family&pg=PT126 |title=The Routledge Companion to Shakespeare and Religion |date=15 December 2025 |publisher=Taylor & Francis |isbn=978-1-040-75903-5 |language=en}}</ref><ref>{{Cite book |last=Hyland |first=Peter |url=https://books.google.com/books?id=yZlGEAAAQBAJ&dq=shakespeare+The+Ardens+were++a+Catholic+family&pg=PA7 |title=An Introduction to Shakespeare's Poems |date=21 December 2017 |publisher=Bloomsbury Publishing |isbn=978-0-230-80240-7 |pages=7 |language=en}}</ref>{{sfn|Schoenbaum|1987|pp=14–22}} He was born in [[Stratford-upon-Avon]], where he was [[Baptism|baptised]] on 26 April 1564. His date of birth is unknown but is traditionally observed on 23 April, [[Saint George's Day]].{{sfn|Schoenbaum|1987|pp=24–26}} This date, which can be traced to [[William Oldys]] and [[George Steevens]], has proved appealing to biographers because Shakespeare died on the same date in 1616.{{sfn|Schoenbaum|1987|pp=24, 296}}{{sfn|Honan|1998|pp=15–16}} He was the third of eight children, and the eldest surviving son.{{sfn|Schoenbaum|1987|pp=23–24}}
+
+Although no attendance records for the period survive, most biographers agree that Shakespeare was probably educated at the [[King Edward VI School, Stratford-upon-Avon|King's New School]] in Stratford,{{sfn|Schoenbaum|1987|pp=62–63}}{{sfn|Ackroyd|2006|p=53}}{{sfn|Wells|Taylor|Jowett|Montgomery|2005|pp=xv–xvi}} a free school chartered in 1553,{{sfn|Baldwin|1944|p=464}} based about a quarter-mile (400&nbsp;m) from his home in [[Stratford-upon-Avon Guildhall|Stratford's guildhall]].<ref>{{Cite book |last1=Giles|first1=Kate|last2=Clark|first2=Jonathan|title=The Guild and Guild Buildings of Shakespeare's Stratford: Society, Religion, School and Stage |publisher=Ashgate |year=2012 |isbn=9781409417668 |editor-last=Mulryne  |editor-first=J. R. |pages=138|chapter=The Archaeology of the Guild Buildings of Shakespeare’s Stratford-upon-Avon|editor-last2=Morris |editor-first2=James}}</ref> [[Grammar school]]s varied in quality during the [[Elizabethan era]], but grammar school curricula were largely similar: the basic [[Latin]] text was standardised by royal decree,{{sfn|Baldwin|1944|pp=179–180, 183}}{{sfn|Cressy|1975|pp=28–29}} and the school would have provided an intensive education in grammar based upon Latin [[classics|classical]] authors.{{sfn|Baldwin|1944|p=117}}
+
+At the age of 18, Shakespeare married 26-year-old [[Anne Hathaway (Shakespeare's wife)|Anne Hathaway]]. The [[consistory court]] of the [[Anglican Diocese of Worcester|Diocese of Worcester]] issued a marriage licence on 27 November 1582. The next day, two of Hathaway's neighbours posted bonds guaranteeing that no lawful claims impeded the marriage.{{sfn|Schoenbaum|1987|pp=77–78}} The ceremony may have been arranged in some haste; the Worcester [[chancellor]] allowed the [[Banns of marriage|marriage banns]] to be read once instead of the usual three times.{{sfn|Wood|2003|p=84}}{{sfn|Schoenbaum|1987|pp=78–79}} Six months after the marriage, Anne gave birth to a daughter, [[Susanna Hall|Susanna]], baptised 26 May 1583.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/93 93]}} Twins, son [[Hamnet Shakespeare|Hamnet]] and daughter [[Judith Quiney|Judith]], followed almost two years later and were baptised 2 February 1585.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/94 94]}} Hamnet died of unknown causes at the age of 11 and was buried 11 August 1596.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/224 224]}}
+
+[[File:William-Shakespeare CoA 1602.jpg|upright=0.75|thumb|[[Shakespeare coat of arms|Shakespeare's coat of arms]], from the 1602 book ''The book of coates and creasts. Promptuarium armorum.'' It features spears as a [[canting arms|pun]] on the family name.{{efn|The [[crest (heraldry)|crest]] is a silver falcon supporting a spear, while the motto is ''Non Sanz Droict'' (French for "not without right"). This motto is still used by [[Warwickshire County Council]], in reference to Shakespeare.}}]]
+
+After the birth of the twins, Shakespeare left few historical traces until he is mentioned as part of the London theatre scene in 1592. The exception is the appearance of his name in the "complaints bill" of a law case before the Queen's Bench court at Westminster dated [[Michaelmas Term]] 1588 and 9 October 1589.{{sfn|Bate|2008|p=314}} Scholars refer to the years between 1585 and 1592 as Shakespeare's "lost years".{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/95 95]}} Biographers attempting to account for this period have reported many [[wikt:apocryphal|apocryphal]] stories. [[Nicholas Rowe (writer)|Nicholas Rowe]], Shakespeare's first biographer, recounted a Stratford legend that Shakespeare fled the town for London to escape prosecution for deer [[poaching]] in the estate of local squire [[Thomas Lucy]]. Shakespeare is also supposed to have taken his revenge on Lucy by writing a scurrilous ballad about him.{{sfn|Schoenbaum|1987|pp=97–108}}{{sfn|Rowe|1709|pp=16–17 }} Another 18th-century story has Shakespeare starting his theatrical career minding the horses of theatre patrons in London.{{sfn|Schoenbaum|1987|pp=144–145}} [[John Aubrey]] reported that Shakespeare had been a country schoolmaster.{{sfn|Schoenbaum|1987|pp=110–111}} Some 20th-century scholars suggested that Shakespeare may have been employed as a schoolmaster by Alexander Hoghton of [[Lancashire]], a Catholic landowner who named a certain "William Shakeshafte" in his will.{{sfn|Honigmann|1998|p=1}}{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xvii}} Little evidence substantiates such stories other than [[wikt:hearsay|hearsay]] collected after his death, and Shakeshafte was a common name in the Lancashire area.{{sfn|Honigmann|1998|pp=95–117}}{{sfn|Wood|2003|pp=97–109}}
+
+===London and theatrical career===
+It is not known definitively when Shakespeare began writing, but contemporary allusions and records of performances show that several of his plays were on the London stage by 1592.{{sfn|Chambers|1988a|pp=287, 292}} By then, he was sufficiently known in London to be attacked in print by the playwright [[Robert Greene (dramatist)|Robert Greene]] in his ''[[Greene's Groats-Worth of Wit|Groats-Worth of Wit]]'' from that year:
+
+<blockquote>...&nbsp;there is an upstart Crow, beautified with our feathers, that with his ''Tiger's heart wrapped in a Player's hide'', supposes he is as well able to bombast out a blank verse as the best of you: and being an absolute ''Johannes factotum'', is in his own conceit the only Shake-scene in a {{nowrap|country.{{sfn|Greenblatt|2005|p=213}}}}</blockquote>
+
+Scholars differ on the exact meaning of Greene's words,{{sfn|Greenblatt|2005|p=213}}{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/153 153]}} but most agree that Greene was accusing Shakespeare of reaching above his rank in trying to match such university-educated writers as [[Christopher Marlowe]], [[Thomas Nashe]] and Greene himself (the so-called "[[University Wits]]").{{sfn|Ackroyd|2006|p=176}} The italicised phrase parodying the line "Oh, tiger's heart wrapped in a woman's hide" from Shakespeare's ''[[Henry VI, Part 3]]'', along with the pun "Shake-scene", clearly identify Shakespeare as Greene's target. As used here, ''[[Jack of all trades, master of none|Johannes Factotum]]'' ("Jack of all trades") refers to a second-rate tinkerer with the work of others, rather than the more common "universal genius".{{sfn|Greenblatt|2005|p=213}}{{sfn|Schoenbaum|1987|p=151–153}}
+
+Greene's attack is the earliest surviving mention of Shakespeare's work in the theatre. Biographers suggest that his career may have begun any time from the mid-1580s to just before Greene's remarks.{{sfn|Wells|2006|p=28}}{{sfn|Schoenbaum|1987|pp=144–146}}{{sfn|Chambers|1988a|p=59}} After 1594 Shakespeare's plays were performed at [[The Theatre]], in [[Shoreditch]], only by the [[Lord Chamberlain's Men]], a company owned by a group of players, including Shakespeare, that soon became the leading [[playing company]] in London.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/184 184]}} After the death of [[Elizabeth I|Queen Elizabeth]] in 1603, the company was awarded a royal patent by the new king [[James VI and I|James I]], and changed its name to the [[King's Men (playing company)|King's Men]].{{sfn|Chambers|1923|pp=208–209}}
+
+{{Quote box|align=right|quote=<poem>
+All the world's a stage,
+and all the men and women merely players:
+they have their exits and their entrances;
+and one man in his time plays many parts&nbsp;...
+</poem>
+|source=—''[[As You Like It]]'', Act II, Scene 7, 139–142{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=666}}
+}}
+
+In 1599 a partnership of members of the company built their own theatre on the south bank of the [[River Thames]], which they named the [[Globe Theatre|Globe]]. In 1608 the partnership also took over the [[Blackfriars Theatre|Blackfriars indoor theatre]]. Extant records of Shakespeare's property purchases and investments indicate that his association with the company made him a wealthy man,{{sfn|Chambers|1988b|pp=67–71}} and in 1597 he bought the second-largest house in Stratford, [[New Place]], and in 1605 invested in a share of the parish [[tithes]] in Stratford.{{sfn|Bentley|1961|p=36}}
+
+Some of Shakespeare's plays were published in [[Quarto (binding)|quarto]] editions, beginning in 1594, and by 1598 his name had become a selling point and began to appear on the [[title page]]s.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/188 188]}}{{sfn|Kastan|1999|p=37}}{{sfn|Knutson|2001|p=17}} Shakespeare continued to act in his own and other plays after his success as a playwright. The 1616 edition of [[Ben Jonson]]'s ''Works'' names him on the cast lists for ''[[Every Man in His Humour]]'' (1598) and ''[[Sejanus His Fall]]'' (1603).{{sfn|Adams|1923|p=275}} The absence of his name from the 1605 cast list for Jonson's ''[[Volpone]]'' is taken by some scholars as a sign that his acting career was nearing its end.{{sfn|Wells|2006|p=28}} The [[First Folio]] of 1623, however, lists Shakespeare as one of "the Principal Actors in all these Plays", some of which were first staged after ''Volpone'', although one cannot know for certain which roles he played.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/200 200]}} In 1610, [[John Davies of Hereford]] wrote that "good Will" played "kingly" roles.{{sfn|Schoenbaum|1987|pp=200–201}} In 1709 Rowe passed down a tradition that Shakespeare played the ghost of Hamlet's father.{{sfn|Rowe|1709|p=32}} Later traditions maintain that he also played Adam in ''[[As You Like It]]'', and the Chorus in ''[[Henry V (play)|Henry V]]'',{{sfn|Ackroyd|2006|p=357}}{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xxii}} though scholars doubt the sources of that information.{{sfn|Schoenbaum|1987|pp=202–203}}
+
+Throughout his career, Shakespeare divided his time between London and Stratford. In 1596, the year before he bought New Place as his family home in Stratford, Shakespeare was living in the parish of [[St Helen's Church, Bishopsgate|St Helen's]], [[Bishopsgate]], north of the River Thames.{{sfn|Hales|1904|pp=401–402}}{{sfn|Honan|1998|p=121}} He moved across the river to [[Southwark]] by 1599, the same year his company constructed the Globe Theatre there.{{sfn|Hales|1904|pp=401–402}}{{sfn|Shapiro|2005|p=122}} By 1604 he had moved north of the river again, to an area north of [[St Paul's Cathedral]] with many fine houses. There he rented rooms from a French [[Huguenot]] named Christopher Mountjoy, a maker of women's wigs and other headgear.{{sfn|Honan|1998|p=325}}{{sfn|Greenblatt|2005|p=405}}
+
+===Later years and death===
+[[File:Monument-ht6.jpg|thumb|upright=0.75|[[Shakespeare's funerary monument]] in Stratford-upon-Avon]]
+
+[[Nicholas Rowe (writer)|Nicholas Rowe]] was the first biographer to record the tradition, repeated by [[Samuel Johnson]], that Shakespeare retired to Stratford "some years before his death".{{sfn|Ackroyd|2006|p=476}}{{sfn|Wood|1806|pp=ix–x, lxxii}} He was still working as an actor in London in 1608; in an answer to the sharers' petition in 1635, [[Cuthbert Burbage]] stated that after purchasing the lease of the [[Blackfriars Theatre]] in 1608 from [[Henry Evans (theatre)|Henry Evans]], the King's Men "placed men players" there, "which were [[John Heminges|Heminges]], [[Henry Condell|Condell]], Shakespeare, etc.".{{sfn|Smith|1964|p=558}} However, it is perhaps relevant that the [[bubonic plague]] raged in London throughout 1609.{{sfn|Ackroyd|2006|p=477}}{{sfn|Barroll|1991|pp=179–182}} The London public playhouses were repeatedly closed during extended outbreaks of the plague (a total of over 60 months closure between May 1603 and February 1610),{{sfn|Bate|2008|pp=354–355}} which meant there was often no acting work. Retirement from all work was uncommon at that time.{{sfn|Honan|1998|pp=382–383}} Shakespeare continued to visit London during the years 1611–1614.{{sfn|Ackroyd|2006|p=476}} In 1612 he was called as a witness in ''[[Bellott v Mountjoy]]'', a court case concerning the marriage settlement of Mountjoy's daughter, Mary.{{sfn|Honan|1998|p=326}}{{sfn|Ackroyd|2006|pp=462–464}} In March 1613 he bought a [[gatehouse]] in the former [[Blackfriars, London|Blackfriars]] priory;{{sfn|Schoenbaum|1987|pp=272–274}} and from November 1614 he was in London for several weeks with his son-in-law, [[John Hall (physician)|John Hall]].{{sfn|Honan|1998|p=387}} After 1610 Shakespeare wrote fewer plays, and none are attributed to him after 1613.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/279 279]}} His last three plays were collaborations, probably with [[John Fletcher (playwright)|John Fletcher]],{{sfn|Honan|1998|pp=375–378}} who succeeded him as the house playwright of the King's Men. He retired in 1613, before the [[Globe Theatre]] burned down during the performance of ''[[Henry VIII (play)|Henry VIII]]'' on 29 June.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/279 279]}}
+
+Shakespeare died on 23 April 1616, at the age of 52.{{efn|Inscribed in Latin on his [[Shakespeare's funerary monument|funerary monument]]: {{lang|la|AETATIS 53 DIE 23 APR|italic=yes}} (In his 53rd year he died 23 April).{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/311 311]}}}} He died within a month of signing his will, a document which he begins by describing himself as being in "perfect health". No extant contemporary source explains how or why he died. Half a century later, [[John Ward (vicar)|John Ward]], the vicar of Stratford, wrote in his notebook: "Shakespeare, Drayton, and Ben Jonson had a merry meeting and, it seems, drank too hard, for Shakespeare died of a fever there contracted",{{sfn|Schoenbaum|1991|p=[https://archive.org/details/williamshakespea0000scho/page/78 78]}}{{sfn|Rowse|1963|p=453}} not an impossible scenario since Shakespeare knew Jonson and [[Michael Drayton]]. Of the tributes from fellow authors, one refers to his relatively sudden death: "We wondered, Shakespeare, that thou went'st so soon / From the world's stage to the grave's tiring room."{{sfn|Kinney|2012|p=11}}{{efn|Verse by [[James Mabbe]] printed in the First Folio.{{sfn|Kinney|2012|p=11}}}}
+[[File:Holy Trinity Church, Stratford-upon-Avon.jpg|left|thumb|[[Church of the Holy Trinity, Stratford-upon-Avon|Holy Trinity Church, Stratford-upon-Avon]], where Shakespeare was baptised and is buried]]
+He was survived by his wife and two daughters. Susanna had married a physician, John Hall, in 1607,{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/287 287]}} and Judith had married [[Thomas Quiney]], a [[vintner]], two months before Shakespeare's death.{{sfn|Schoenbaum|1987|pp=292–294}} Shakespeare signed his last will and testament on 25 March 1616; the following day, Thomas Quiney, his new son-in-law, was found guilty of fathering an illegitimate son by Margaret Wheeler, and Margaret and her son both died during childbirth. Thomas was ordered by the church court to do public penance, which would have caused much shame and embarrassment for the Shakespeare family.{{sfn|Schoenbaum|1987|pp=292–294}}
+
+Shakespeare bequeathed the bulk of his large estate to his elder daughter Susanna{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/304 304]}} under stipulations that she pass it down intact to "the first son of her body".{{sfn|Honan|1998|pp=395–396}} The Quineys had three children, all of whom died without marrying.{{sfn|Chambers|1988b|pp=8, 11, 104}}{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/296 296]}} The Halls had one child, Elizabeth, who married twice but died without children in 1670, ending Shakespeare's direct line.{{sfn|Chambers|1988b|pp=7, 9, 13}}{{sfn|Schoenbaum|1987|pp=289, 318–319}} Shakespeare's will scarcely mentions his wife, Anne, who was probably entitled to one-third of his estate automatically.{{efn|[[Charles Knight (publisher)|Charles Knight]], 1842, in his notes on ''[[Twelfth Night]]''.{{sfn|Schoenbaum|1991|p=[https://archive.org/details/williamshakespea0000scho/page/275 275]}}}} He did make a point, however, of leaving her "my second best bed", a bequest that has led to much speculation.{{sfn|Ackroyd|2006|p=483}}{{sfn|Frye|2005|p=16}}{{sfn|Greenblatt|2005|pp=145–146}} Some scholars see the bequest as an insult to Anne, whereas others believe that the second-best bed would have been the matrimonial bed and therefore rich in significance.{{sfn|Schoenbaum|1987|pp=301–303}}
+
+[[File:Shakespeare grave -Stratford-upon-Avon -3June2007.jpg|thumb|Shakespeare's grave, next to those of Anne Shakespeare, his wife, and [[Thomas Nash (relative of Shakespeare)|Thomas Nash]], the husband of his granddaughter]]
+
+Shakespeare was buried in the [[chancel]] of the [[Holy Trinity Church, Stratford-upon-Avon|Holy Trinity Church]] two days after his death.{{sfn|Schoenbaum|1987|pp=306–307}}{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xviii}} The epitaph carved into the stone slab covering his grave includes a curse against moving his bones, which was carefully avoided during restoration of the church in 2008:{{sfn|BBC News|2008}}
+
+{{Verse translation
+|Good frend for Iesvs sake forbeare,
+To digg the dvst encloased heare.
+Bleste be yͤ man yͭ spares thes stones,
+And cvrst be he yͭ moves my bones.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/306 306]}}{{efn|In the scribal abbreviations ''ye'' for ''the'' (3rd line) and ''yt'' for ''that'' (3rd and 4th lines) the letter ''y'' represents ''th'': see ''[[thorn (letter)|thorn]]''.}}
+|Good friend, for Jesus' sake forbear,
+To dig the dust enclosed here.
+Blessed be the man that spares these stones,
+And cursed be he that moves my bones.
+}}
+
+Some time before 1623 a [[Shakespeare's funerary monument|funerary monument]] was erected in his memory on the north wall, with a half-effigy of him in the act of writing. Its plaque compares him to [[Nestor (mythology)|Nestor]], [[Socrates]], and [[Virgil]].{{sfn|Schoenbaum|1987|pp=308–310}} In 1623, in conjunction with the publication of the [[First Folio]], the [[Droeshout engraving]] was published.{{sfn|Cooper|2006|p=48}} Shakespeare has been commemorated in many [[Memorials to William Shakespeare|statues and memorials]] around the world, including funeral monuments in [[Southwark Cathedral]] and [[Poets' Corner]] in [[Westminster Abbey]].{{sfn|Westminster Abbey|n.d.}}{{sfn|Southwark Cathedral|n.d.}}
+
+==Plays==
+{{Main|Shakespeare's plays|William Shakespeare's collaborations|List of works by William Shakespeare|Chronology of Shakespeare's plays}}
+
+[[File:Procession of Characters from Shakespeare's Plays - Google Art Project.jpg|thumb|center|upright=2.25|''Procession of Characters from Shakespeare's Plays'' by an unknown 19th-century artist]]
+<!-- This is a SUMMARY. Please don't add new information or details here, but instead at the main article [[William Shakespeare's plays]]! -->
+Most playwrights of the period typically collaborated with others at some point, as critics agree Shakespeare did, mostly early and late in his career.{{sfn|Thomson|2003|p=49}}
+
+The first recorded works of Shakespeare are ''[[Richard III (play)|Richard III]]'' and the three parts of ''[[Henry VI, Part 1|Henry VI]]'', written in the early 1590s during a vogue for [[History (theatrical genre)|historical drama]]. Shakespeare's plays are difficult to date precisely, however,{{sfn|Frye|2005|p=9}}{{sfn|Honan|1998|p=166}} and studies of the texts suggest that ''[[Titus Andronicus]]'', ''[[The Comedy of Errors]]'', ''[[The Taming of the Shrew]],'' and ''[[The Two Gentlemen of Verona]]'' may also belong to Shakespeare's earliest period.{{sfn|Schoenbaum|1987|pp=159–161}}{{sfn|Frye|2005|p=9}} His first [[Shakespearean history|histories]], which draw heavily on the 1587 edition of Raphael Holinshed's [[Holinshed's Chronicles|''Chronicles of England, Scotland, and Ireland'']],{{sfn|Dutton|Howard|2003|p=147}} dramatise the destructive results of weak or corrupt rule and have been interpreted as a justification for the origins of the [[Tudor dynasty]].{{sfn|Ribner|2005|pp=154–155}} The early plays were influenced by the works of other Elizabethan dramatists, especially [[Thomas Kyd]] and [[Christopher Marlowe]], by the traditions of medieval drama, and by the plays of [[Seneca the Younger|Seneca]].{{sfn|Frye|2005|p=105}}{{sfn|Ribner|2005|p=67}}{{sfn|Bednarz|2004|p=100}} ''The Comedy of Errors'' was also based on classical models, but no source for ''The Taming of the Shrew'' has been found, though it has an identical plot but different wording as another play with a similar name.{{sfn|Honan|1998|p=136}}{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/166 166]}} Like ''The Two Gentlemen of Verona'', in which two friends appear to approve of rape,{{sfn|Frye|2005|p=91}}{{sfn|Honan|1998|pp=116–117}}{{sfn|Werner|2001|pp=96–100}} the ''Shrew''{{'}}s story of the taming of a woman's independent spirit by a man sometimes troubles modern critics, directors, and audiences.{{sfn|Friedman|2006|p=159}}
+
+[[File:Oberon, Titania and Puck with Fairies Dancing. William Blake. c.1786.jpg|thumb|left|''Oberon, Titania and Puck with Fairies Dancing''. By [[William Blake]], {{circa}}&nbsp;1786.]]
+
+Shakespeare's early classical and Italianate comedies, containing tight double plots and precise comic sequences, give way in the mid-1590s to the romantic atmosphere of his most acclaimed comedies.{{sfn|Ackroyd|2006|p=235}} ''[[A Midsummer Night's Dream]]'' is a witty mixture of romance, fairy magic, and comic lowlife scenes.{{sfn|Wood|2003|pp=161–162}} Shakespeare's next comedy, the equally romantic ''[[The Merchant of Venice]]'', contains a portrayal of the vengeful Jewish moneylender [[Shylock]], which reflects dominant Elizabethan views but may appear derogatory to modern audiences.{{sfn|Wood|2003|pp=205–206}}{{sfn|Honan|1998|p=258}} The wit and wordplay of ''[[Much Ado About Nothing]]'',{{sfn|Ackroyd|2006|p=359}} the charming rural setting of ''[[As You Like It]]'', and the lively merrymaking of ''[[Twelfth Night]]'' complete Shakespeare's sequence of great comedies.{{sfn|Ackroyd|2006|pp=362–383}} After the lyrical ''[[Richard II (play)|Richard II]]'', written almost entirely in verse, Shakespeare introduced prose comedy into the histories of the late 1590s, ''[[Henry IV, Part 1]]'' and ''[[Henry IV, Part 2|2]]'', and ''[[Henry V (play)|Henry V]]''. ''Henry IV'' features [[Falstaff]], rogue, wit and friend of Prince Hal. His characters become more complex and tender as he switches deftly between comic and serious scenes, prose and poetry, and achieves the narrative variety of his mature work.{{sfn|Shapiro|2005|p=150}}{{sfn|Gibbons|1993|p=1}}{{sfn|Ackroyd|2006|p=356}} This period begins and ends with two tragedies: ''[[Romeo and Juliet]]'', the famous romantic tragedy of sexually charged adolescence, love, and death;{{sfn|Wood|2003|p=161}}{{sfn|Honan|1998|p=206}} and ''[[Julius Caesar (play)|Julius Caesar]]''—based on Sir [[Thomas North]]'s 1579 translation of [[Plutarch]]'s ''[[Parallel Lives]]''—which introduced a new kind of drama.{{sfn|Ackroyd|2006|pp=353, 358}}{{sfn|Shapiro|2005|pp=151–153}} According to the Shakespearean scholar [[James S. Shapiro|James Shapiro]], in ''Julius Caesar'', "the various strands of politics, character, inwardness, contemporary events, even Shakespeare's own reflections on the act of writing, began to infuse each other".{{sfn|Shapiro|2005|p=151}}
+
+[[File:Henry Fuseli rendering of Hamlet and his father's Ghost.JPG|thumb|''Hamlet, Horatio, Marcellus, and the Ghost of Hamlet's Father''. [[Henry Fuseli]], 1780–1785.]]
+
+In the early-17th century, Shakespeare wrote the so-called "[[Shakespearean problem play|problem plays]]" ''[[Measure for Measure]]'', ''[[Troilus and Cressida]]'', and ''[[All's Well That Ends Well]]'' and a number of his best known [[Shakespearean tragedy|tragedies]].{{sfn|Bradley|1991|p=85}}{{sfn|Muir|2005|pp=12–16}} Many critics believe that Shakespeare's tragedies represent the peak of his art. [[Prince Hamlet|Hamlet]] has probably been analysed more than any other Shakespearean character, especially for his famous [[soliloquy]] which begins "[[To be, or not to be|To be or not to be; that is the question]]".{{sfn|Bradley|1991|p=94}} Unlike the introverted Hamlet, whose fatal flaw is hesitation, [[Othello (character)|Othello]] and Lear are undone by hasty errors of judgement.{{sfn|Bradley|1991|p=86}} The plots of Shakespeare's tragedies often hinge on such fatal errors or flaws, which overturn order and destroy the hero and those he loves.{{sfn|Bradley|1991|pp=40, 48}} In ''[[Othello]]'', [[Iago]] stokes Othello's sexual jealousy to the point where he murders the innocent wife who loves him.{{sfn|Bradley|1991|pp=42, 169, 195}}{{sfn|Greenblatt|2005|p=304}} In ''[[King Lear]]'', the old king commits the tragic error of giving up his powers, initiating the events which led to the torture and blinding of the Earl of Gloucester and the murder of Lear's youngest daughter, [[Cordelia (King Lear)|Cordelia]]. According to the critic [[Frank Kermode]], "the play...offers neither its good characters nor its audience any relief from its cruelty".{{sfn|Bradley|1991|p=226}}{{sfn|Ackroyd|2006|p=423}}{{sfn|Kermode|2004|pp=141–142}} In ''[[Macbeth]]'', the shortest and most compressed of Shakespeare's tragedies,{{sfn|McDonald|2006|pp=43–46}} uncontrollable ambition incites Macbeth and his wife, [[Lady Macbeth]], to murder the rightful king and usurp the throne until their own guilt destroys them in turn.{{sfn|Bradley|1991|p=306}} In this play, Shakespeare adds a supernatural element to the tragic structure. His last major tragedies, ''[[Antony and Cleopatra]]'' and ''[[Coriolanus]]'', contain some of Shakespeare's finest poetry and were considered his most successful tragedies by the poet and critic [[T. S. Eliot]].{{sfn|Ackroyd|2006|p=444}}{{sfn|McDonald|2006|pp=69–70}}{{sfn|Eliot|1934|p=59}} Eliot wrote, "Shakespeare acquired more essential history from Plutarch than most men could from the whole [[British Museum]]."<ref>{{cite book| author=[[T. S. Eliot]]| title=Tradition and the Individual Talent| year=1919| url=https://www.poetryfoundation.org/articles/69400/tradition-and-the-individual-talent| access-date=7 May 2024| archive-date=7 May 2024| archive-url=https://web.archive.org/web/20240507175052/https://www.poetryfoundation.org/articles/69400/tradition-and-the-individual-talent| url-status=live}}</ref>
+
+In his final period, Shakespeare turned to [[Shakespeare's late romances|romance]] or [[tragicomedy]] and completed three more major plays: ''[[Cymbeline]]'', ''[[The Winter's Tale]],'' and ''[[The Tempest]]'', as well as the collaboration, ''[[Pericles, Prince of Tyre]]''. Less bleak than the tragedies, these four plays are graver in tone than the comedies of the 1590s, but they end with reconciliation and the forgiveness of potentially tragic errors.{{sfn|Dowden|1881|p=57}} Some commentators have seen this change in mood as evidence of a more serene view of life on Shakespeare's part, but it may merely reflect the theatrical fashion of the day.{{sfn|Dowden|1881|p=60}}{{sfn|Frye|2005|p=123}}{{sfn|McDonald|2006|p=15}} Shakespeare collaborated on two further surviving plays, ''[[Henry VIII (play)|Henry VIII]]'' and ''[[The Two Noble Kinsmen]]'', probably with [[John Fletcher (playwright)|John Fletcher]].{{sfn|Wells|Taylor|Jowett|Montgomery|2005|pp=1247, 1279}}
+
+===Classification===
+
+[[File:Gilbert WShakespeares Plays.jpg|thumb|left|''The Plays of William Shakespeare'', a painting containing scenes and characters from several plays of Shakespeare; by [[John Gilbert (painter)|Sir John Gilbert]], {{c.|1849}}]]
+Shakespeare's works include the 36 plays printed in the [[First Folio]] of 1623, listed according to their folio classification as [[Shakespearean comedy|comedies]], [[Shakespearean history|histories]], and [[Shakespearean tragedy|tragedies]].{{sfn|Boyce|1996|pp=91, 193, 513.}} Two plays not included in the First Folio,{{sfn|Greenblatt|Abrams|2012|p=1168}} ''[[The Two Noble Kinsmen]]'' and ''[[Pericles, Prince of Tyre]]'', are now accepted as part of the canon, with today's scholars agreeing that Shakespeare made major contributions to the writing of both.{{sfn|Kathman|2003|p=629}}{{sfn|Boyce|1996|p=91}} No Shakespearean poems were included in the First Folio, partly because the collection was compiled by men of theatre.<ref>{{cite book |last1=Shakespeare |first1=William |title=The Oxford Shakespeare: The Complete Sonnets and Poems |date=2002 |publisher=Oxford University Press |page=2}}</ref>
+
+In the late 19th century the critic [[Edward Dowden]] classified four of the late comedies as [[Shakespeare's late romances|romances]], and though many scholars prefer to call them ''[[Tragicomedy|tragicomedies]]'', Dowden's term is often used.{{sfn|Edwards|1958|pp=1–10}}{{sfn|Snyder|Curren-Aquino|2007}} In 1896 [[Frederick S. Boas]] coined the term "[[Shakespearean problem play|problem plays]]" to describe four plays: ''[[All's Well That Ends Well]]'', ''[[Measure for Measure]]'', ''[[Troilus and Cressida]]'' and ''[[Hamlet]]''.{{sfn|Schanzer|1963|pp=1–10}} "Dramas as singular in theme and temper cannot be strictly called comedies or tragedies", he wrote. "We may, therefore, borrow a convenient phrase from the theatre of today and class them together as Shakespeare's problem plays."{{sfn|Boas|1896|p=345}} The term, much debated and sometimes applied to other plays, remains in use, though ''Hamlet'' is definitively classed as a tragedy.{{sfn|Schanzer|1963|p=1}}{{sfn|Bloom|1999|pp=325–380}}{{sfn|Berry|2005|p=37}}
+
+===Performances===
+{{Main|Shakespeare in performance}}
+
+It is not clear for which companies Shakespeare wrote his early plays. The title page of the 1594 edition of ''Titus Andronicus'' reveals that the play had been acted by three different troupes.{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xx}} After the [[Black Death in England|plagues]] of 1592–93, Shakespeare's plays were performed by his own company at [[The Theatre]] and the [[Curtain Theatre|Curtain]] in [[Shoreditch]], north of the Thames.{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xxi}} Londoners flocked there to see the first part of ''Henry IV'', [[Leonard Digges (writer)|Leonard Digges]] recording, "Let but Falstaff come, Hal, Poins, the rest&nbsp;... and you scarce shall have a room".{{sfn|Shapiro|2005|p=16}} When the company found themselves in dispute with their landlord, they pulled The Theatre down and used the timbers to construct the [[Globe Theatre]], the first playhouse built by actors for actors, on the south bank of the Thames at [[Southwark]].{{sfn|Foakes|1990|p=6}}{{sfn|Shapiro|2005|pp=125–131}} The Globe opened in autumn 1599, with ''Julius Caesar'' one of the first plays staged. Most of Shakespeare's greatest post-1599 plays were written for the Globe, including ''Hamlet'', ''Othello'', and ''King Lear''.{{sfn|Foakes|1990|p=6}}{{sfn|Nagler|1958|p=7}}{{sfn|Shapiro|2005|pp=131–132}}
+
+[[File:Shakespeare´s Globe (8162111781).jpg|thumb|left|The reconstructed [[Globe Theatre]] on the south bank of the [[River Thames]] in [[London]]]]
+After the Lord Chamberlain's Men were renamed the [[King's Men (playing company)|King's Men]] in 1603, they entered a special relationship with the new [[James VI and I|King James]]. Although the performance records are patchy, the King's Men performed seven of Shakespeare's plays at court between 1 November 1604, and 31 October 1605, including two performances of ''The Merchant of Venice''.{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xxii}} After 1608, they performed at the indoor [[Blackfriars Theatre]] during the winter and the Globe during the summer.{{sfn|Foakes|1990|p=33}} The indoor setting, combined with the [[Jacobean era|Jacobean]]<!--or perhaps [[Jacobean literature]]?--> fashion for lavishly staged [[masques]], allowed Shakespeare to introduce more elaborate stage devices. In ''Cymbeline'', for example, [[Jupiter (mythology)|Jupiter]] descends "in thunder and lightning, sitting upon an eagle: he throws a thunderbolt. The ghosts fall on their knees."{{sfn|Ackroyd|2006|p=454}}{{sfn|Holland|2000|p=xli}}
+
+The actors in Shakespeare's company included the famous [[Richard Burbage]], [[William Kempe]], [[Henry Condell]] and [[John Heminges]]. Burbage played the leading role in the first performances of many of Shakespeare's plays, including ''Richard III'', ''Hamlet'', ''Othello'', and ''King Lear''.{{sfn|Ringler|1997|p=127}} The popular comic actor Will Kempe played the servant Peter in ''Romeo and Juliet'' and [[Dogberry]] in ''Much Ado About Nothing'', among other characters.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/210 210]}}{{sfn|Chambers|1988a|p=341}} He was replaced around 1600 by [[Robert Armin]], who played roles such as [[Touchstone (As You Like It)|Touchstone]] in ''As You Like It'' and the fool in ''King Lear''.{{sfn|Shapiro|2005|pp=247–249}} In 1613 Sir [[Henry Wotton]] recorded that ''Henry VIII'' "was set forth with many extraordinary circumstances of pomp and ceremony".{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=1247}} However, on 29 June a cannon set fire to the thatch of the Globe and burned the theatre to the ground, an event that pinpoints the date of a Shakespeare play with rare precision.{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=1247}}
+{{clear}}
+
+===Textual sources===
+[[File:Title page William Shakespeare's First Folio 1623.jpg|thumb|upright=0.75|Title page of the ''[[First Folio]]'', 1623. Copper engraving of Shakespeare by [[Martin Droeshout]].]]
+In 1623 [[John Heminges]] and [[Henry Condell]], two of Shakespeare's colleagues from the King's Men, published the [[First Folio]], a collected edition of Shakespeare's plays. It contained 36 texts, including 18 printed for the first time.{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xxxvii}} Most of the others had already appeared in [[Book size|quarto]] versions—flimsy books made from sheets of paper folded twice to make four leaves.{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xxxiv}}{{sfn|Mowat|Werstine|2015|p=xlvii}} No evidence suggests that Shakespeare approved these editions, which the First Folio describes as "stol'n and surreptitious copies".{{sfn|Pollard|1909|p=xi}}
+
+[[Alfred W. Pollard|Alfred Pollard]] termed some of the pre-1623 versions as "[[bad quarto]]s" because of their adapted, paraphrased or garbled texts, which may in places have been reconstructed from memory.{{sfn|Wells|Taylor|Jowett|Montgomery|2005|p=xxxiv}}{{sfn|Pollard|1909|p=xi}}{{sfn|Maguire|1996|p=28}} Where several versions of a play survive, each [[Shakespeare's plays#Shakespeare and the textual problem|differs from the others]]. The differences may stem from copying or [[Letterpress printing|printing]] errors, from notes by actors or audience members, or from Shakespeare's own [[foul papers|papers]].{{sfn|Bowers|1955|pp=8–10}}{{sfn|Wells|Taylor|Jowett|Montgomery|2005|pp=xxxiv–xxxv}} In some cases, for example, ''Hamlet'', ''Troilus and Cressida,'' and ''Othello'', Shakespeare could have revised the texts between the quarto and folio editions. In the case of ''[[King Lear]]'', however, while most modern editions do conflate them, the 1623 folio version is so different from the 1608 quarto that the ''Oxford Shakespeare'' prints them both, arguing that they cannot be conflated without confusion.{{sfn|Wells|Taylor|Jowett|Montgomery|2005|pp=909, 1153}}
+
+==Poems==
+In 1593 and 1594, when the theatres were closed because of [[Bubonic plague|plague]], Shakespeare published two narrative poems on sexual themes, ''[[Venus and Adonis (Shakespeare poem)|Venus and Adonis]]'' and ''[[The Rape of Lucrece]]''. He dedicated them to [[Henry Wriothesley, 3rd Earl of Southampton]]. In ''Venus and Adonis'', an innocent [[Adonis]] rejects the sexual advances of [[Venus (mythology)|Venus]]; while in ''The Rape of Lucrece'', the virtuous wife [[Lucretia|Lucrece]] is raped by the lustful [[Sextus Tarquinius|Tarquin]].{{sfn|Roe|2006|p=21}} Influenced by [[Ovid]]'s ''[[Metamorphoses]]'',{{sfn|Frye|2005|p=288}} the poems show the guilt and moral confusion that result from uncontrolled lust.{{sfn|Roe|2006|pp=3, 21}} Both proved popular and were often reprinted during Shakespeare's lifetime. A third narrative poem, ''[[A Lover's Complaint]]'', in which a young woman laments her seduction by a persuasive suitor, was printed in the first edition of the ''Sonnets'' in 1609. Most scholars now accept that Shakespeare wrote ''A Lover's Complaint''. Critics consider that its fine qualities are marred by leaden effects.{{sfn|Roe|2006|p=1}}{{sfn|Jackson|2004|pp=267–294}}{{sfn|Honan|1998|p=289}} ''[[The Phoenix and the Turtle]]'', printed in Robert Chester's 1601 ''Love's Martyr'', mourns the deaths of the legendary [[phoenix (mythology)|phoenix]] and his lover, the faithful [[European turtle dove|turtle dove]]. In 1599, two early drafts of sonnets 138 and 144 appeared in ''[[The Passionate Pilgrim]]'', published under Shakespeare's name but without his permission.{{sfn|Roe|2006|p=1}}{{sfn|Honan|1998|p=289}}{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/327 327]}}
+
+===Sonnets===
+<!--This is a SUMMARY. Please don't add new information or details here, but instead at the main article Shakespeare's sonnets!
+(unless it adds to the general understanding of the subject while maintaining brevity) -->
+
+{{Main|Shakespeare's sonnets}}
+
+[[File:Sonnets1609titlepage.jpg|thumb|upright|left|Title page from 1609 edition of ''Shake-Speares Sonnets'']]
+
+Published in 1609, the ''[[Shakespeare's sonnets|Sonnets]]'' were the last of Shakespeare's non-dramatic works to be printed. Scholars are not certain when each of the 154 sonnets was composed, but evidence suggests that Shakespeare wrote sonnets throughout his career for a private readership.{{sfn|Wood|2003|p=178}}{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/180 180]}} Even before the two unauthorised sonnets appeared in ''The Passionate Pilgrim'' in 1599, [[Francis Meres]] had referred in 1598 to Shakespeare's "sugred Sonnets among his private friends".{{sfn|Honan|1998|p=180}} Few analysts believe that the published collection follows Shakespeare's intended sequence.{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/268 268]}} He seems to have planned two contrasting series: one about uncontrollable lust for a married woman of dark complexion (the "dark lady"), and one about conflicted love for a fair young man (the "fair youth"). It remains unclear if these figures represent real individuals, or if the authorial "I" who addresses them represents Shakespeare himself, although [[William Wordsworth]] believed that with the sonnets "Shakespeare unlocked his heart".{{sfn|Honan|1998|p=180}}{{sfn|Schoenbaum|1987|p=[https://archive.org/details/williamshakespea0000scho/page/180 180]}}
+
+{{Quote box
+| align = right
+| quote = <poem>
+Shall I compare thee to a summer's day?
+Thou art more lovely and more temperate&nbsp;...
+</poem>
+| source = —Opening lines from Shakespeare's [[Sonnet 18]].{{sfn|Mowat|Werstine|n.d.}}
+}}
+
+The 1609 edition was dedicated to a "Mr. W.H.", credited as "the only begetter" of the poems. It is not known whether this was written by Shakespeare himself or by the publisher, [[Thomas Thorpe]], whose initials appear at the foot of the dedication page; nor is it known who Mr. W.H. was, despite numerous theories, or whether Shakespeare even authorised the publication.{{sfn|Schoenbaum|1987|pp=268–269}} Critics praise the ''Sonnets'' as a profound meditation on the nature of love, sexual passion, procreation, death, and time.{{sfn|Wood|2003|p=177}}
+
+==Style==
+{{Main|Shakespeare's writing style}}
+
+Shakespeare's first plays were written in the conventional style of the day. He wrote them in a stylised language that does not always spring naturally from the needs of the characters or the drama.{{sfn|Clemen|2005a|p=150}} The poetry depends on extended, sometimes elaborate metaphors and conceits, and the language is often rhetorical—written for actors to declaim rather than speak. The grand speeches in ''[[Titus Andronicus]]'', in the view of some critics, often hold up the action, for example; and the verse in ''[[The Two Gentlemen of Verona]]'' has been described as stilted.{{sfn|Frye|2005|pp=105, 177}}{{sfn|Clemen|2005b|p=29}}
+
+[[File:WilliamBlakePity.jpeg|thumb|''[[Pity (William Blake)|Pity]]'' by [[William Blake]], 1795, is an illustration of two similes in ''Macbeth'':<poem>
+"And pity, like a naked new-born babe,
+Striding the blast, or heaven's cherubim, hors'd
+Upon the sightless couriers of the air."{{sfn|de Sélincourt|1909|p=174}}
+</poem>]]
+
+However, Shakespeare soon began to adapt the traditional styles to his own purposes. The opening [[soliloquy]] of ''[[Richard III (play)|Richard III]]'' has its roots in the self-declaration of [[the Vice|Vice]] in medieval drama. At the same time, Richard's vivid self-awareness looks forward to the soliloquies of Shakespeare's mature plays.{{sfn|Brooke|2004|p=69}}{{sfn|Bradbrook|2004|p=195}} No single play marks a change from the traditional to the freer style. Shakespeare combined the two throughout his career, with ''[[Romeo and Juliet]]'' perhaps the best example of the mixing of the styles.{{sfn|Clemen|2005b|p=63}} By the time of ''Romeo and Juliet'', ''[[Richard II (play)|Richard II]]'' and ''[[A Midsummer Night's Dream]]'' in the mid-1590s, Shakespeare had begun to write a more natural poetry. He increasingly tuned his metaphors and images to the needs of the drama itself.
+
+Shakespeare's standard poetic form was [[blank verse]], composed in [[iambic pentameter]]. In practice, this meant that his verse was usually unrhymed and consisted of ten syllables to a line, spoken with a stress on every second syllable. The blank verse of his early plays is quite different from that of his later ones. It is often beautiful, but its sentences tend to start, pause, and finish at the [[End-stopping|end of lines]], with the risk of monotony.{{sfn|Frye|2005|p=185}} Once Shakespeare mastered traditional blank verse, he began to interrupt and vary its flow. This technique releases the new power and flexibility of the poetry in plays such as ''[[Julius Caesar (play)|Julius Caesar]]'' and ''[[Hamlet]]''. Shakespeare uses it, for example, to convey the turmoil in Hamlet's mind:{{sfn|Wright|2004|p=868}}
+
+{{blockquote|<poem>Sir, in my heart there was a kind of fighting
+That would not let me sleep. Methought I lay
+Worse than the mutines in the bilboes. Rashly—
+And prais'd be rashness for it—let us know
+Our indiscretion sometimes serves us well&nbsp;...</poem>
+|
+|''Hamlet'', Act 5, Scene 2, 4–8{{sfn|Wright|2004|p=868}}}}
+
+After ''Hamlet'', Shakespeare varied his poetic style further, particularly in the more emotional passages of the late tragedies. The literary critic [[A. C. Bradley]] described this style as "more concentrated, rapid, varied, and, in construction, less regular, not seldom twisted or elliptical".{{sfn|Bradley|1991|p=91}} In the last phase of his career, Shakespeare adopted many techniques to achieve these effects. These included [[enjambment|run-on lines]], irregular pauses and stops, and extreme variations in sentence structure and length.{{sfn|McDonald|2006|pp=42–46}} In ''[[Macbeth]]'', for example, the language darts from one unrelated metaphor or simile to another: "was the hope drunk/ Wherein you dressed yourself?" (1.7.35–38); "...&nbsp;pity, like a naked new-born babe/ Striding the blast, or heaven's cherubim, hors'd/ Upon the sightless couriers of the air&nbsp;..." (1.7.21–25). The listener is challenged to complete the sense.{{sfn|McDonald|2006|pp=42–46}} The late romances, with their shifts in time and surprising turns of plot, inspired a last poetic style in which long and short sentences are set against one another, clauses are piled up, subject and object are reversed, and words are omitted, creating an effect of spontaneity.{{sfn|McDonald|2006|pp=36, 39, 75}}
+
+Shakespeare combined poetic genius with a practical sense of the theatre.{{sfn|Gibbons|1993|p=4}} Like all playwrights of the time, he dramatised stories from sources such as [[Plutarch]] and [[Raphael Holinshed]].{{sfn|Gibbons|1993|pp=1–4}} He reshaped each plot to create several centres of interest and to show as many sides of a narrative to the audience as possible. This strength of design ensures that a Shakespeare play can survive translation, cutting, and wide interpretation without loss to its core drama.{{sfn|Gibbons|1993|pp=1–7, 15}} As Shakespeare's mastery grew, he gave his characters clearer and more varied motivations and distinctive patterns of speech. He preserved aspects of his earlier style in the later plays, however. In the [[Shakespeare's late romances|late romances]], he deliberately returned to a more artificial style, which emphasised the illusion of theatre.{{sfn|McDonald|2006|p=13}}{{sfn|Meagher|2003|p=358}}
+
+==Legacy==
+===Influence===
+{{Main|Shakespeare's influence}}
+
+[[File:Macbeth consulting the Vision of the Armed Head.jpg|thumb|upright=0.75|left|''Macbeth Consulting the Vision of the Armed Head''. By [[Henry Fuseli]], 1793–1794.]]
+
+Shakespeare's work has made a significant and lasting impression on later theatre and literature. In particular, he expanded the dramatic potential of [[characterisation]], plot, [[language]], and genre.{{sfn|Chambers|1944|p=35}} Until ''Romeo and Juliet'', romance had not been viewed as a worthy topic for tragedy.{{sfn|Levenson|2000|pp=49–50}} [[Soliloquy|Soliloquies]] had been used mainly to convey information about characters or events, but Shakespeare used them to explore characters' minds.{{sfn|Clemen|1987|p=179}} His work heavily influenced later poetry. The [[Romantic poetry|Romantic poets]] attempted to revive Shakespearean verse drama, though with little success. The critic [[George Steiner]] described all English verse dramas from [[Samuel Taylor Coleridge]] to [[Alfred, Lord Tennyson]], as "feeble variations on Shakespearean themes".{{sfn|Steiner|1996|p=145}} [[John Milton]], considered by many to be the most important English poet after Shakespeare, wrote in tribute: "Thou in our wonder and astonishment/ Hast built thyself a live-long monument."<ref>{{Cite web |author=[[John Milton]] |date=6 January 2023 |title=On Shakespeare. 1630 |url=https://www.poetryfoundation.org/poems/46453/on-shakespeare-1630 |access-date=6 January 2023 |website=[[Poetry Foundation]] |language=en-US |archive-date=6 January 2023 |archive-url=https://web.archive.org/web/20230106172927/https://www.poetryfoundation.org/poems/46453/on-shakespeare-1630 |url-status=live }}</ref>
+
+Shakespeare influenced novelists such as [[Thomas Hardy (writer)|Thomas Hardy]], [[William Faulkner]] and [[Charles Dickens]]. The American novelist [[Herman Melville]]'s soliloquies owe much to Shakespeare; his [[Captain Ahab]] in ''[[Moby-Dick]]'' is a classic [[tragic hero]], inspired by ''King Lear''.{{sfn|Bryant|1998|p=82}} Scholars have identified 20,000 pieces of music linked to Shakespeare's works, including [[Felix Mendelssohn]]'s [[A Midsummer Night's Dream (Mendelssohn)|overture and incidental music for ''A Midsummer Night's Dream'']] and [[Sergei Prokofiev]]'s ballet [[Romeo and Juliet (Prokofiev)|''Romeo and Juliet'']]. His work has inspired several operas, among them [[Giuseppe Verdi]]'s [[Macbeth (Verdi)|''Macbeth'']], ''[[Otello]]'' and [[Falstaff (opera)|''Falstaff'']], whose critical standing compares with that of the source plays.{{sfn|Gross|2003|pp=641–642}} Shakespeare has also inspired many painters, including the Romantics and the [[Pre-Raphaelite Brotherhood|Pre-Raphaelites]], while [[William Hogarth]]'s 1745 painting of actor [[David Garrick]] playing Richard III was decisive in establishing the genre of theatrical portraiture in Britain.<ref>{{cite book |last1=Taylor |first1=David Francis |last2=Swindells |first2=Julia |title=The Oxford Handbook of the Georgian Theatre 1737–1832 |date=2014 |publisher=Oxford University Press|page=206}}</ref> Shakespeare has been a rich source for filmmakers; [[Akira Kurosawa]] adapted ''Macbeth'' and ''King Lear'' as ''[[Throne of Blood]]'' and [[Ran (film)|''Ran'']]. Other examples of Shakespeare on film include [[Max Reinhardt]]'s [[A Midsummer Night's Dream (1935 film)|''A Midsummer Night's Dream'']], [[Laurence Olivier]]'s ''[[Hamlet (1948 film)|Hamlet]]'' and [[Al Pacino]]'s documentary ''[[Looking For Richard]]''.<ref>{{Cite magazine |last=Lane | author-link=Anthony Lane|first=Anthony |date=25 November 1996 |title=Tights! Camera! Action! |magazine=[[The New Yorker]] |url=https://www.newyorker.com/magazine/1996/11/25/tights-camera-action |access-date=3 February 2023 |archive-date=3 February 2023 |archive-url=https://web.archive.org/web/20230203010308/https://www.newyorker.com/magazine/1996/11/25/tights-camera-action |url-status=live }}</ref> [[Orson Welles]], a lifelong lover of Shakespeare, directed and starred in [[Macbeth (1948 film)|''Macbeth'']], [[Othello (1951 film)|''Othello'']] and ''[[Chimes at Midnight]]''. The last, in which he plays [[John Falstaff]], was Welles's favourite of his films.<ref>BBC Arena. ''The Orson Welles Story'' BBC Two/BBC Four. 01:51:46-01:52:16. Broadcast 18 May 1982. Retrieved 30 January 2023</ref>
+
+In Shakespeare's day English grammar, spelling and pronunciation were less standardised than they are now,{{sfn|Cercignani|1981|p=}} and his use of language helped to shape modern English.{{sfn|Crystal|2001|pp=55–65, 74}} [[Samuel Johnson]] quoted him more often than any other author in his ''[[A Dictionary of the English Language]]'', the first serious work of its type.{{sfn|Wain|1975|p=194}} Expressions such as "with bated breath" (''Merchant of Venice'') and "a foregone conclusion" (''Othello'') have found their way into everyday English speech.{{sfn|Johnson|2002|p=12}}{{sfn|Crystal|2001|p=63}}
+
+Shakespeare's influence extends far beyond his native England and the English language. His reception in Germany was particularly significant; as early as the 18th century Shakespeare was widely translated and popularised in Germany, notably by the [[Seyler Theatre Company|travelling theatre company]] of [[Abel Seyler]], and gradually became a "classic of the [[Weimar Classicism|German Weimar era]];" [[Christoph Martin Wieland]] was the first to produce complete translations of Shakespeare's plays in any language.<ref>{{cite web |url=https://www.dw.com/en/how-shakespeare-was-turned-into-a-german/a-19208040 |title=How Shakespeare was turned into a German |date=22 April 2016 |website=DW |access-date=29 November 2019 |archive-date=3 March 2020 |archive-url=https://web.archive.org/web/20200303064302/https://www.dw.com/en/how-shakespeare-was-turned-into-a-german/a-19208040 |url-status=live }}</ref><ref>{{cite news |url=https://www.thelocal.de/20160422/unser-shakespeare-why-germans-are-so-obsessed-with-the-british-bard-shakespeare |title=Unser Shakespeare: Germans' mad obsession with the Bard |date=22 April 2016 |newspaper=The Local Germany |access-date=29 November 2019 |archive-date=3 March 2020 |archive-url=https://web.archive.org/web/20200303064306/https://www.thelocal.de/20160422/unser-shakespeare-why-germans-are-so-obsessed-with-the-british-bard-shakespeare |url-status=live }}</ref> The Swiss Romantic artist [[Henry Fuseli]], a friend of [[William Blake]], translated ''Macbeth'' into German.{{sfn|Paraisz|2006|p=130}} The psychoanalyst [[Sigmund Freud]] drew on Shakespearean psychology, in particular, that of Hamlet, for his theories of human nature.{{sfn|Bloom|1995|p=346}} The actor and theatre-director [[Simon Callow]] writes, "this master, this titan, this genius, so profoundly British and so effortlessly universal, each different culture – German, Italian, Russian – was obliged to respond to the Shakespearean example; for the most part, they embraced it, and him, with joyous abandon, as the possibilities of language and character in action that he celebrated liberated writers across the continent. Some of the most deeply affecting productions of Shakespeare have been non-English, and non-European. He is that unique writer: he has something for everyone."<ref>{{cite news |title=Simon Callow: What the Dickens? Well, William Shakespeare was the greatest after all... |url=https://www.independent.co.uk/arts-entertainment/theatre-dance/features/simon-callow-what-the-dickens-well-william-shakespeare-was-the-greatest-after-all-7640214.html |access-date=2 September 2020 |work=The Independent |archive-date=14 April 2012 |archive-url=https://web.archive.org/web/20120414052902/http://www.independent.co.uk/arts-entertainment/theatre-dance/features/simon-callow-what-the-dickens-well-william-shakespeare-was-the-greatest-after-all-7640214.html |url-status=live }}</ref>
+
+According to ''[[Guinness World Records]]'', Shakespeare remains the world's best-selling playwright, with sales of his plays and poetry believed to have achieved in excess of four billion copies in the almost 400 years since his death. He is also the third most translated author in history,<ref>{{cite web|title=William Shakespeare:Ten startling Great Bard-themed world records|url=https://www.guinnessworldrecords.com/news/2014/4/william-shakespeare-turns-450-ten-startling-great-bard-themed-world-records-56900|website=Guinness World Records|date=23 April 2014}}</ref> with his plays [[List of translations of works by William Shakespeare|translated]] into over 80 languages, from major world tongues such as German, Hindi, and Japanese, to constructed languages like [[Esperanto]] and [[Klingon language|Klingon]].<ref>{{cite web |title=William Shakespeare |url=https://www.britishlibrary.cn/en/authors/william-shakespeare/ |website=[[British Library]] |access-date=30 September 2025 }}</ref><ref>{{cite web |last1=Estill |first1=Laura |last2=Johnson |first2=Eric |title=Fun international facts about Shakespeare |url=https://www.britishcouncil.org/voices-magazine/fun-international-facts-about-shakespeare |website=[[British Council]] |date=19 March 2015 |access-date=30 September 2025 |archive-date=11 October 2025 |archive-url=https://web.archive.org/web/20251011022038/https://www.britishcouncil.org/voices-magazine/fun-international-facts-about-shakespeare |url-status=dead }}</ref> Major festivals, including the [[Globe to Globe Festival]] in London (2012), have staged all 37 plays in 37 different languages, with productions ranging from ''Hamlet'' in [[Lithuanian language|Lithuanian]] to ''The Merchant of Venice'' in [[Hebrew]], performed by [[Habima Theatre]], Israel's national theatre.<ref>{{cite web |last1=Billington |first1=Michael |title=Hamlet – review |url=https://www.theguardian.com/stage/2012/jun/03/hamlet-review |website=[[The Guardian]] |date=3 June 2012 |access-date=30 September 2025 }}</ref><ref>{{cite web |title=Globe to Globe: The Merchant of Venice (2012) |url=https://player.shakespearesglobe.com/productions/globe-to-globe-the-merchant-of-venice-2012/ |website=[[Shakespeare's Globe]] |date=29 May 2012 |access-date=30 September 2025 }}</ref>
+
+===Critical reputation===
+<!-- This is a SUMMARY. Please don't add new information or details here, but instead at the main article [[Shakespeare's reputation]]! -->
+{{Main|Reputation of William Shakespeare|Timeline of Shakespeare criticism}}
+
+{{Quote box
+| align = right
+| quote = He was not of an age, but for all time.
+| source = —[[Ben Jonson]]{{sfn|Jonson|1996|p=10}}
+}}
+
+Shakespeare was not revered in his lifetime, but he received a large amount of praise.{{sfn|Dominik|1988|p=9}}{{sfn|Grady|2001b|p=267}} In 1598 the cleric and author [[Francis Meres]] singled him out from a group of English playwrights as "the most excellent" in both comedy and tragedy.{{sfn|Grady|2001b|p=265}}{{sfn|Greer|1986|p=9}} The authors of [[Parnassus plays|the ''Parnassus'' plays]] at [[St John's College, Cambridge]], numbered him with [[Geoffrey Chaucer]], [[John Gower]] and [[Edmund Spenser]].{{sfn|Grady|2001b|p=266}} In the [[First Folio]], [[Ben Jonson]] called Shakespeare the "Soul of the age, the applause, delight, the wonder of our stage", although he had remarked elsewhere that "Shakespeare wanted art" (lacked skill).{{sfn|Jonson|1996|p=10}}
+
+Between [[Stuart Restoration|the Restoration]] of the monarchy in 1660 and the end of the 17th century, classical ideas were in vogue. As a result, critics of the time mostly rated Shakespeare below [[John Fletcher (playwright)|John Fletcher]] and Ben Jonson.{{sfn|Grady|2001b|p=269}} [[Thomas Rymer]], for example, condemned Shakespeare for mixing the comic with the tragic. Nevertheless, the poet and critic [[John Dryden]] rated Shakespeare highly, saying of Jonson, "I admire him, but I love Shakespeare".{{sfn|Dryden|2006|p=71}} He also famously remarked that Shakespeare "was naturally learned; he needed not the spectacles of books to read nature; he looked inwards, and found her there."<ref>{{Cite web |title=John Dryden (1631–1700). Shakespeare. Beaumont and Fletcher. Ben Jonson. Vol. III. Seventeenth Century. Henry Craik, ed. 1916. English Prose |url=https://www.bartleby.com/209/534.html |access-date=20 July 2022 |website=www.bartleby.com |archive-date=20 July 2022 |archive-url=https://web.archive.org/web/20220720101326/https://www.bartleby.com/209/534.html |url-status=live }}</ref> For several decades, Rymer's view held sway but during the 18th century, critics began to respond to Shakespeare on his own terms and, like Dryden, to acclaim what they termed his natural genius. A series of scholarly editions of his work, notably those of [[Samuel Johnson]] in 1765 and [[Edmond Malone]] in 1790, added to his growing reputation.{{sfn|Grady|2001b|pp=270–272}}{{sfn|Levin|1986|p=217}} By 1800, he was firmly enshrined as the national poet,{{sfn|Grady|2001b|p=270}} and described as the "[[Bard]] of Avon" (or simply "the Bard").{{sfn|Dobson|1992|pp=185–186}}{{efn|The "national cult" of Shakespeare, and the "bard" identification, dates from September 1769, when the actor [[David Garrick]] organised a week-long carnival at Stratford to mark the town council awarding him the [[Freedom of the City|freedom]] of the town. In addition to presenting the town with a statue of Shakespeare, Garrick composed a doggerel verse, lampooned in the London newspapers, naming the banks of the Avon as the birthplace of the "matchless Bard".{{sfn|McIntyre|1999|pp=412–432}}}} In the 18th and 19th centuries, his reputation also spread abroad. Among those who championed him were the writers [[Voltaire]], [[Johann Wolfgang von Goethe|Johann Wolfgang Von Goethe]], [[Stendhal]] and [[Victor Hugo]].{{sfn|Grady|2001b|pp=272–74}}{{efn|Grady cites [[Voltaire]]'s ''[[Letters on the English|Philosophical Letters]]'' (1733); [[Johann Wolfgang von Goethe|Goethe's]] ''[[Wilhelm Meister's Apprenticeship]]'' (1795); [[Stendhal]]'s two-part pamphlet ''Racine et Shakespeare'' (1823–25); and [[Victor Hugo]]'s prefaces to ''[[Cromwell (play)|Cromwell]]'' (1827) and ''[[William Shakespeare (essay)|William Shakespeare]]'' (1864).{{sfn|Grady|2001b|pp=272–274}}}}
+
+[[File:William Shakespeare Statue in Lincoln Park.JPG|thumb|upright=0.75|[[William Ordway Partridge]]'s garlanded statue of William Shakespeare in [[Lincoln Park, Chicago]], typical of many created in the 19th and early 20th centuries]]
+
+During the [[Romanticism|Romantic era]] Shakespeare was praised by the poet and literary philosopher [[Samuel Taylor Coleridge]], and the critic [[August Wilhelm Schlegel]] translated his plays in the spirit of [[German Romanticism]].{{sfn|Levin|1986|p=223}} In the 19th century, critical admiration for Shakespeare's genius often bordered on adulation.{{sfn|Sawyer|2003|p=113}} "This King Shakespeare," the essayist [[Thomas Carlyle]] wrote in 1840, "does not he shine, in crowned sovereignty, over us all, as the noblest, gentlest, yet strongest of rallying signs; indestructible".{{sfn|Carlyle|1841|p=161}} The [[Victorian era|Victorians]] produced his plays as lavish spectacles on a grand scale.{{sfn|Schoch|2002|pp=58–59}} The playwright and critic [[George Bernard Shaw]] mocked the cult of Shakespeare worship as "[[bardolatry]]", claiming that the new [[Naturalism (theatre)|naturalism]] of [[Henrik Ibsen]]'s plays had made Shakespeare obsolete.{{sfn|Grady|2001b|p=276}}
+
+The modernist revolution in the arts during the early 20th century, far from discarding Shakespeare, eagerly enlisted his work in the service of the [[avant-garde]]. The [[German Expressionism (cinema)|Expressionists in Germany]] and the [[Futurism|Futurists]] in Moscow mounted productions of his plays. The [[Marxism|Marxist]] playwright and director [[Bertolt Brecht]] devised an [[epic theatre]] under the influence of Shakespeare. The poet and critic [[T. S. Eliot]] argued against Shaw that Shakespeare's "primitiveness" in fact made him truly modern.{{sfn|Grady|2001a|pp=22–26}} Eliot, along with [[G. Wilson Knight]] and the school of [[New Criticism]], led a movement towards a closer reading of Shakespeare's imagery. In the 1950s, a wave of new critical approaches replaced modernism and paved the way for [[postmodernism|post-modern]] studies of Shakespeare.{{sfn|Grady|2001a|p=24}} [[Harold Bloom]] wrote, "Shakespeare was larger than [[Plato]] and than [[St. Augustine]]. He ''encloses'' us because we ''see'' with his fundamental perceptions."{{sfn|Bloom|2008|p=xii}} In the 21st century, his reputation remains pre-eminent. [[Emma Smith (scholar)|Emma Smith]], professor of Shakespeare Studies at the [[University of Oxford]], in a study published in 2019, called him "the world's greatest playwright";{{sfn|Smith|2019|loc=cover}} while [[Dennis Kennedy (author)|Dennis Kennedy]], Samuel Beckett Professor of Drama and Theatre (Emeritus) at [[Trinity College Dublin]], noted in 2004 that he remains "the most performed playwright in the world".{{sfn|Kennedy|2004|p=2}} [[Gary Taylor (scholar)|Gary Taylor]], co-editor of ''[[The Oxford Shakespeare|The New Oxford Shakespeare]]'' published in 2017, wrote; "most of the most important, the most talented, and best educated writers and readers of the last four centuries have considered Shakespeare the best writer in English, or the best modern writer in any language, or the world's best playwright, or the best Western writer of the last thousand years, or the best writer ever, or the greatest genius of all time".{{sfn|Taylor|Bourus|2017|p=1}}
+
+==Speculation==
+===Authorship===
+<!-- This is a SUMMARY. Please don't add new information or details here, but instead at the main article [[Shakespeare authorship question]]! -->
+{{Main|Shakespeare authorship question}}
+
+Around 230 years after Shakespeare's death, doubts began to be expressed about the authorship of the works attributed to him.{{sfn|Shapiro|2010|pp=77–78}} Proposed alternative candidates include [[Francis Bacon]], [[Christopher Marlowe]] and [[Edward de Vere, 17th Earl of Oxford]].{{sfn|Gibson|2005|pp=48, 72, 124}} Several "group theories" have also been proposed.{{sfn|McMichael|Glenn|1962|p=56}} All but a few Shakespeare scholars and literary historians consider it a fringe theory, with only a small minority of academics believing that there is reason to question the traditional attribution,{{sfn|The New York Times|2007}} but interest in the subject, particularly the [[Oxfordian theory of Shakespeare authorship]], continues into the 21st century.{{sfn|Kathman|2003|pp=620, 625–626}}{{sfn|Love|2002|pp=194–209}}{{sfn|Schoenbaum|1991|pp=430–440}}
+
+===Religion===
+{{Main|Religious views of William Shakespeare}}
+
+Shakespeare conformed to the official state religion,{{efn|For example, [[A.L. Rowse]], the 20th-century Shakespeare scholar, was emphatic: "He died, as he had lived, a conforming member of the Church of England. His will made that perfectly clear—in facts, puts it beyond dispute, for it uses the Protestant formula."{{sfn|Rowse|1988|p=240}}}} but his private views on religion have been the subject of debate. [[Shakespeare's will]] uses a Protestant formula, and he was a confirmed member of the [[Church of England]], where he was married, his children were baptised, and where he is buried.
+
+Some scholars are of the view that members of Shakespeare's family were Catholics, at a time when practising Catholicism in England was against the law.{{sfn|Pritchard|1979|p=3}} Shakespeare's mother, [[Mary Shakespeare|Mary Arden]], certainly came from a pious Catholic family. The strongest evidence might be a Catholic statement of faith signed by his father, [[John Shakespeare]], found in 1757 in the rafters of his former house in Henley Street. However, the document is now lost and scholars differ as to its authenticity.{{sfn|Wood|2003|pp=75–78}}{{sfn|Ackroyd|2006|pp=22–23}} In 1591 the authorities reported that John Shakespeare had missed church "for fear of process for debt", a common Catholic excuse.{{sfn|Wood|2003|p=78}}{{sfn|Ackroyd|2006|p=416}}{{sfn|Schoenbaum|1987|pp=41–42, 286}} In 1606 the name of William's daughter Susanna appears on a list of those who failed to attend Easter [[Eucharist|communion]] in Stratford.{{sfn|Wood|2003|p=78}}{{sfn|Ackroyd|2006|p=416}}{{sfn|Schoenbaum|1987|pp=41–42, 286}}
+
+Other authors argue that there is a lack of evidence about Shakespeare's religious beliefs. Scholars find evidence both for and against Shakespeare's Catholicism, Protestantism, or lack of belief in his plays, but the truth may be impossible to prove.{{sfn|Wilson|2004|p=34}}{{sfn|Shapiro|2005|p=167}}
+
+In 1934, [[Rudyard Kipling]] published a short story in ''[[The Strand Magazine]]'', "Proofs of Holy Writ", postulating that Shakespeare had helped to polish the prose of the [[King James Bible]], published in 1611.<ref>''Short Stories from the Strand'', The Folio Society, 1992.</ref>
+
+===Sexuality===
+<!-- This is a SUMMARY. Please don't add new information or details here, but instead at the main article [[Sexuality of William Shakespeare]]! -->
+{{Main|Sexuality of William Shakespeare}}
+
+[[File:Shakespeare's family circle.jpg|thumb|Artistic depiction of the Shakespeare family, late 19th century]]
+
+Few details of Shakespeare's sexuality are known. At 18 he married 26-year-old [[Anne Hathaway (wife of Shakespeare)|Anne Hathaway]], who was pregnant. Susanna, the first of their three children, was born six months later on 26 May 1583. Over the centuries, some readers have posited that Shakespeare's sonnets are autobiographical,{{sfn|Lee|1900|p=55}} and point to them as evidence of his love for a young man. Others read the same passages as the expression of intense friendship rather than romantic love.{{sfn|Casey|1998}}{{sfn|Pequigney|1985}}{{sfn|Evans|1996|p=132}} The 26 so-called [[Dark Lady (Shakespeare)|"Dark Lady"]] sonnets, addressed to a married woman, are taken as evidence of heterosexual liaisons.{{sfn|Fort|1927|pp=406–414}}
+
+===Portraiture===
+{{Main|Portraits of Shakespeare}}
+
+No written contemporary description of Shakespeare's physical appearance survives, and no evidence suggests that he ever commissioned a portrait. From the 18th century, the desire for authentic Shakespeare portraits fuelled claims that various surviving pictures depicted Shakespeare.<ref>{{cite web|url=https://www.metmuseum.org/toah/hd/shaa_2/hd_shaa_2.htm|first=Constance C.|last=McPhee|title=Shakespeare Portrayed|publisher=[[Metropolitan Museum of Art]]|date=May 2017|access-date=16 April 2024|archive-date=10 September 2023|archive-url=https://web.archive.org/web/20230910160150/https://www.metmuseum.org/toah/hd/shaa_2/hd_shaa_2.htm|url-status=live}}</ref> That demand also led to the production of several fake portraits, as well as misattributions, re-paintings, and relabelling of portraits of other people.<ref>{{cite news|url=https://www.cbsnews.com/news/shakespeare-portrait-is-a-fake/|title=Shakespeare Portrait Is A Fake|work=[[CBS News]]|date=22 April 2005|access-date=16 April 2024|archive-date=19 April 2021|archive-url=https://web.archive.org/web/20210419034826/https://www.cbsnews.com/news/shakespeare-portrait-is-a-fake/|url-status=live}}</ref>{{sfn|Schoenbaum|1981|p=190}}
+
+Some scholars suggest that the [[Droeshout portrait]], which [[Ben Jonson]] approved of as a good likeness,{{sfn|Cooper|2006|pp=48, 57}} and his [[Shakespeare's funerary monument|Stratford monument]] provide perhaps the best evidence of his appearance.<ref>{{cite news|url=https://www.theguardian.com/culture/2021/mar/19/shakespeare-grave-effigy-believed-to-be-definitive-likeness|first=Dalya|last= Alberge|title='Self-satisfied pork butcher': Shakespeare grave effigy believed to be definitive likeness|work=[[The Guardian]]|date=19 March 2021|access-date=16 April 2024}}</ref> Of the claimed paintings, the art historian [[Tarnya Cooper]] concluded that the [[Chandos portrait]] had "the strongest claim of any of the known contenders to be a true portrait of Shakespeare". After a three-year study supported by the [[National Portrait Gallery, London]], the portrait's owners, Cooper contended that its composition date, contemporary with Shakespeare, its subsequent provenance, and the sitter's attire, all supported the attribution.<ref>{{cite news|url=https://www.theguardian.com/uk/2006/mar/02/arts.books|first=Charlotte|last=Higgins|title=The only true painting of Shakespeare - probably|work=[[The Guardian]]|date=2 March 2006|access-date=15 April 2024}}</ref>
+
+==See also==
+* [[Outline of William Shakespeare]]
+* {{annotated link|World Shakespeare Bibliography|''World Shakespeare Bibliography''}}
+* [[Spelling of Shakespeare's name]]
+* {{annotated link|Shakespeare's Politics|''Shakespeare's Politics''}}
+* {{annotated link|English Renaissance theatre}}
+* [[List of poets]]
+
+==References==
+===Notes===
+{{notelist}}
+
+===Citations===
+<!-- READ ME!! PLEASE DO ''not'' JUST ADD NEW NOTES AT THE BOTTOM. Use ref tags in the text. -->
+{{reflist|22em}}
+
+===Sources===
+:'''Books'''
+{{refbegin|30em}}
+* {{cite book
+  |title = Shakespeare: The Biography
+  |last = Ackroyd
+  |first = Peter
+  |author-link = Peter Ackroyd
+  |publisher = Vintage
+  |year = 2006
+  |location = London
+  |isbn = 978-0-7493-8655-9
+  |oclc = 1036948826
+  |url = https://archive.org/details/shakespeare00pete
+  |url-access = registration
+  }}
+* {{cite book
+  |title = A Life of William Shakespeare
+  |url = https://archive.org/details/lifeofwilliamsha00adam_0
+  |last = Adams
+  |first = Joseph Quincy
+  |author-link = Joseph Quincy Adams
+  |publisher = [[Houghton Mifflin]]
+  |location = Boston
+  |year = 1923
+  |oclc = 1935264
+  }}
+* {{cite book
+  |title = William Shakspere's Small Latine & Lesse Greek
+  |last = Baldwin
+  |first = T.W.
+  |publisher = [[University of Illinois Press]]
+  |location = Urbana
+  |year = 1944
+  |volume = 1
+  |oclc = 359037
+  |url = https://catalog.hathitrust.org/Record/001112103
+  |access-date = 5 May 2023
+  |archive-date = 5 May 2023
+  |archive-url = https://web.archive.org/web/20230505000357/https://catalog.hathitrust.org/Record/001112103
+  |url-status = live
+  }}
+* {{cite book
+  |title = Politics, Plague, and Shakespeare's Theater: The Stuart Years
+  |last = Barroll
+  |first = Leeds
+  |publisher = [[Cornell University Press]]
+  |location = Ithaca
+  |year = 1991
+  |isbn = 978-0-8014-2479-3
+  |oclc = 23652422
+  |url = https://archive.org/details/politicsplaguesh0000barr
+  |url-access = registration
+  }}
+* {{cite book
+  |title = The Soul of the Age
+  |last = Bate
+  |first = Jonathan
+  |author-link = Jonathan Bate
+  |publisher = [[Penguin Publishing|Penguin]]
+  |location = London
+  |year = 2008
+  |isbn = 978-0-670-91482-1
+  |oclc = 237192578
+}}
+* {{cite book
+  |chapter = Marlowe and the English literary scene
+  |last = Bednarz
+  |first = James P.
+  |pages = [https://archive.org/details/cambridgecompani00chen_319/page/n108 90]–105
+  |title = The Cambridge Companion to Christopher Marlowe
+  |url = https://archive.org/details/cambridgecompani00chen_319
+  |url-access = limited
+  |editor-last = Cheney
+  |editor-first = Patrick Gerard
+  |year = 2004
+  |location = Cambridge
+  |publisher = [[Cambridge University Press]]
+  |isbn = 978-0-511-99905-5
+  |oclc = 53967052
+  |doi = 10.1017/CCOL0521820340
+  |via = [[Cambridge Core]]
+  }}
+* {{cite book
+  |title = Shakespeare: A Biographical Handbook
+  |url = https://archive.org/details/shakespearebiogr00bent
+  |url-access = registration
+  |last = Bentley
+  |first = G.E.
+  |author-link = Gerald Eades Bentley
+  |orig-year = 1961
+  |year = 1986
+  |publisher = [[Yale University Press]]
+  |location = New Haven
+  |oclc = 356416
+  |isbn = 978-0-313-25042-2
+  |ref = {{sfnref|Bentley|1961}}
+  }}
+* {{cite book
+  |title = Changing Styles in Shakespeare
+  |last = Berry
+  |first = Ralph
+  |publisher = [[Routledge]]
+  |location = London
+  |year = 2005
+  |isbn = 978-1-315-88917-7
+  |oclc = 868972698
+}}
+* {{cite book
+  |title = Shakespeare
+  |last = Bevington
+  |first = David
+  |author-link = David Bevington
+  |year = 2002
+  |location = Oxford
+  |publisher = [[Blackwell Publishing|Blackwell]]
+  |isbn = 978-0-631-22719-9
+  |oclc = 49261061
+  |url = https://archive.org/details/shakespeare0000bevi
+  |url-access = registration
+  }}
+* {{cite book
+  |title = The Western Canon: The Books and School of the Ages
+  |last = Bloom
+  |first = Harold
+  |author-link = Harold Bloom
+  |publisher = [[Riverhead Books]]
+  |location = New York
+  |year = 1995
+  |isbn = 978-1-57322-514-4
+  |oclc = 32013000
+  |url = https://archive.org/details/westerncanonbook00bloo
+  |url-access = registration
+  }}
+* {{cite book
+  |title = Shakespeare: The Invention of the Human
+  |last = Bloom
+  |first = Harold
+  |author-link = Harold Bloom
+  |publisher = [[Riverhead Books]]
+  |location = New York
+  |year = 1999
+  |isbn = 978-1-57322-751-3
+  |oclc = 39002855
+}}
+* {{cite book
+  |last = Bloom
+  |first = Harold
+  |author-link = Harold Bloom
+  |title = King Lear
+  |editor1-last = Heims
+  |editor1-first = Neil
+  |series = Bloom's Shakespeare Through the Ages
+  |publisher = [[Infobase Publishing|Bloom's Literary Criticism]]
+  |year = 2008
+  |isbn = 978-0-7910-9574-4
+  |oclc = 156874814
+}}
+* {{cite book
+  |title = Shakspere and His Predecessors
+  |last = Boas
+  |first = Frederick S.
+  |series = The University series
+  |author-link = Frederick S. Boas
+  |publisher = [[Charles Scribner's Sons]]
+  |location = New York
+  |year = 1896
+  |ol = 20577303M
+  |hdl = 2027/uc1.32106001899191
+  |oclc = 221947650
+}}
+* {{cite book
+  |title = On Editing Shakespeare and the Elizabethan Dramatists
+  |url = https://archive.org/details/oneditingshakesp0000bowe
+  |url-access = registration
+  |last = Bowers
+  |first = Fredson
+  |author-link = Fredson Bowers
+  |publisher = [[University of Pennsylvania Press]]
+  |location = Philadelphia
+  |year = 1955
+  |oclc = 2993883
+  }}
+* {{cite book
+  |title = Dictionary of Shakespeare
+  |last = Boyce
+  |first = Charles
+  |publisher = [[Wordsworth Editions|Wordsworth]]
+  |location = Ware
+  |year = 1996
+  |isbn = 978-1-85326-372-9
+  |oclc = 36586014
+}}
+* {{cite book
+  |chapter = Shakespeare's Recollection of Marlowe
+  |last = Bradbrook
+  |first = M.C.
+  |author-link = M. C. Bradbrook
+  |pages = 191–204
+  |title = Shakespeare's Styles: Essays in Honour of Kenneth Muir
+  |editor1-last = Edwards
+  |editor1-first = Philip
+  |editor2-last = Ewbank
+  |editor2-first = Inga-Stina
+  |editor2-link = Inga-Stina Ewbank
+  |editor3-last = Hunter
+  |editor3-first = G.K.
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 2004
+  |isbn = 978-0-521-61694-2
+  |oclc = 61724586
+}}
+* {{cite book
+  |title = Shakespearean Tragedy: Lectures on Hamlet, Othello, King Lear and Macbeth
+  |last = Bradley
+  |first = A.C.
+  |author-link = A. C. Bradley
+  |publisher = [[Penguin Group|Penguin]]
+  |location = London
+  |year = 1991
+  |isbn = 978-0-14-053019-3
+  |oclc = 22662871
+}}
+* {{cite book
+  |chapter = Language and Speaker in Macbeth
+  |last = Brooke
+  |first = Nicholas
+  |pages = 67–78
+  |title = Shakespeare's Styles: Essays in Honour of Kenneth Muir
+  |editor1-last = Edwards
+  |editor1-first = Philip
+  |editor2-last = Ewbank
+  |editor2-first = Inga-Stina
+  |editor2-link = Inga-Stina Ewbank
+  |editor3-last = Hunter
+  |editor3-first = G.K.
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 2004
+  |isbn = 978-0-521-61694-2
+  |oclc = 61724586
+}}
+* {{cite book
+  |chapter = ''Moby-Dick'' as Revolution
+  |last = Bryant
+  |first = John
+  |pages = [https://archive.org/details/cambridgecompani00levi/page/n64 65]–90
+  |title = The Cambridge Companion to Herman Melville
+  |url = https://archive.org/details/cambridgecompani00levi
+  |url-access = limited
+  |editor-last = Levine
+  |editor-first = Robert Steven
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 1998
+  |isbn = 978-1-139-00037-6
+  |oclc = 37442715
+  |doi = 10.1017/CCOL0521554772
+  |via = [[Cambridge Core]]
+  }}
+* {{cite book
+  |title = On Heroes, Hero-Worship, and The Heroic in History
+  |last = Carlyle
+  |first = Thomas
+  |author-link = Thomas Carlyle
+  |publisher = [[James Fraser (publisher)|James Fraser]]
+  |location = London
+  |year = 1841
+  |oclc = 17473532
+  |ol = 13561584M
+  |hdl = 2027/hvd.hnlmmi
+  |title-link = On Heroes, Hero-Worship, and The Heroic in History
+  }}
+* {{cite book
+  |title = Shakespeare's Works and Elizabethan Pronunciation
+  |last = Cercignani
+  |first = Fausto
+  |author-link = Fausto Cercignani
+  |publisher = [[Clarendon Press]]
+  |location = Oxford
+  |year = 1981
+  |isbn = 978-0-19-811937-1
+  |oclc = 4642100
+  |url-access = registration
+  |url = https://archive.org/details/shakespeareswork0000cerc
+  }}
+* {{cite book
+  |title = The Elizabethan Stage
+  |last = Chambers
+  |first = E.K.
+  |author-link = E. K. Chambers
+  |volume = 2
+  |location = Oxford
+  |publisher = [[Clarendon Press]]
+  |orig-year = 1923
+  |date=1974
+  |oclc = 336379
+  |isbn = 978-0-19-811511-3
+  |ref={{sfnref|Chambers|1923}}
+}}
+* {{cite book
+  |title = William Shakespeare: A Study of Facts and Problems
+  |last = Chambers
+  |first = E.K.
+  |author-link = E. K. Chambers
+  |location = Oxford
+  |publisher = [[Clarendon Press]]
+  |orig-year = 1930a
+  |year= 1988a
+  |volume = 1
+  |oclc = 353406
+  |isbn = 978-0-19-811774-2
+}}
+* {{cite book
+  |title = William Shakespeare: A Study of Facts and Problems
+  |last = Chambers
+  |first = E.K.
+  |author-link = E. K. Chambers
+  |location = Oxford
+  |publisher = [[Clarendon Press]]
+  |orig-year = 1930b
+  |year= 1988b
+  |volume = 2
+  |oclc = 353406
+  |isbn = 978-0-19-811774-2
+}}
+* {{cite book
+  |title = Shakespearean Gleanings
+  |url = https://archive.org/details/shakespeareangle0000cham
+  |url-access = registration
+  |last = Chambers
+  |first = E.K.
+  |author-link = E. K. Chambers
+  |location = Oxford
+  |publisher = [[Oxford University Press]]
+  |orig-year = 1944
+  |year = 1974
+  |oclc = 2364570
+  |isbn = 978-0-8492-0506-4
+  |ref = {{sfnref|Chambers|1944}}
+  }}
+* {{cite book
+  |title = Shakespeare's Soliloquies
+  |last = Clemen
+  |first = Wolfgang
+  |author-link = Wolfgang Clemen
+  |translator-last = Scott-Stokes
+  |translator-first = Charity
+  |publisher = [[Routledge]]
+  |location = London
+  |year = 1987
+  |isbn = 978-0-415-35277-2
+  |oclc = 15108952
+}}
+* {{cite book
+  |title = Shakespeare's Dramatic Art: Collected Essays
+  |last = Clemen
+  |first = Wolfgang
+  |author-link = Wolfgang Clemen
+  |publisher = [[Routledge]]
+  |location = New York
+  |year = 2005a
+  |isbn = 978-0-415-35278-9
+  |oclc = 1064833286
+}}
+* {{cite book
+  |title = Shakespeare's Imagery
+  |last = Clemen
+  |first = Wolfgang
+  |author-link = Wolfgang Clemen
+  |publisher = [[Routledge]]
+  |location = London
+  |edition = 2nd
+  |year = 2005b
+  |isbn = 978-0-415-35280-2
+  |oclc = 59136636
+}}
+* {{cite book
+  |title = Searching for Shakespeare
+  |last = Cooper
+  |first = Tarnya
+  |author-link = Tarnya Cooper
+  |publisher = [[Yale University Press]]
+  |location = New Haven
+  |year = 2006
+  |isbn = 978-0-300-11611-3
+  |oclc = 67294299
+}}
+* {{cite book
+  |title = Of Philosophers and Kings: Political Philosophy in Shakespeare's ''Macbeth'' and ''King Lear''
+  |last = Craig
+  |first = Leon Harold
+  |publisher = [[University of Toronto Press]]
+  |location = Toronto
+  |year = 2003
+  |isbn = 978-0-8020-8605-1
+  |oclc = 958558871
+}}
+* {{cite book
+  |title = Education in Tudor and Stuart England
+  |last = Cressy
+  |first = David
+  |publisher = [[St Martin's Press]]
+  |location = New York
+  |year = 1975
+  |oclc = 2148260
+  |isbn = 978-0-7131-5817-5
+}}
+* {{cite book
+  |title = The Cambridge Encyclopedia of the English Language
+  |last = Crystal
+  |first = David
+  |author-link = David Crystal
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 2001
+  |isbn = 978-0-521-40179-1
+  |oclc = 49960817
+  |url = https://archive.org/details/cambridgeencyclo00crys
+  }}
+* {{cite book
+  |title = The Making of the National Poet: Shakespeare, Adaptation and Authorship, 1660–1769
+  |last = Dobson
+  |first = Michael
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 1992
+  |isbn = 978-0-19-818323-5
+  |oclc = 25631612
+}}
+* {{cite book
+  |title = Shakespeare–Middleton Collaborations
+  |last = Dominik
+  |first = Mark
+  |publisher = Alioth Press
+  |location = Beaverton
+  |year = 1988
+  |isbn = 978-0-945088-01-1
+  |oclc = 17300766
+}}
+* {{cite book
+  |title = Shakspere
+  |url = https://archive.org/details/shakspere01dowdgoog
+  |last = Dowden
+  |first = Edward
+  |author-link = Edward Dowden
+  |publisher = [[D. Appleton & Company]]
+  |location = New York
+  |year = 1881
+  |oclc = 8164385
+  |ol = 6461529M
+  }}
+* {{cite book
+  |chapter = Introduction
+  |last = Drakakis
+  |first = John
+  |pages = [https://archive.org/details/alternativeshake0000unse/page/n16 1]–25
+  |title = Alternative Shakespeares
+  |editor-last = Drakakis
+  |editor-first = John
+  |year = 1985
+  |location = New York
+  |publisher = [[Methuen Publishing|Methuen]]
+  |isbn = 978-0-416-36860-4
+  |oclc = 11842276
+  |url = https://archive.org/details/alternativeshake0000unse
+  |url-access = limited
+  }}
+* {{cite book
+  |last = Dryden
+  |first = John
+  |author-link = John Dryden
+  |title = Dryden: An Essay of Dramatic Poesy
+  |editor-last = Arnold
+  |editor-first = Thomas
+  |editor-link = Tom Arnold (literary scholar)
+  |publisher = [[Clarendon Press]]
+  |location = Oxford
+  |orig-year = 1889
+  |year = 2006
+  |oclc = 7847292
+  |ol = 23752217M
+  |hdl = 2027/umn.31951t00074232s
+  |isbn = 978-81-7156-323-4
+}}
+* {{cite book
+  |title = A Companion to Shakespeare's Works: The Histories
+  |last1 = Dutton
+  |first1 = Richard
+  |last2 = Howard
+  |first2 = Jean E.
+  |author-link2 = Jean E. Howard
+  |publisher = [[Blackwell Publishers|Blackwell]]
+  |location = Oxford
+  |volume = II
+  |isbn = 978-0-631-22633-8
+  |oclc = 50002219
+  |year = 2003
+}}
+* {{Cite book
+  |title = Shakespeare Survey: Volume 11: The Last Plays
+  |chapter = Shakespeare's Romances: 1900–1957
+  |last = Edwards
+  |first = Phillip
+  |pages = 1–18
+  |series = [[Shakespeare Survey]]
+  |volume = 11
+  |orig-year = 1958
+  |date = March 2007
+  |location = Cambridge
+  |publisher = [[Cambridge University Press]]
+  |isbn = 978-1-139-05291-7
+  |oclc = 220909427
+  |doi = 10.1017/CCOL0521064244.001
+  |via = [[Cambridge Core]]
+  |ref={{sfnref|Edwards|1958}}
+}}
+* {{cite book
+  |title = Elizabethan Essays
+  |last = Eliot
+  |first = T.S.
+  |author-link = T. S. Eliot
+  |publisher = [[Faber & Faber]]
+  |location = London
+  |orig-year = 1934
+  |year = 1973
+  |oclc = 9738219
+  |isbn = 978-0-15-629051-7
+  |ref={{sfnref|Eliot|1934}}
+}}
+* {{cite book
+  |title = The Sonnets
+  |last = Shakespeare
+  |first = William
+  |author-link = William Shakespeare
+  |display-authors = 0
+  |year = 1996
+  |editor-last = Evans
+  |editor-first = G. Blakemore
+  |editor-link = G. Blakemore Evans
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |volume = 26
+  |series = [[The New Cambridge Shakespeare]]
+  |isbn = 978-0-521-22225-9
+  |oclc = 32272082
+  |ref = {{harvid|Evans|1996}}
+  |url-access = registration
+  |url = https://archive.org/details/sonnets0000shak_s5k7
+  }}
+* {{cite book
+  |chapter = Playhouses and players
+  |last = Foakes
+  |first = R.A.
+  |author-link = R. A. Foakes
+  |pages = [https://archive.org/details/cambridgecompani0000unse_m8d3/page/1 1–52]
+  |title = The Cambridge Companion to English Renaissance Drama
+  |editor1-last = Braunmuller
+  |editor1-first = A.R.
+  |editor2-last = Hattaway
+  |editor2-first = Michael
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 1990
+  |isbn = 978-0-521-38662-3
+  |oclc = 20561419
+  |url = https://archive.org/details/cambridgecompani0000unse_m8d3
+  |url-access = registration
+  }}
+* {{cite book
+  |chapter = 'I'm not a feminist director but...': Recent Feminist Productions of ''The Taming of the Shrew''
+  |last = Friedman
+  |first = Michael D.
+  |pages = 159–174
+  |title = Acts of Criticism: Performance Matters in Shakespeare and his Contemporaries
+  |editor1-last = Nelsen
+  |editor1-first = Paul
+  |editor2-last = Schlueter
+  |editor2-first = June
+  |publisher = [[Fairleigh Dickinson University Press]]
+  |location = New Jersey
+  |year = 2006
+  |isbn = 978-0-8386-4059-3
+  |oclc = 60644679
+}}
+* {{cite book
+  |title = The Art of the Dramatist
+  |last = Frye
+  |first = Roland Mushat
+  |author-link = Roland Frye
+  |year = 2005
+  |location = London; New York
+  |publisher = [[Routledge]]
+  |isbn = 978-0-415-35289-5
+  |oclc = 493249616
+}}
+* {{cite book
+  |title = Shakespeare and Multiplicity
+  |url = https://archive.org/details/shakespearemulti0000gibb
+  |url-access = registration
+  |last = Gibbons
+  |first = Brian
+  |year = 1993
+  |location = Cambridge
+  |publisher = [[Cambridge University Press]]
+  |isbn = 978-0-511-55310-3
+  |oclc = 27066411
+  |doi = 10.1017/CBO9780511553103
+  |via = [[Cambridge Core]]
+  }}
+* {{cite book
+  |title = The Shakespeare Claimants: A Critical Survey of the Four Principal Theories Concerning the Authorship of the Shakespearean Plays
+  |last = Gibson
+  |first = H.N.
+  |publisher = [[Routledge]]
+  |location = London
+  |year = 2005
+  |isbn = 978-0-415-35290-1
+  |oclc = 255028016
+}}
+* {{cite book
+  |chapter = Modernity, Modernism and Postmodernism in the Twentieth Century's Shakespeare
+  |last = Grady
+  |first = Hugh
+  |pages = [https://archive.org/details/shakespearemoder00bris/page/n34 20]–35
+  |title = Shakespeare and Modern Theatre: The Performance of Modernity
+  |url = https://archive.org/details/shakespearemoder00bris
+  |url-access = limited
+  |editor1-last = Bristol
+  |editor1-first = Michael
+  |editor2-last = McLuskie
+  |editor2-first = Kathleen
+  |publisher = [[Routledge]]
+  |location = New York
+  |year = 2001a
+  |isbn = 978-0-415-21984-6
+  |oclc = 45394137
+  }}
+* {{cite book
+  |chapter = Shakespeare criticism, 1600–1900
+  |last = Grady
+  |first = Hugh
+  |pages = 265–278
+  |title = The Cambridge Companion to Shakespeare
+  |editor1-last = de Grazia
+  |editor1-first = Margreta
+  |editor2-last = Wells
+  |editor2-first = Stanley
+  |editor2-link = Stanley Wells
+  |location = Cambridge
+  |publisher = [[Cambridge University Press]]
+  |year = 2001b
+  |isbn = 978-1-139-00010-9
+  |oclc = 44777325
+  |doi = 10.1017/CCOL0521650941.017
+  |via = [[Cambridge Core]]
+}}
+* {{cite book
+  |title = Will in the World: How Shakespeare Became Shakespeare
+  |last = Greenblatt
+  |first = Stephen
+  |author-link = Stephen Greenblatt
+  |publisher = [[Pimlico (publishing imprint)|Pimlico]]
+  |location = London
+  |year = 2005
+  |isbn = 978-0-7126-0098-9
+  |oclc = 57750725
+}}
+* {{cite book
+  |title = Sixteenth/Early Seventeenth Century
+  |series = The Norton Anthology of English Literature
+  |volume = 2
+  |editor1-last = Greenblatt
+  |editor1-first = Stephen
+  |editor1-link = Stephen Greenblatt
+  |editor2-last = Abrams
+  |editor2-first = Meyer Howard
+  |editor2-link = Meyer Howard Abrams
+  |publisher = [[W.W. Norton]]
+  |year = 2012
+  |isbn = 978-0-393-91250-0
+  |oclc = 778369012
+}}
+* {{cite book
+  |title = Shakespeare
+  |last = Greer
+  |first = Germaine
+  |author-link = Germaine Greer
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 1986
+  |isbn = 978-0-19-287538-9
+  |oclc = 12369950
+  |url = https://archive.org/details/shakespeare00gree
+  |url-access = registration
+  }}
+* {{cite book
+  |title = Cymbeline
+  |last = Shakespeare
+  |first = William
+  |author-link = William Shakespeare
+  |display-authors = 0
+  |editor1-last = Holland
+  |editor1-first = Peter
+  |publisher = [[Penguin Group|Penguin]]
+  |location = London
+  |year = 2000
+  |isbn = 978-0-14-071472-2
+  |url = https://books.google.com/books?id=y8SQ3SJTIYsC
+  |oclc = 43639603
+  |ref = {{harvid|Holland|2000}}
+  |access-date = 14 June 2023
+  |archive-date = 29 August 2023
+  |archive-url = https://web.archive.org/web/20230829192843/https://books.google.com/books?id=y8SQ3SJTIYsC
+  |url-status = live
+  }}
+* {{cite book
+  |title = Shakespeare: A Life
+  |last = Honan
+  |first = Park
+  |author-link = Park Honan
+  |publisher = [[Clarendon Press]]
+  |location = Oxford
+  |year = 1998
+  |isbn = 978-0-19-811792-6
+  |url = https://archive.org/details/shakespearelife00hona
+  |url-access = registration
+  }}
+* {{cite book
+  |title = Shakespeare: The 'Lost Years'
+  |last = Honigmann
+  |first = E.A.J.
+  |author-link = E. A. J. Honigmann
+  |edition = Revised
+  |publisher = [[Manchester University Press]]
+  |location = Manchester
+  |year = 1998
+  |url = {{google books|plainurl=y|id=rKMWPwtV7BoC}}
+  |isbn = 978-0-7190-5425-9
+  |oclc = 40517369
+  }}
+* {{cite book
+  |title = Samuel Johnson's Dictionary: Selections from the 1755 Work that Defined the English Language
+  |last = Johnson
+  |first = Samuel
+  |author-link = Samuel Johnson
+  |editor-last = Lynch
+  |editor-first = Jack
+  |publisher = Levenger Press
+  |location = Delray Beach
+  |year = 2002
+  |orig-year = 1755
+  |isbn = 978-1-84354-296-4
+  |oclc = 56645909
+}}
+* {{cite book
+  |chapter = To the memory of my beloued, The AVTHOR MR. WILLIAM SHAKESPEARE: AND what he hath left vs
+  |last = Jonson
+  |first = Ben
+  |author-link = Ben Jonson
+  |title = The First Folio of Shakespeare
+  |editor-last = Hinman
+  |editor-first = Charlton
+  |editor-link = Charlton Hinman
+  |location = New York
+  |publisher = [[W.W. Norton & Company]]
+  |year = 1996
+  |orig-year = 1623
+  |edition = 2nd
+  |url = {{google books|plainurl=y|id=U7-iIzIF3-IC?hl}}
+  |isbn = 978-0-393-03985-6
+  |oclc = 34663304
+  }}{{Dead link|date=March 2024 |bot=InternetArchiveBot |fix-attempted=yes }}
+* {{cite book
+  |title = Shakespeare After Theory
+  |last = Kastan
+  |first = David Scott
+  |publisher = [[Routledge]]
+  |location = London
+  |year = 1999
+  |isbn = 978-0-415-90112-3
+  |oclc = 40125084
+}}
+* {{cite book
+|first=Dennis
+|last=Kennedy
+|author-link=Dennis Kennedy (author)
+|title=Foreign Shakespeare: Contemporary Performance
+|url=https://books.google.com/books?id=4WbVhb7seLEC
+|year=2004
+|location=Cambridge
+|publisher=[[Cambridge University Press]]
+|isbn=978-0-521-61708-6
+}}
+* {{cite book
+  |title = The Age of Shakespeare
+  |last = Kermode
+  |first = Frank
+  |author-link = Frank Kermode
+  |publisher = [[Weidenfeld & Nicolson]]
+  |location = London
+  |year = 2004
+  |isbn = 978-0-297-84881-3
+  |oclc = 52970550
+}}
+* {{cite book
+  |title = The Oxford Handbook of Shakespeare
+  |editor1-last = Kinney
+  |editor1-first = Arthur F.
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 2012
+  |url = https://books.google.com/books?id=qT6zl-Nyw8cC
+  |isbn = 978-0-19-956610-5
+  |oclc = 775497396
+  |access-date = 14 June 2023
+  |archive-date = 29 August 2023
+  |archive-url = https://web.archive.org/web/20230829210414/https://books.google.com/books?id=qT6zl-Nyw8cC
+  |url-status = live
+  }}
+* {{cite book
+  |title = Playing Companies and Commerce in Shakespeare's Time
+  |last = Knutson
+  |first = Roslyn
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 2001
+  |isbn = 978-0-511-48604-3
+  |oclc = 45505919
+  |doi = 10.1017/CBO9780511486043
+  |via = [[Cambridge Core]]
+}}
+* {{cite book
+  |title = Shakespeare's Life and Work: Being an Abridgment Chiefly for the Use of Students of a Life of A Life of William Shakespeare
+  |url = https://archive.org/details/shakespeareslif01leegoog
+  |last = Lee
+  |first = Sidney
+  |author-link = Sidney Lee
+  |publisher = [[Smith, Elder & Co.]]
+  |location = London
+  |year = 1900
+  |ol = OL21113614M
+  |oclc = 355968
+  }}
+* {{cite book
+  |title = Romeo and Juliet
+  |last = Shakespeare
+  |first = William
+  |author-link = William Shakespeare
+  |display-authors = 0
+  |year = 2000
+  |editor-last = Levenson
+  |editor-first = Jill L.
+  |location = Oxford
+  |publisher = [[Oxford University Press]]
+  |isbn = 978-0-19-281496-8
+  |oclc = 41991397
+  |ref = {{harvid|Levenson|2000}}
+}}
+* {{cite book
+  |chapter = Critical Approaches to Shakespeare from 1660 to 1904
+  |last = Levin
+  |first = Harry
+  |title = The Cambridge Companion to Shakespeare Studies
+  |editor-last = Wells
+  |editor-first = Stanley
+  |editor-link = Stanley Wells
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 1986
+  |isbn = 978-0-521-31841-9
+  |oclc = 12945372
+  |url = https://archive.org/details/cambridgecompani00well
+  |url-access = registration
+  }}
+* {{cite book
+  |title = Attributing Authorship: An Introduction
+  |last = Love
+  |first = Harold
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 2002
+  |isbn = 978-0-511-48316-5
+  |oclc = 70741078
+  |doi = 10.1017/CBO9780511483165
+  |via = [[Cambridge Core]]
+}}
+* {{cite book
+  |title = Shakespearean Suspect Texts: The 'Bad' Quartos and Their Contexts
+  |url = https://archive.org/details/shakespeareansus0000magu
+  |url-access = registration
+  |last = Maguire
+  |first = Laurie E.
+  |year = 1996
+  |location = Cambridge
+  |publisher = [[Cambridge University Press]]
+  |isbn = 978-0-511-55313-4
+  |oclc = 726828014
+  |doi = 10.1017/CBO9780511553134
+  |via = [[Cambridge Core]]
+  }}
+* {{cite book
+  |title = Shakespeare's Late Style
+  |url = https://archive.org/details/shakespeareslate0000mcdo
+  |url-access = registration
+  |last = McDonald
+  |first = Russ
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 2006
+  |isbn = 978-0-511-48378-3
+  |oclc = 252529245
+  |doi = 10.1017/CBO9780511483783
+  |via = [[Cambridge Core]]
+  }}
+* {{cite book
+  |title = Garrick
+  |last = McIntyre
+  |first = Ian
+  |year = 1999
+  |location = Harmondsworth
+  |publisher = [[Allen Lane]]
+  |isbn = 978-0-14-028323-5
+  |oclc = 43581619
+}}
+* {{cite book
+  |title = Shakespeare and his Rivals: A Casebook on the Authorship Controversy
+  |last1 = McMichael
+  |first1 = George
+  |last2 = Glenn
+  |first2 = Edgar M.
+  |publisher = Odyssey Press
+  |location = New York
+  |year = 1962
+  |oclc = 2113359
+}}
+* {{cite book
+  |title = Pursuing Shakespeare's Dramaturgy: Some Contexts, Resources, and Strategies in his Playmaking
+  |last = Meagher
+  |first = John C.
+  |publisher = [[Fairleigh Dickinson University Press]]
+  |location = New Jersey
+  |year = 2003
+  |isbn = 978-0-8386-3993-1
+  |oclc = 51985016
+}}
+* {{cite book
+  |title = The Tempest
+  |series = Folger Shakespeare Library
+  |last1 = Mowat
+  |first1 = Barbara A.
+  |last2 = Werstine
+  |first2 = Paul
+  |publisher = Simon & Schuster
+  |location = New York
+  |year = 2015
+  |isbn = 978-1-5011-3001-4
+}}
+* {{cite book
+  |title = Shakespeare's Tragic Sequence
+  |last = Muir
+  |first = Kenneth
+  |author-link = Kenneth Muir (scholar)
+  |publisher = [[Routledge]]
+  |location = London
+  |year = 2005
+  |isbn = 978-0-415-35325-0
+  |oclc = 62584912
+}}
+* {{cite book
+  |title = Shakespeare's Stage
+  |url = https://archive.org/details/shakespearesstag0000nagl
+  |url-access = registration
+  |last = Nagler
+  |first = A.M.
+  |publisher = [[Yale University Press]]
+  |location = New Haven
+  |orig-year = 1958
+  |year = 1981
+  |isbn = 978-0-300-02689-4
+  |oclc = 6942213
+  |ref = {{sfnref|Nagler|1958}}
+  }}
+* {{cite book
+  |chapter = The Author, the Editor and the Translator: William Shakespeare, Alexander Chalmers and Sándor Petofi or the Nature of a Romantic Edition
+  |last = Paraisz
+  |first = Júlia
+  |title = Editing Shakespeare
+  |series = [[Shakespeare Survey]]
+  |volume = 59
+  |pages = 124–135
+  |publisher = [[Cambridge University Press]]
+  |location = Cambridge
+  |year = 2006
+  |isbn = 978-1-139-05271-9
+  |oclc = 237058653
+  |doi = 10.1017/CCOL0521868386.010
+  |via = [[Cambridge Core]]
+}}
+* {{cite book
+  |title = Such Is My Love: A Study of Shakespeare's Sonnets
+  |last = Pequigney
+  |first = Joseph
+  |publisher = [[University of Chicago Press]]
+  |location = Chicago
+  |year = 1985
+  |isbn = 978-0-226-65563-5
+  |oclc = 11650519
+}}
+* {{cite book
+  |title = Shakespeare Quartos and Folios: A Study in the Bibliography of Shakespeare's Plays, 1594–1685
+  |last = Pollard
+  |first = Alfred W.
+  |author-link = Alfred W. Pollard
+  |publisher = [[Methuen Publishing|Methuen]]
+  |location = London
+  |year = 1909
+  |oclc = 46308204
+}}
+* {{cite book
+  |title = Catholic Loyalism in Elizabethan England
+  |last = Pritchard
+  |first = Arnold
+  |publisher = [[University of North Carolina Press]]
+  |location = Chapel Hill
+  |year = 1979
+  |isbn = 978-0-8078-1345-4
+  |oclc = 4496552
+  |url = https://archive.org/details/catholicloyalism0000prit
+  |url-access = registration
+  }}
+* {{cite book
+  |title = The English History Play in the Age of Shakespeare
+  |last = Ribner
+  |first = Irving
+  |year = 2005
+  |location = London
+  |publisher = [[Routledge]]
+  |isbn = 978-0-415-35314-4
+  |oclc = 253869825
+}}
+* {{cite book
+  |chapter = Shakespeare and His Actors: Some Remarks on King Lear
+  |last = Ringler
+  |first = William Jr
+  |pages = 123–134
+  |title = In Lear from Study to Stage: Essays in Criticism
+  |editor1-last = Ogden
+  |editor1-first = James
+  |editor2-last = Scouten
+  |editor2-first = Arthur Hawley
+  |publisher = [[Fairleigh Dickinson University Press]]
+  |location = New Jersey
+  |year = 1997
+  |isbn = 978-0-8386-3690-9
+  |oclc = 35990360
+}}
+* {{cite book
+  |title = The Poems: Venus and Adonis, The Rape of Lucrece, The Phoenix and the Turtle, The Passionate Pilgrim, A Lover's Complaint
+  |last = Shakespeare
+  |first = William
+  |author-link = William Shakespeare
+  |display-authors = 0
+  |editor-last = Roe
+  |editor-first = John
+  |year = 2006
+  |location = Cambridge
+  |publisher = [[Cambridge University Press]]
+  |series = [[The New Cambridge Shakespeare]]
+  |edition = 2nd revised
+  |isbn = 978-0-521-85551-8
+  |oclc = 64313051
+  |ref = {{harvid|Roe|2006}}
+}}
+* {{cite book
+  |title = Some Account of the Life &c of Mr. William Shakespear
+  |last = Rowe
+  |first = Nicholas
+  |author-link = Nicholas Rowe (writer)
+  |orig-year = 1709
+  |year = 2009
+  |publisher = Pallas Athene
+  |isbn = 9781843680567
+  |url = https://archive.org/details/someaccountoflif0000rowe/mode/2up
+  |url-access = registration
+  |editor-last = Nicholl
+  |editor-first = Charles
+  |editor-link = Charles Nicholl (author)
+  |ref = {{harvid|Rowe|1709}}
+  }}
+* {{cite book
+  |title = William Shakespeare; A Biography
+  |url = https://archive.org/details/williamshakespea00rows
+  |url-access = registration
+  |last = Rowse
+  |first = A.L.
+  |author-link = A. L. Rowse
+  |publisher = [[Harper & Row]]
+  |location = New York
+  |year = 1963
+  |ol = 21462232M
+  |oclc = 352856
+  }}
+* {{cite book
+  |title = Shakespeare: The Man
+  |last = Rowse
+  |first = A.L.
+  |author-link = A. L. Rowse
+  |publisher = [[Macmillan Publishers|Macmillan]]
+  |edition = Revised
+  |year = 1988
+  |isbn = 978-0-333-44354-5
+  |oclc = 20527549
+}}
+* {{cite book
+  |title = Victorian Appropriations of Shakespeare
+  |last = Sawyer
+  |first = Robert
+  |publisher = [[Fairleigh Dickinson University Press]]
+  |location = New Jersey
+  |year = 2003
+  |isbn = 978-0-8386-3970-2
+  |oclc = 51040611
+}}
+* {{cite book
+  |title = The Problem Plays of Shakespeare
+  |url = https://archive.org/details/problemplaysofsh0000scha
+  |url-access = registration
+  |last = Schanzer
+  |first = Ernest
+  |orig-year = 1963
+  |date = 2005
+  |location = London
+  |publisher = [[Routledge]] and [[Kegan Paul]]
+  |oclc = 2378165
+  |isbn = 978-0-415-35305-2
+  |ref = {{sfnref|Schanzer|1963}}
+  }}
+* {{cite book
+  |chapter = Pictorial Shakespeare
+  |last = Schoch
+  |first = Richard W.
+  |year = 2002
+  |title = The Cambridge Companion to Shakespeare on Stage
+  |url = https://archive.org/details/cambridgecompani00well_687
+  |url-access = limited
+  |pages = [https://archive.org/details/cambridgecompani00well_687/page/n74 58]–75
+  |editor1-last = Wells
+  |editor1-first = Stanley
+  |editor1-link = Stanley Wells
+  |editor2-last = Stanton
+  |editor2-first = Sarah
+  |location = Cambridge
+  |publisher = [[Cambridge University Press]]
+  |isbn = 978-0-511-99957-4
+  |oclc = 48140822
+  |doi = 10.1017/CCOL0521792959.004
+  |via = [[Cambridge Core]]
+  }}
+* {{cite book
+  |title = William Shakespeare: Records and Images
+  |last = Schoenbaum
+  |first = Samuel
+  |author-link = Samuel Schoenbaum
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 1981
+  |isbn = 978-0-19-520234-2
+  |oclc = 6813367
+}}
+* {{cite book
+  |last = de Sélincourt
+  |first = Basil
+  |author-link = Basil de Sélincourt
+  |year = 1909
+  |title = William Blake
+  |series = The Library of Art
+  |location = London
+  |publisher = [[Duckworth & co]]
+  |url = https://archive.org/details/williamblake007928mbp
+  |hdl = 2027/mdp.39015066033914
+  |ol = 26411508M
+  }}
+* {{cite book
+  |title = William Shakespeare: A Compact Documentary Life
+  |last = Schoenbaum
+  |first = S.
+  |author-link = Samuel Schoenbaum
+  |year = 1987
+  |edition = Revised
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |isbn = 978-0-19-505161-2
+  |url = https://archive.org/details/in.ernet.dli.2015.186170
+  |url-access = 
+  }}
+* {{cite book
+  |title = Shakespeare's Lives
+  |last = Schoenbaum
+  |first = Samuel
+  |author-link = Samuel Schoenbaum
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 1991
+  |isbn = 978-0-19-818618-2
+  |oclc = 58832341
+  |url = https://archive.org/details/shakespeareslive00scho_0
+  |url-access = registration
+  }}
+* {{cite book
+  |title = 1599: A Year in the Life of William Shakespeare
+  |last = Shapiro
+  |first = James
+  |author-link = James S. Shapiro
+  |publisher = [[Faber and Faber]]
+  |location = London
+  |year = 2005
+  |isbn = 978-0-571-21480-8
+  |oclc = 58832341
+}}
+* {{cite book
+  |title = Contested Will: Who Wrote Shakespeare?
+  |last = Shapiro
+  |first = James
+  |author-link = James S. Shapiro
+  |publisher = [[Simon & Schuster]]
+  |location = New York
+  |year = 2010
+  |isbn = 978-1-4165-4162-2
+  |oclc = 699546904
+}}
+* {{cite book
+  |title = Shakespeare's Blackfriars Playhouse
+  |url = https://archive.org/details/shakespearesblac0000smit
+  |url-access = registration
+  |last = Smith
+  |first = Irwin
+  |publisher = [[New York University Press]]
+  |location = New York
+  |year = 1964
+  |oclc = 256278
+  }}
+* {{cite book
+  |title = The Winter's Tale
+  |url = https://archive.org/details/winterstale00shakgoog
+  |last = Shakespeare
+  |first = William
+  |author-link = William Shakespeare
+  |display-authors = 0
+  |year = 2007
+  |editor1-last = Snyder
+  |editor1-first = Susan
+  |editor2-last = Curren-Aquino
+  |editor2-first = Deborah
+  |location = Cambridge
+  |publisher = [[Cambridge University Press]]
+  |isbn = 978-0-521-22158-0
+  |oclc = 76798206
+  |ref = {{harvid|Snyder|Curren-Aquino|2007}}
+  }}
+* {{cite book
+|first=Emma
+|last=Smith
+|author-link=Emma Smith (scholar)
+|title=This is Shakespeare: how to read the world's greatest playwright
+|url=https://books.google.com/books?id=8zlrDwAAQBAJ
+|year=2019
+|location=London
+|publisher=[[Penguin Books]]
+|isbn=978-0-241-36164-1
+|archive-date=10 February 2026
+|access-date=3 December 2025
+|archive-url=https://web.archive.org/web/20260210141947/https://books.google.com/books?id=8zlrDwAAQBAJ
+|url-status=live
+}}
+* {{cite book
+  |title = The Death of Tragedy
+  |last = Steiner
+  |first = George
+  |author-link = George Steiner
+  |publisher = [[Yale University Press]]
+  |location = New Haven
+  |year = 1996
+  |isbn = 978-0-300-06916-7
+  |oclc = 36209846
+}}
+* {{cite book
+  |title = William Shakespeare: A Textual Companion
+  |last = Taylor
+  |first = Gary
+  |author-link = Gary Taylor (scholar)
+  |year = 1987
+  |location = Oxford
+  |publisher = [[Oxford University Press]]
+  |isbn = 978-0-19-812914-1
+  |oclc = 13526264
+  |url-access = registration
+  |url = https://archive.org/details/williamshakespea0000well
+  }}
+* {{cite book
+  |title = Reinventing Shakespeare: A Cultural History from the Restoration to the Present
+  |last = Taylor
+  |first = Gary
+  |author-mask = 1
+  |publisher = [[Hogarth Press]]
+  |location = London
+  |year = 1990
+  |orig-year = 1989
+  |isbn = 978-0-7012-0888-2
+  |oclc = 929677322
+}}
+* {{cite book
+|editor1=[[Gary Taylor (scholar)|Garry Taylor]]
+|editor2=Terri Bourus
+|title=The New Oxford Shakespeare: The complete works - modern critical edition
+|url=https://books.google.com/books?id=MsRjDQAAQBAJ
+|year=2017
+|location=Oxford
+|publisher=[[Oxford University Press]]
+|isbn=978-0-198-74972-1
+|ref={{SfnRef|Taylor|Bourus|2017}}
+|archive-date=3 September 2025
+|access-date=3 December 2025
+|archive-url=https://web.archive.org/web/20250903132606/https://books.google.com/books?id=MsRjDQAAQBAJ
+|url-status=live
+}}
+* {{cite book
+  |title = Samuel Johnson
+  |last = Wain
+  |first = John
+  |author-link = John Wain
+  |year = 1975
+  |location = New York
+  |publisher = [[Viking Press|Viking]]
+  |isbn = 978-0-670-61671-8
+  |oclc = 1056697
+  |url = https://archive.org/details/samueljohnson00wain
+  |url-access = registration
+  }}
+* {{cite book
+  |title = The Oxford Shakespeare: The Complete Works
+  |editor1-last = Wells
+  |editor1-first = Stanley
+  |editor1-link = Stanley Wells
+  |editor2-last = Taylor
+  |editor2-first = Gary
+  |editor2-link = Gary Taylor (scholar)
+  |editor3-last = Jowett
+  |editor3-first = John
+  |editor3-link = John Jowett
+  |editor4-last = Montgomery
+  |editor4-first = William
+  |edition = 2nd
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 2005
+  |isbn = 978-0-19-926717-0
+  |oclc = 1153632306
+  |url-access = registration
+  |url = https://archive.org/details/completeworks0000shak_f0m2
+  }}
+* {{cite book
+  |title = Shakespeare: A Life in Drama
+  |last = Wells
+  |first = Stanley
+  |author-link = Stanley Wells
+  |year = 1997
+  |location = New York
+  |publisher = [[W.W. Norton]]
+  |isbn = 978-0-393-31562-2
+  |oclc = 36867040
+  |url = https://archive.org/details/shakespearelifei0000well_y5p6
+  |url-access = registration
+  }}
+* {{cite book
+  |title = Shakespeare & Co: Christopher Marlowe, Thomas Dekker, Ben Jonson, Thomas Middleton, John Fletcher and the Other Players in His Story
+  |last = Wells
+  |first = Stanley
+  |author-link = Stanley Wells
+  |publisher = [[Pantheon Books|Pantheon]]
+  |location = New York
+  |year = 2006
+  |isbn = 978-0-375-42494-6
+  |oclc = 76820663
+  |url = https://archive.org/details/shakespearecochr0000well
+  |url-access = registration
+  }}
+* {{cite book
+  |title = Shakespeare: An Oxford Guide
+  |editor1-last = Wells
+  |editor1-first = Stanley
+  |editor1-link = Stanley Wells
+  |editor2-last = Orlin
+  |editor2-first = Lena Cowen
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 2003
+  |isbn = 978-0-19-924522-2
+  |oclc = 50920674
+  |ref = none
+}}
+** {{cite book
+  |chapter = Shakespeare's Influence
+  |last = Gross
+  |first = John
+  |title = Shakespeare: An Oxford Guide
+  |editor1-last = Wells
+  |editor1-first = Stanley
+  |editor1-link = Stanley Wells
+  |editor2-last = Orlin
+  |editor2-first = Lena Cowen
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 2003
+  |isbn = 978-0-19-924522-2
+  |oclc = 50920674
+}}
+** {{cite book
+  |chapter = The Question of Authorship
+  |last = Kathman
+  |first = David
+  |pages = 620–632
+  |title = Shakespeare: an Oxford Guide
+  |editor1-last = Wells
+  |editor1-first = Stanley
+  |editor1-link = Stanley Wells
+  |editor2-last = Orlin
+  |editor2-first = Lena Cowen
+  |series = Oxford Guides
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 2003
+  |isbn = 978-0-19-924522-2
+  |oclc = 50920674
+}}
+** {{cite book
+  |chapter = Conventions of Playwriting
+  |last = Thomson
+  |first = Peter
+  |title = Shakespeare: An Oxford Guide
+  |editor1-last = Wells
+  |editor1-first = Stanley
+  |editor1-link = Stanley Wells
+  |editor2-last = Orlin
+  |editor2-first = Lena Cowen
+  |publisher = [[Oxford University Press]]
+  |location = Oxford
+  |year = 2003
+  |isbn = 978-0-19-924522-2
+  |oclc = 50920674
+}}
+* {{cite book
+  |title = Shakespeare and Feminist Performance
+  |last = Werner
+  |first = Sarah
+  |year = 2001
+  |location = London
+  |publisher = [[Routledge]]
+  |isbn = 978-0-415-22729-2
+  |oclc = 45791390
+}}
+* {{cite book
+  |title = Secret Shakespeare: Studies in Theatre, Religion and Resistance
+  |last = Wilson
+  |first = Richard
+  |publisher = [[Manchester University Press]]
+  |location = Manchester
+  |year = 2004
+  |isbn = 978-0-7190-7024-2
+  |url-access = registration
+  |url = https://archive.org/details/secretshakespear00wils
+  |oclc = 55523047
+  }}
+* {{cite book
+  |title = The Plays of William Shakespeare with Notes of Various Commentators
+  |editor-last = Wood
+  |editor-first = Manley
+  |year = 1806
+  |volume = I
+  |location = London
+  |publisher = George Kearsley
+  |oclc = 38442678
+}}
+* {{cite book
+  |title = Shakespeare
+  |last = Wood
+  |first = Michael
+  |author-link = Michael Wood (historian)
+  |publisher = [[Basic Books]]
+  |location = New York
+  |year = 2003
+  |isbn = 978-0-465-09264-2
+  |url = https://archive.org/details/shakespeare00wood
+  |url-access = registration
+  |oclc = 1043430614
+  }}
+* {{cite book
+  |chapter = The Play of Phrase and Line
+  |last = Wright
+  |first = George T.
+  |title = Shakespeare: An Anthology of Criticism and Theory, 1945–2000
+  |editor-last = McDonald
+  |editor-first = Russ
+  |location = Oxford
+  |publisher = [[Blackwell Publishing|Blackwell]]
+  |year = 2004
+  |isbn = 978-0-631-23488-3
+  |url = https://archive.org/details/shakespeareantho0000unse_z9v6
+  |url-access = registration
+  |oclc = 52377477
+  }}
+{{refend}}
+:'''Articles and online'''
+{{refbegin|32em}}
+* {{cite journal |title=Was Shakespeare gay? Sonnet 20 and the politics of pedagogy |last=Casey |first=Charles |year=1998 |journal=College Literature |volume=25 |issue=3 |pages=35–51 |jstor=25112402}}
+* {{cite journal |title=The Story Contained in the Second Series of Shakespeare's Sonnets |last=Fort |first=J.A. |pages=406–414 |date=October 1927 |journal=[[The Review of English Studies]] |volume=III |series=Original Series |issue=12 |issn=0034-6551 |doi=10.1093/res/os-III.12.406 |via=[[Oxford Journals]]}}
+* {{cite magazine |title=London Residences of Shakespeare |last=Hales |first=John W. |magazine=[[The Athenaeum (British magazine)|The Athenaeum]] |location=London |publisher=John C. Francis |date=26 March 1904 |issue=3987 |pages=401–402 |url=https://archive.org/stream/p1athenaeum1904lond#page/400/mode/2up}}
+* {{cite journal |title=''A Lover's Complaint'' revisited |last=Jackson |first=MacDonald P. |author-link=MacDonald P. Jackson |journal=Shakespeare Studies |volume=XXXII |issn=0582-9399 |editor-last=Zimmerman |editor-first=Susan |year=2004 |url=https://www.thefreelibrary.com/A+Lover%27s+Complaint+revisited.-a0125306072 |via=[[The Free Library]] |access-date=29 December 2017 |archive-date=23 March 2021 |archive-url=https://web.archive.org/web/20210323100406/https://www.thefreelibrary.com/A+Lover%27s+Complaint+revisited.-a0125306072 |url-status=live}}
+* {{cite web |title=Sonnet 18 |last1=Mowat |first1=Barbara |last2=Werstine |first2=Paul |website=Folger Digital Texts |publisher=[[Folger Shakespeare Library]] |date=n.d. |access-date=20 March 2021 |url=https://shakespeare.folger.edu/shakespeares-works/shakespeares-sonnets/sonnet-18/ |archive-date=23 June 2021 |archive-url=https://web.archive.org/web/20210623175149/https://shakespeare.folger.edu/shakespeares-works/shakespeares-sonnets/sonnet-18/ |url-status=live}}
+* {{cite news |title=Bard's 'cursed' tomb is revamped |author=<!-- no byline --> |date=28 May 2008 |work=[[BBC News]] |url=https://news.bbc.co.uk/1/hi/england/coventry_warwickshire/7422986.stm |access-date=23 April 2010 |ref={{harvid|BBC News|2008}} |archive-date=15 September 2010 |archive-url=https://web.archive.org/web/20100915013619/http://news.bbc.co.uk/2/hi/uk_news/england/coventry_warwickshire/7422986.stm |url-status=live}}
+* {{Cite news |title=Did He or Didn't He? That Is the Question |author=<!-- no byline --> |newspaper=The New York Times |date=22 April 2007 |url=https://www.nytimes.com/2007/04/22/education/edlife/22shakespeare-survey.html |access-date=31 December 2017 |ref={{harvid|The New York Times|2007}} |archive-date=23 March 2021 |archive-url=https://web.archive.org/web/20210323100407/https://www.nytimes.com/2007/04/22/education/edlife/22shakespeare-survey.html |url-status=live}}
+* {{cite web |title=Shakespeare Memorial |url=http://southwark.anglican.org/cathedral/tour/bill.htm |publisher=[[Southwark Cathedral]] |access-date=2 April 2016 |url-status=dead |archive-url=https://web.archive.org/web/20160304192458/http://www.southwark.anglican.org/cathedral/tour/bill.htm |archive-date=4 March 2016 |ref={{harvid|Southwark Cathedral|n.d.}}}}
+* {{cite web |title=Visiting the Abbey |publisher=[[Westminster Abbey]] |url=http://www.westminster-abbey.org/archive/visit-us/highlights/poets-corner |access-date=2 April 2016 |url-status=dead |archive-url=https://web.archive.org/web/20160403162702/http://www.westminster-abbey.org/archive/visit-us/highlights/poets-corner |archive-date=3 April 2016 |ref={{harvid|Westminster Abbey|n.d.}}}}
+{{refend}}
+
+==External links==
+<!--Note: all links should comply with Wikipedia's external links guideline at [[Wikipedia:External links]]. To keep this section from ballooning, please only include links of general interest -->
+{{Library resources box |by=yes |onlinebooks=yes |others=yes |about=yes |label=William Shakespeare }}
+{{Spoken Wikipedia|William Shakespeare (Spoken Article).ogg|date=11 April 2008}}
+
+'''Digital editions'''
+* [https://bookwise.io/author/william-shakespeare William Shakespeare's plays on Bookwise]
+* [https://internetshakespeare.uvic.ca/ Internet Shakespeare Editions]
+* [https://shakespeare.folger.edu/ The Folger Shakespeare]
+* [http://www.opensourceshakespeare.org/ Open Source Shakespeare] complete works, with search engine and concordance
+* [https://wayback.archive-it.org/org-467/20191016094633/http://quartos.org/ The Shakespeare Quartos Archive]
+* {{StandardEbooks|Standard Ebooks URL=https://standardebooks.org/ebooks/william-shakespeare}}
+* {{Gutenberg author|id=65}}
+* {{Internet Archive author|sname=William Shakespeare}}
+* {{Librivox author|id=37}}
+
+'''Exhibitions'''
+* [https://shakespearedocumented.folger.edu/ Shakespeare Documented] an online exhibition documenting Shakespeare in his own time
+* [https://webarchive.nationalarchives.gov.uk/ukgwa/+/https://www.nationalarchives.gov.uk/dol/images/examples/pdfs/shakespeare.pdf Shakespeare's Will] from [[The National Archives (United Kingdom)|The National Archives]]
+* [https://www.shakespeare.org.uk/ The Shakespeare Birthplace Trust]
+* [https://www.bl.uk/people/william-shakespeare William Shakespeare] at the British Library. {{Webarchive|url=https://web.archive.org/web/20210923070227/https://www.bl.uk/people/william-shakespeare |date=23 September 2021 }}.
+
+'''Music'''
+* {{ChoralWiki|description=Works by William Shakespeare set to music: free scores}}
+* {{IMSLP|work=Category:Shakespeare, William|cname=Works by William Shakespeare set to music}}
+
+'''Education'''
+* [https://shakespeareathome.org/ Shakespeare at Home] an online resource providing free educational resources on William Shakespeare and the Renaissance world. Activities are dyslexia friendly and suitable for all ages.
+
+'''Legacy and criticism'''
+* [https://www.parliament.uk/about/living-heritage/transformingsociety/towncountry/towns/collections/collections-shakespeare/ Records on Shakespeare's Theatre Legacy from the UK Parliamentary Collections]
+* [https://www.parliament.uk/about/living-heritage/transformingsociety/private-lives/yourcountry/collections/churchillexhibition/churchill-death/herbert-samuel/ Winston Churchill & Shakespeare – UK Parliament Living Heritage]
+
+{{Shakespeare}}
+{{Navboxes
+|list1=
+{{Earlybard}}
+{{Navboxes
+|title=[[Shakespearean tragedy]]
+|list1=
+{{Antony and Cleopatra}}
+{{Coriolanus}}
+{{Cymbeline}}
+{{Hamlet}}
+{{Julius Caesar (play)}}
+{{King Lear}}
+{{Macbeth}}
+{{Othello}}
+{{Romeo and Juliet}}
+{{Timon of Athens}}
+{{Titus Andronicus}}
+{{Troilus and Cressida}}
+}}
+{{Navboxes
+|title=[[Shakespearean comedy]]
+|list1=
+{{All's Well That Ends Well}}
+{{As You Like It}}
+{{The Comedy of Errors}}
+{{Love's Labour's Lost}}
+{{Measure for Measure}}
+{{The Merchant of Venice}}
+{{The Merry Wives of Windsor}}
+{{A Midsummer Night's Dream}}
+{{Much Ado About Nothing}}
+{{Pericles, Prince of Tyre}}
+{{The Taming of the Shrew}}
+{{The Tempest}}
+{{Twelfth Night}}
+{{The Two Gentlemen of Verona}}
+{{The Two Noble Kinsmen}}
+{{The Winter's Tale}}
+}}
+{{Navboxes
+|title=[[Shakespearean history]]
+|list1=
+{{King John}}
+{{Edward III (play)}}
+{{Henriad}}
+{{Shakespeare tetralogy}}
+{{Henry VIII (play)}}
+}}
+{{William Shakespeare family tree}}
+{{Portraits and sculptures of William Shakespeare}}
+{{Beaumont and Fletcher canon}}
+}}
+{{Subject bar
+| book        = William Shakespeare
+| portal1     = Biography
+| portal2     = England
+| portal3     = History
+| portal4     = Literature
+| portal5     = Theatre
+| commons     = y
+| wikt        = y
+| wikt-search = Shakespeare
+| b           = y
+| b-search    = William Shakespeare's Works
+| q           = y
+| s           = y
+| s-search    = Author:William Shakespeare (1564–1616)
+| d           = y
+| d-search    = Q692
+}}
+{{Authority control}}
+
+{{DEFAULTSORT:Shakespeare, William}}
+[[Category:William Shakespeare| ]]
+[[Category:1564 births]]
+[[Category:1616 deaths]]
+[[Category:16th-century English male actors]]
+[[Category:English male stage actors]]
+[[Category:English male Shakespearean actors]]
+[[Category:16th-century English dramatists and playwrights]]
+[[Category:16th-century English male writers]]
+[[Category:17th-century English dramatists and playwrights]]
+[[Category:16th-century English poets]]
+[[Category:Burials in Warwickshire]]
+[[Category:17th-century English poets]]
+[[Category:17th-century English male writers]]
+[[Category:English Renaissance dramatists]]
+[[Category:People educated at King Edward VI School, Stratford-upon-Avon]]
+[[Category:Male actors from Stratford-upon-Avon]]
+[[Category:People of the Elizabethan era]]
+[[Category:Shakespeare family|William]]
+[[Category:Sonneteers]]
+[[Category:King's Men (playing company)]]
+[[Category:17th-century English male actors]]
+[[Category:English male dramatists and playwrights]]
+[[Category:English male poets]]
+[[Category:Writers from Warwickshire]]
+[[Category:Burials at the Church of the Holy Trinity, Stratford-upon-Avon]]

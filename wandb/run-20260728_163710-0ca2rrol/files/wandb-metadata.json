@@ -1,0 +1,39 @@
+{
+  "os":  "Linux-6.8.0-1060-aws-x86_64-with-glibc2.39",
+  "python":  "CPython 3.12.11",
+  "startedAt":  "2026-07-28T16:37:10.412174Z",
+  "program":  "/teamspace/studios/this_studio/shakespear/project_bard/train.py",
+  "codePath":  "train.py",
+  "codePathLocal":  "train.py",
+  "git":  {
+    "remote":  "https://github.com/stanlley-locke/project_bard.git"
+  },
+  "email":  "stanlleylocke@gmail.com",
+  "root":  "/teamspace/studios/this_studio/shakespear/project_bard",
+  "host":  "ip-10-192-11-66",
+  "executable":  "/home/zeus/miniconda3/envs/cloudspace/bin/python",
+  "cpu_count":  2,
+  "cpu_count_logical":  4,
+  "gpu":  "Tesla T4",
+  "gpu_count":  1,
+  "disk":  {
+    "/":  {
+      "total":  "244936478720",
+      "used":  "19129286656"
+    }
+  },
+  "memory":  {
+    "total":  "16554946560"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Tesla T4",
+      "memoryTotal":  "16106127360",
+      "cudaCores":  2560,
+      "architecture":  "Turing",
+      "uuid":  "GPU-7206220e-09f8-dd01-2a94-98842fd7eb07"
+    }
+  ],
+  "cudaVersion":  "13.0",
+  "writerId":  "rj9rlh01hv9o4mg0btzs8oykd2e3jqnm"
+}

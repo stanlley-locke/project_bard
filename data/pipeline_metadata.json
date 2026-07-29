@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-07-28 16:28:04",
+  "statistics": {
+    "download": {
+      "total_sources": 16,
+      "successful": 16,
+      "failed": 0,
+      "total_chars": 16393256,
+      "sources": [
+        {
+          "index": 3,
+          "url": "https://www.gutenberg.org/cache/epub/11/pg11.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_3.txt",
+          "chars": 163950
+        },
+        {
+          "index": 2,
+          "url": "https://www.gutenberg.org/cache/epub/1342/pg1342.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_2.txt",
+          "chars": 748167
+        },
+        {
+          "index": 1,
+          "url": "https://www.gutenberg.org/cache/epub/84/pg84.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_1.txt",
+          "chars": 438841
+        },
+        {
+          "index": 0,
+          "url": "https://www.gutenberg.org/cache/epub/100/pg100.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_0.txt",
+          "chars": 5378701
+        },
+        {
+          "index": 5,
+          "url": "https://www.gutenberg.org/cache/epub/1661/pg1661.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_5.txt",
+          "chars": 581601
+        },
+        {
+          "index": 4,
+          "url": "https://www.gutenberg.org/cache/epub/996/pg996.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_4.txt",
+          "chars": 2318585
+        },
+        {
+          "index": 6,
+          "url": "https://www.gutenberg.org/cache/epub/1400/pg1400.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_6.txt",
+          "chars": 1013928
+        },
+        {
+          "index": 7,
+          "url": "https://www.gutenberg.org/cache/epub/1257/pg1257.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_7.txt",
+          "chars": 1317371
+        },
+        {
+          "index": 8,
+          "url": "https://www.gutenberg.org/cache/epub/8800/pg8800.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_8.txt",
+          "chars": 624012
+        },
+        {
+          "index": 9,
+          "url": "https://www.gutenberg.org/cache/epub/76/pg76.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_9.txt",
+          "chars": 590402
+        },
+        {
+          "index": 10,
+          "url": "https://www.gutenberg.org/cache/epub/215/pg215.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_10.txt",
+          "chars": 194917
+        },
+        {
+          "index": 12,
+          "url": "https://www.gutenberg.org/cache/epub/160/pg160.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_12.txt",
+          "chars": 378800
+        },
+        {
+          "index": 13,
+          "url": "https://www.gutenberg.org/cache/epub/1260/pg1260.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_13.txt",
+          "chars": 1041730
+        },
+        {
+          "index": 11,
+          "url": "https://www.gutenberg.org/cache/epub/98/pg98.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_11.txt",
+          "chars": 776912
+        },
+        {
+          "index": 15,
+          "url": "https://en.wikipedia.org/w/index.php?title=William_Shakespeare&action=raw",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_15.txt",
+          "chars": 127222
+        },
+        {
+          "index": 14,
+          "url": "https://www.gutenberg.org/cache/epub/1727/pg1727.txt",
+          "file": "/teamspace/studios/this_studio/shakespear/project_bard/data/raw/source_14.txt",
+          "chars": 698117
+        }
+      ]
+    },
+    "raw": {
+      "total_characters": 16393286,
+      "total_words": 2965363,
+      "total_lines": 422106,
+      "total_paragraphs": 79356,
+      "unique_words": 153111,
+      "avg_word_length": 4.48674782817483,
+      "avg_words_per_paragraph": 37.36784868188921,
+      "vocabulary_richness": 0.05163313901198605
+    },
+    "filtered": {
+      "total_characters": 16010257,
+      "total_words": 2920441,
+      "total_lines": 375287,
+      "total_paragraphs": 73696,
+      "unique_words": 149324,
+      "avg_word_length": 4.4558948460181185,
+      "avg_words_per_paragraph": 39.62821591402518,
+      "vocabulary_richness": 0.051130634037804566
+    },
+    "final": {
+      "total_characters": 13562290,
+      "total_words": 2495645,
+      "total_lines": 274971,
+      "total_paragraphs": 34460,
+      "unique_words": 133950,
+      "avg_word_length": 4.419538836653451,
+      "avg_words_per_paragraph": 72.4215031921068,
+      "vocabulary_richness": 0.05367349923566853
+    },
+    "retention_rate": 0.827307594096754
+  }
+}

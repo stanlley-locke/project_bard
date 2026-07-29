@@ -1,0 +1,135 @@
+[*] Device: cuda, dtype: torch.float16
+[*] Effective batch size: 8 * 8 = 64
+[*] GPU: Tesla T4
+[*] GPU memory: 15.64 GB
+======================================================================
+[PHASE 3] Dataset Splitting & Structuring
+======================================================================
+[*] Total tokens: 3,452,785
+[+] train:  3,280,145 tokens ( 95.0%) -> /teamspace/studios/this_studio/shakespear/project_bard/data/splits/train.bin
+[+] val  :     86,319 tokens (  2.5%) -> /teamspace/studios/this_studio/shakespear/project_bard/data/splits/val.bin
+[+] test :     86,321 tokens (  2.5%) -> /teamspace/studios/this_studio/shakespear/project_bard/data/splits/test.bin
+[+] Dataset splitting complete.
+[+] Model parameters: 110,119,680
+[*] No previous checkpoint found. Starting fresh training.
+/home/zeus/miniconda3/envs/cloudspace/lib/python3.12/site-packages/torch/cuda/memory.py:491: FutureWarning: torch.cuda.reset_max_memory_allocated now calls torch.cuda.reset_peak_memory_stats, which resets /all/ peak memory stats.
+  warnings.warn(
+[step 0000] loss=1.3150 | lr=7.50e-07 | iter_time=152.6ms | gpu_mem=2.75GB
+[step 0020] loss=24.1551 | lr=1.57e-05 | iter_time=2613.1ms | gpu_mem=3.64GB
+[step 0040] loss=21.3966 | lr=3.07e-05 | iter_time=2652.6ms | gpu_mem=3.64GB
+[step 0060] loss=19.8333 | lr=4.57e-05 | iter_time=2672.5ms | gpu_mem=3.64GB
+[step 0080] loss=17.7877 | lr=6.07e-05 | iter_time=2688.4ms | gpu_mem=3.64GB
+[step 0100] loss=16.1515 | lr=7.57e-05 | iter_time=2701.7ms | gpu_mem=3.64GB
+[step 0120] loss=14.9733 | lr=9.07e-05 | iter_time=2695.7ms | gpu_mem=3.64GB
+[step 0140] loss=14.3476 | lr=1.06e-04 | iter_time=2694.5ms | gpu_mem=3.64GB
+[step 0160] loss=13.8975 | lr=1.21e-04 | iter_time=2695.8ms | gpu_mem=3.64GB
+[step 0180] loss=13.5124 | lr=1.36e-04 | iter_time=2698.6ms | gpu_mem=3.64GB
+[step 0200] loss=13.2144 | lr=1.50e-04 | iter_time=2703.3ms | gpu_mem=3.64GB
+[step 0220] loss=12.7980 | lr=1.50e-04 | iter_time=2708.2ms | gpu_mem=3.64GB
+[step 0240] loss=12.5882 | lr=1.50e-04 | iter_time=2696.7ms | gpu_mem=3.64GB
+[eval step 250] train_loss=4.8798 train_ppl=131.61 | val_loss=5.3287 val_ppl=206.17
+[+] New best model saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/best.pt
+[step 0260] loss=12.4220 | lr=1.50e-04 | iter_time=6290.5ms | gpu_mem=3.64GB
+[step 0280] loss=12.2217 | lr=1.50e-04 | iter_time=2701.2ms | gpu_mem=3.64GB
+[step 0300] loss=12.1069 | lr=1.50e-04 | iter_time=2708.5ms | gpu_mem=3.64GB
+[step 0320] loss=11.7857 | lr=1.50e-04 | iter_time=2709.4ms | gpu_mem=3.64GB
+[step 0340] loss=11.6820 | lr=1.50e-04 | iter_time=2713.3ms | gpu_mem=3.64GB
+[step 0360] loss=11.6534 | lr=1.50e-04 | iter_time=2712.7ms | gpu_mem=3.64GB
+[step 0380] loss=11.6169 | lr=1.50e-04 | iter_time=2981.6ms | gpu_mem=3.64GB
+[step 0400] loss=11.5454 | lr=1.49e-04 | iter_time=2713.4ms | gpu_mem=3.64GB
+[step 0420] loss=11.2067 | lr=1.49e-04 | iter_time=3067.7ms | gpu_mem=3.64GB
+[step 0440] loss=11.1611 | lr=1.49e-04 | iter_time=3134.4ms | gpu_mem=3.64GB
+[step 0460] loss=11.1452 | lr=1.49e-04 | iter_time=2923.1ms | gpu_mem=3.64GB
+[step 0480] loss=11.1221 | lr=1.49e-04 | iter_time=2712.4ms | gpu_mem=3.64GB
+[step 0500] loss=11.0805 | lr=1.49e-04 | iter_time=2721.4ms | gpu_mem=3.64GB
+[eval step 500] train_loss=4.2536 train_ppl=70.36 | val_loss=4.9419 val_ppl=140.04
+[+] New best model saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/best.pt
+[*] Checkpoint saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/last.pt
+[step 0520] loss=10.7603 | lr=1.49e-04 | iter_time=6670.3ms | gpu_mem=3.64GB
+[step 0540] loss=10.7573 | lr=1.48e-04 | iter_time=2841.5ms | gpu_mem=3.64GB
+[step 0560] loss=10.7554 | lr=1.48e-04 | iter_time=2837.7ms | gpu_mem=3.64GB
+[step 0580] loss=10.7170 | lr=1.48e-04 | iter_time=2708.0ms | gpu_mem=3.64GB
+[step 0600] loss=10.6922 | lr=1.48e-04 | iter_time=2703.6ms | gpu_mem=3.64GB
+[step 0620] loss=10.4010 | lr=1.47e-04 | iter_time=2706.5ms | gpu_mem=3.64GB
+[step 0640] loss=10.3718 | lr=1.47e-04 | iter_time=2702.1ms | gpu_mem=3.64GB
+[step 0660] loss=10.3731 | lr=1.47e-04 | iter_time=2705.3ms | gpu_mem=3.64GB
+[step 0680] loss=10.4201 | lr=1.47e-04 | iter_time=2705.2ms | gpu_mem=3.64GB
+[step 0700] loss=10.3562 | lr=1.46e-04 | iter_time=2705.5ms | gpu_mem=3.64GB
+[step 0720] loss=10.0148 | lr=1.46e-04 | iter_time=2698.2ms | gpu_mem=3.64GB
+[step 0740] loss=10.0423 | lr=1.46e-04 | iter_time=2703.2ms | gpu_mem=3.64GB
+[eval step 750] train_loss=3.8370 train_ppl=46.39 | val_loss=4.8308 val_ppl=125.31
+[+] New best model saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/best.pt
+[step 0760] loss=10.0739 | lr=1.46e-04 | iter_time=6423.3ms | gpu_mem=3.64GB
+[step 0780] loss=10.0913 | lr=1.45e-04 | iter_time=2703.5ms | gpu_mem=3.64GB
+[step 0800] loss=10.1027 | lr=1.45e-04 | iter_time=2708.6ms | gpu_mem=3.64GB
+[step 0820] loss=9.6838 | lr=1.45e-04 | iter_time=2709.5ms | gpu_mem=3.64GB
+[step 0840] loss=9.7468 | lr=1.44e-04 | iter_time=2710.4ms | gpu_mem=3.64GB
+[step 0860] loss=9.7891 | lr=1.44e-04 | iter_time=2710.9ms | gpu_mem=3.64GB
+[step 0880] loss=9.7947 | lr=1.43e-04 | iter_time=2706.6ms | gpu_mem=3.64GB
+[step 0900] loss=9.7738 | lr=1.43e-04 | iter_time=2711.9ms | gpu_mem=3.64GB
+[step 0920] loss=9.4052 | lr=1.43e-04 | iter_time=2712.0ms | gpu_mem=3.64GB
+[step 0940] loss=9.4097 | lr=1.42e-04 | iter_time=2709.2ms | gpu_mem=3.64GB
+[step 0960] loss=9.4808 | lr=1.42e-04 | iter_time=2702.1ms | gpu_mem=3.64GB
+[step 0980] loss=9.5064 | lr=1.41e-04 | iter_time=2703.9ms | gpu_mem=3.64GB
+[step 1000] loss=9.5051 | lr=1.41e-04 | iter_time=2704.3ms | gpu_mem=3.64GB
+[eval step 1000] train_loss=3.4718 train_ppl=32.19 | val_loss=4.8103 val_ppl=122.77
+[+] New best model saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/best.pt
+[*] Checkpoint saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/last.pt
+[step 1020] loss=9.1003 | lr=1.41e-04 | iter_time=6643.2ms | gpu_mem=3.64GB
+[step 1040] loss=9.1235 | lr=1.40e-04 | iter_time=2693.4ms | gpu_mem=3.64GB
+[step 1060] loss=9.2120 | lr=1.40e-04 | iter_time=2699.6ms | gpu_mem=3.64GB
+[step 1080] loss=9.2153 | lr=1.39e-04 | iter_time=2700.1ms | gpu_mem=3.64GB
+[step 1100] loss=9.2112 | lr=1.39e-04 | iter_time=2698.2ms | gpu_mem=3.64GB
+[step 1120] loss=8.8132 | lr=1.38e-04 | iter_time=2703.1ms | gpu_mem=3.64GB
+[step 1140] loss=8.8306 | lr=1.38e-04 | iter_time=2700.2ms | gpu_mem=3.64GB
+[step 1160] loss=8.9027 | lr=1.37e-04 | iter_time=2700.4ms | gpu_mem=3.64GB
+[step 1180] loss=8.9305 | lr=1.37e-04 | iter_time=2698.4ms | gpu_mem=3.64GB
+[step 1200] loss=8.9885 | lr=1.36e-04 | iter_time=2710.8ms | gpu_mem=3.64GB
+[step 1220] loss=8.5104 | lr=1.36e-04 | iter_time=2702.0ms | gpu_mem=3.64GB
+[step 1240] loss=8.5946 | lr=1.35e-04 | iter_time=2708.3ms | gpu_mem=3.64GB
+[eval step 1250] train_loss=3.0879 train_ppl=21.93 | val_loss=4.8988 val_ppl=134.12
+[step 1260] loss=8.6026 | lr=1.34e-04 | iter_time=6211.3ms | gpu_mem=3.64GB
+[step 1280] loss=8.6606 | lr=1.34e-04 | iter_time=2704.3ms | gpu_mem=3.64GB
+[step 1300] loss=8.7213 | lr=1.33e-04 | iter_time=2700.1ms | gpu_mem=3.64GB
+[step 1320] loss=8.2245 | lr=1.33e-04 | iter_time=2703.9ms | gpu_mem=3.64GB
+[step 1340] loss=8.2933 | lr=1.32e-04 | iter_time=2704.9ms | gpu_mem=3.64GB
+[step 1360] loss=8.3757 | lr=1.31e-04 | iter_time=2711.7ms | gpu_mem=3.64GB
+[step 1380] loss=8.3859 | lr=1.31e-04 | iter_time=2704.5ms | gpu_mem=3.64GB
+[step 1400] loss=8.4456 | lr=1.30e-04 | iter_time=2709.3ms | gpu_mem=3.64GB
+[step 1420] loss=7.9634 | lr=1.30e-04 | iter_time=2712.0ms | gpu_mem=3.64GB
+[step 1440] loss=8.0452 | lr=1.29e-04 | iter_time=2713.4ms | gpu_mem=3.64GB
+[step 1460] loss=8.0933 | lr=1.28e-04 | iter_time=2715.9ms | gpu_mem=3.64GB
+[step 1480] loss=8.1499 | lr=1.28e-04 | iter_time=2710.0ms | gpu_mem=3.64GB
+[step 1500] loss=8.1547 | lr=1.27e-04 | iter_time=2716.4ms | gpu_mem=3.64GB
+[eval step 1500] train_loss=2.7575 train_ppl=15.76 | val_loss=5.0048 val_ppl=149.13
+[*] Checkpoint saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/last.pt
+[step 1520] loss=7.6711 | lr=1.26e-04 | iter_time=6453.7ms | gpu_mem=3.64GB
+[step 1540] loss=7.7595 | lr=1.26e-04 | iter_time=2709.0ms | gpu_mem=3.64GB
+[step 1560] loss=7.8218 | lr=1.25e-04 | iter_time=2711.0ms | gpu_mem=3.64GB
+[step 1580] loss=7.9290 | lr=1.24e-04 | iter_time=2717.2ms | gpu_mem=3.64GB
+[step 1600] loss=7.9450 | lr=1.24e-04 | iter_time=2714.3ms | gpu_mem=3.64GB
+[step 1620] loss=7.4266 | lr=1.23e-04 | iter_time=2713.4ms | gpu_mem=3.64GB
+[step 1640] loss=7.5371 | lr=1.22e-04 | iter_time=2717.8ms | gpu_mem=3.64GB
+[step 1660] loss=7.6007 | lr=1.21e-04 | iter_time=2719.7ms | gpu_mem=3.64GB
+[step 1680] loss=7.6481 | lr=1.21e-04 | iter_time=2718.9ms | gpu_mem=3.64GB
+[step 1700] loss=7.6410 | lr=1.20e-04 | iter_time=2718.4ms | gpu_mem=3.64GB
+[step 1720] loss=7.1766 | lr=1.19e-04 | iter_time=2712.1ms | gpu_mem=3.64GB
+[step 1740] loss=7.2754 | lr=1.19e-04 | iter_time=2716.6ms | gpu_mem=3.64GB
+[eval step 1750] train_loss=2.4200 train_ppl=11.25 | val_loss=5.2131 val_ppl=183.66
+[step 1760] loss=7.3350 | lr=1.18e-04 | iter_time=6254.7ms | gpu_mem=3.64GB
+[step 1780] loss=7.4123 | lr=1.17e-04 | iter_time=2717.9ms | gpu_mem=3.64GB
+[step 1800] loss=7.4265 | lr=1.16e-04 | iter_time=2713.4ms | gpu_mem=3.64GB
+[step 1820] loss=6.9475 | lr=1.15e-04 | iter_time=2719.4ms | gpu_mem=3.64GB
+[step 1840] loss=7.0229 | lr=1.15e-04 | iter_time=2717.7ms | gpu_mem=3.64GB
+[step 1860] loss=7.0966 | lr=1.14e-04 | iter_time=2726.4ms | gpu_mem=3.64GB
+[step 1880] loss=7.1676 | lr=1.13e-04 | iter_time=2716.5ms | gpu_mem=3.64GB
+[step 1900] loss=7.2087 | lr=1.12e-04 | iter_time=2723.2ms | gpu_mem=3.64GB
+[step 1920] loss=6.6844 | lr=1.12e-04 | iter_time=2721.5ms | gpu_mem=3.64GB
+[step 1940] loss=6.8308 | lr=1.11e-04 | iter_time=2719.8ms | gpu_mem=3.64GB
+[step 1960] loss=6.8673 | lr=1.10e-04 | iter_time=2719.3ms | gpu_mem=3.64GB
+[step 1980] loss=6.9797 | lr=1.09e-04 | iter_time=2713.7ms | gpu_mem=3.64GB
+[step 2000] loss=6.9429 | lr=1.08e-04 | iter_time=2723.1ms | gpu_mem=3.64GB
+[eval step 2000] train_loss=2.1436 train_ppl=8.53 | val_loss=5.3527 val_ppl=211.18
+[!] Early stopping triggered. No improvement in 1000 steps.
+[*] Checkpoint saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/last.pt
+[*] Final checkpoint saved: /teamspace/studios/this_studio/shakespear/project_bard/checkpoints/last.pt
