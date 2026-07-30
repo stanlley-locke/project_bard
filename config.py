@@ -1,8 +1,11 @@
 """
-config.py - Production-Grade T4-Optimized Configuration
-Centralized configuration for ~100M parameter model training and inference.
+@author    : github.com/stanlley-locke
+@website   : https://stanlleylocke.dev 
+           : https://stanlley.me
+@repo      : project_bard
+@desc      : Centralized configuration for ~880M parameter model training and inference.
 
-Supports environment variable overrides for production deployments:
+Supports environment variable overrides:
   BARD_DEVICE, BARD_DTYPE, BARD_USE_WANDB, BARD_BATCH_SIZE,
   BARD_MAX_STEPS, BARD_LEARNING_RATE, BARD_CHECKPOINT_DIR
 """
@@ -13,11 +16,11 @@ from dataclasses import dataclass, field
 from typing import List
 
 
-# -----------------------------
+
 # Logging Configuration
-# -----------------------------
+
 def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
-    """Get a configured logger for any module in the project."""
+    """Get configured logger for any module in the project."""
     logger = logging.getLogger(name)
     if not logger.handlers:
         handler = logging.StreamHandler()
@@ -30,9 +33,9 @@ def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
     logger.setLevel(level)
     return logger
 
-# -----------------------------
+
 # Paths
-# -----------------------------
+
 PROJECT_ROOT = Path(__file__).parent
 DATA_DIR = PROJECT_ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
@@ -41,7 +44,7 @@ TOKENIZER_DIR = DATA_DIR / "tokenizer"
 CHECKPOINT_DIR = PROJECT_ROOT / "checkpoints"
 LOG_DIR = PROJECT_ROOT / "logs"
 
-# Ensure all directories exist
+# checks for all directories.
 for d in [RAW_DIR, CLEAN_DIR, TOKENIZER_DIR, CHECKPOINT_DIR, LOG_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
@@ -53,9 +56,9 @@ TOKEN_IDS_PATH = CLEAN_DIR / "token_ids.bin"
 SPLIT_DIR = DATA_DIR / "splits"
 SPLIT_DIR.mkdir(parents=True, exist_ok=True)
 
-# -----------------------------
-# Data Sources (Expanded for larger token base)
-# -----------------------------
+
+# Data Sources for larger token base
+
 DATA_SOURCES = [
     # Classic Literature (Project Gutenberg)
     "https://www.gutenberg.org/cache/epub/100/pg100.txt",   # The Complete Works of William Shakespeare
@@ -75,28 +78,28 @@ DATA_SOURCES = [
     "https://www.gutenberg.org/cache/epub/1727/pg1727.txt",  # The Odyssey by Homer
 ]
 
-# -----------------------------
+
 # Tokenizer Configuration
-# -----------------------------
-VOCAB_SIZE = 32768         # Industry-standard size for rich subword patterns
+
+VOCAB_SIZE = 32768         # Standard size for rich subword patterns
 SPECIAL_TOKENS: List[str] = ["[PAD]", "[BOS]", "[EOS]", "[UNK]"]
 PAD_TOKEN = "[PAD]"
 BOS_TOKEN = "[BOS]"
 EOS_TOKEN = "[EOS]"
 UNK_TOKEN = "[UNK]"
 
-# -----------------------------
+
 # Data Splitting & Loading
-# -----------------------------
-BLOCK_SIZE = 2048          # Increased Context window size for deep reasoning
+
+BLOCK_SIZE = 2048          # Context window size for deep reasoning
 TRAIN_RATIO = 0.95
 VAL_RATIO = 0.025
 TEST_RATIO = 0.025
-NUM_WORKERS = 2            # DataLoader workers (adjust based on CPU cores)
+NUM_WORKERS = 0            # Set to 0 to save System RAM and prevent OS OOM kills
 
-# -----------------------------
-# Model Architecture (~350M parameters + MoE)
-# -----------------------------
+
+# Model Architecture (~880M parameters + MoE)
+
 N_LAYER = 16               # Number of Transformer blocks
 N_HEAD = 16                # Number of attention heads (Queries)
 N_KV_HEAD = 4              # Number of KV heads (Grouped-Query Attention)
@@ -104,9 +107,9 @@ N_EMBD = 1024              # Embedding dimension
 MLP_HIDDEN = 4096          # Hidden dimension for FFNs
 DROPOUT = 0.1
 
-# -----------------------------
+
 # Feature Flags
-# -----------------------------
+
 USE_ROPE = True
 USE_RMSNORM = True
 USE_SWIGLU = True
@@ -117,15 +120,15 @@ NUM_EXPERTS = 4            # Reduced from 8 to 4 to fit in 16GB VRAM
 NUM_EXPERTS_PER_TOK = 2    # Experts routed to per token
 ROPE_THETA = 10000.0       # Base frequency for RoPE
 
-# -----------------------------
+
 # Training Configuration (T4-optimized)
-# -----------------------------
-BATCH_SIZE = 2             # Reduced to fit the 1GB float32 logits gradient in backward pass
+
+BATCH_SIZE = 2             # fits 1GB float32 logits gradient in backward pass
 GRAD_ACCUM_STEPS = 32      # Adjusted to maintain effective batch size
-BATCH_SIZE_EFFECTIVE = BATCH_SIZE * GRAD_ACCUM_STEPS  # Effective batch size = 64
+BATCH_SIZE_EFFECTIVE = BATCH_SIZE * GRAD_ACCUM_STEPS  # Effective batch size = 64 for a 16gig GPU
 
 NUM_EPOCHS = 3
-LEARNING_RATE = 1.5e-4     # Conservative LR for ~100M params
+LEARNING_RATE = 1.5e-4     
 WEIGHT_DECAY = 0.1
 BETA1 = 0.9
 BETA2 = 0.95
@@ -133,47 +136,48 @@ GRAD_CLIP = 1.0
 
 WARMUP_STEPS = 200
 MAX_STEPS = 2500
-MIN_LR_RATIO = 0.1         # Final LR will be LEARNING_RATE * MIN_LR_RATIO
+MIN_LR_RATIO = 0.1         
 
-LOG_INTERVAL = 1           # Log every step (since 1 step takes ~48s)
+LOG_INTERVAL = 1           # Log every step
 EVAL_INTERVAL = 250
+EVAL_ITERS = 50            # Limit evaluation to 50 batches to save on time.
 SAVE_INTERVAL = 500
 
 SEED = 42
 DTYPE = os.environ.get("BARD_DTYPE", "float16")       # T4 uses fp16 natively
 DEVICE = os.environ.get("BARD_DEVICE", "cuda")
 
-# -----------------------------
+
 # Generation Configuration
-# -----------------------------
+
 GEN_TEMPERATURE = 0.8
 GEN_TOP_K = 50
 GEN_TOP_P = 0.95           # Nucleus sampling
 GEN_REP_PENALTY = 1.1      # Repetition penalty
 GEN_MAX_NEW_TOKENS = 500
 
-# -----------------------------
+
 # Supervised Fine-Tuning (SFT) & DPO
-# -----------------------------
+
 SFT_DATA_PATH = DATA_DIR / "sft_shakespeare.jsonl"
 DPO_DATA_PATH = DATA_DIR / "dpo_shakespeare.jsonl"
 
-SFT_EPOCHS = 2
-SFT_LR = 1e-5
+SFT_EPOCHS = 10
+SFT_LR = 2e-4
 DPO_LR = 5e-6
 DPO_BETA = 0.1
 
-# -----------------------------
+
 # Weights & Biases (WandB) Logging
-# -----------------------------
+
 USE_WANDB = os.environ.get("BARD_USE_WANDB", "true").lower() == "true"
 WANDB_PROJECT = os.environ.get("BARD_WANDB_PROJECT", "project-bard")
 WANDB_ENTITY = os.environ.get("BARD_WANDB_ENTITY", "stanlleylocke-ai")
 os.environ["WANDB_MODE"] = "online"
 
-# -----------------------------
+
 # API Server Configuration
-# -----------------------------
+
 API_HOST = os.environ.get("BARD_API_HOST", "0.0.0.0")
 API_PORT = int(os.environ.get("BARD_API_PORT", "8000"))
-API_RATE_LIMIT = int(os.environ.get("BARD_RATE_LIMIT", "30"))  # requests per minute
+API_RATE_LIMIT = int(os.environ.get("BARD_RATE_LIMIT", "30"))  

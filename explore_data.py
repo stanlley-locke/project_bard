@@ -12,7 +12,7 @@ from tokenizer import load_tokenizer
 
 def explore_dataset(target_split=None, num_samples=1):
     print("=" * 70)
-    print(" 🔍 PROJECT BARD: Dataset Explorer 🔍")
+    print(" PROJECT BARD: Dataset Explorer ")
     print("=" * 70)
 
     # 1. Load Tokenizer

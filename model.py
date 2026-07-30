@@ -1,5 +1,5 @@
 """
-model.py - Production-Grade T4-Optimized Transformer
+T4-Optimized Transformer
 Features:
   - Flash Attention via PyTorch SDPA with robust fallback
   - SwiGLU activation (Llama-style)
@@ -25,9 +25,9 @@ from config import (
 )
 
 
-# -----------------------------
+
 # RMSNorm
-# -----------------------------
+
 class RMSNorm(nn.Module):
     def __init__(self, dim: int, eps: float = 1e-6):
         super().__init__()
@@ -40,9 +40,9 @@ class RMSNorm(nn.Module):
         return x * rms * self.weight
 
 
-# -----------------------------
+
 # RoPE (with caching)
-# -----------------------------
+
 def precompute_rope_cache(head_dim: int, max_seq_len: int, theta: float = 10000.0, device=None):
     assert head_dim % 2 == 0
     freqs = 1.0 / (theta ** (torch.arange(0, head_dim, 2, device=device).float() / head_dim))
@@ -65,9 +65,9 @@ def apply_rope(x: torch.Tensor, cos: torch.Tensor, sin: torch.Tensor) -> torch.T
     return x * cos + rotated * sin
 
 
-# -----------------------------
+
 # SwiGLU MLP
-# -----------------------------
+
 class SwiGLU_MLP(nn.Module):
     """SwiGLU: gated linear unit with SiLU activation (Llama-style)"""
     def __init__(self, n_embd: int, hidden: int, dropout: float):
@@ -94,9 +94,9 @@ class GELU_MLP(nn.Module):
         return self.drop(self.fc2(self.act(self.fc1(x))))
 
 
-# -----------------------------
+
 # Attention with SDPA + KV Cache
-# -----------------------------
+
 class CausalSelfAttention(nn.Module):
     def __init__(self, n_embd: int, n_head: int, n_kv_head: int, dropout: float, use_rope: bool, use_flash: bool):
         super().__init__()
@@ -195,9 +195,9 @@ class CausalSelfAttention(nn.Module):
         return y, new_kv, attn_weights
 
 
-# -----------------------------
+
 # Sparse Mixture of Experts
-# -----------------------------
+
 class SparseMoE(nn.Module):
     def __init__(self, n_embd: int, hidden: int, dropout: float, num_experts: int, top_k: int):
         super().__init__()
@@ -235,9 +235,9 @@ class SparseMoE(nn.Module):
                     
         return final_output.view(B, T, C)
 
-# -----------------------------
+
 # Transformer Block
-# -----------------------------
+
 class Block(nn.Module):
     def __init__(self, cfg):
         super().__init__()
@@ -259,9 +259,9 @@ class Block(nn.Module):
         return x, new_kv, attn_weights
 
 
-# -----------------------------
+
 # Full Model
-# -----------------------------
+
 @dataclass
 class ModelConfig:
     vocab_size: int = VOCAB_SIZE

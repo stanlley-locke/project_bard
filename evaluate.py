@@ -40,9 +40,9 @@ def load_model(checkpoint: str = "best.pt") -> tuple:
     return model, cfg
 
 
-# ==============================================================================
+
 # 1. FINAL TEST EVALUATION
-# ==============================================================================
+
 @torch.no_grad()
 def final_test_evaluation():
     print("=" * 70)
@@ -83,9 +83,9 @@ def final_test_evaluation():
     print("[+] Base model evaluation complete.\n")
 
 
-# ==============================================================================
+
 # 2. SUPERVISED FINE-TUNING (SFT) - Multi-Genre
-# ==============================================================================
+
 class SFTDataset(Dataset):
     def __init__(self, path: Path, tokenizer, block_size: int = BLOCK_SIZE):
         self.examples = []
@@ -210,9 +210,9 @@ def run_sft():
     print("[+] SFT model saved successfully.\n")
 
 
-# ==============================================================================
+
 # 3. DIRECT PREFERENCE OPTIMIZATION (DPO) - Multi-Genre
-# ==============================================================================
+
 def create_comprehensive_dpo():
     """Generates a rich, multi-genre DPO dataset (Chosen vs. Rejected)."""
     samples = [
@@ -314,9 +314,9 @@ def run_dpo():
     print("[+] DPO training complete.\n")
 
 
-# ==============================================================================
+
 # 4. POST-ALIGNMENT GENERATION TEST
-# ==============================================================================
+
 def test_generation_post_alignment():
     print("=" * 70)
     print("[PHASE 6] Post-Alignment Generation Test")

@@ -1,9 +1,13 @@
 """
-data_pipeline.py - Production-Grade Multi-Source Data Collection and Curation
+@author    : github.com/stanlley-locke
+@website   : https://stanlleylocke.dev 
+           : https://stanlley.me
+@repo      : project_bard
+@desc      : Multi-Source Data Collection and Curation
 Features:
-  - Expanded data sources (diverse classic literature and reliable raw text)
+  - Data sources (diverse classic literature and reliable raw text)
   - Parallel downloads with retry logic and incremental resumption
-  - Advanced quality filtering (preserves paragraph structure)
+  - Quality filtering (preserves paragraph structure)
   - Enhanced PII scrubbing (emails, phones, financial data, IPs, dates)
   - Document-level and paragraph-level deduplication
   - Metadata tracking and comprehensive data quality reporting
@@ -179,14 +183,12 @@ def download_all_sources_parallel() -> Dict:
     return stats
 
 
-# ============================================================================
+
 # HEURISTIC FILTERING
-# ============================================================================
 
 def heuristic_filter(text: str) -> str:
     """
-    Advanced heuristic filtering with multiple rules.
-    CRITICAL FIX: Preserves paragraph structure (\n\n) instead of collapsing everything.
+    Heuristic filtering with multiple rules.
     """
     # Extract Gutenberg book content (strip headers/footers)
     # (Moved to download_all_sources_parallel to process per-file)
@@ -203,7 +205,7 @@ def heuristic_filter(text: str) -> str:
     text = re.sub(r"''+", "", text)  # italic/bold markup
     
     paragraphs = []
-    # CRITICAL FIX: Split by double newline to preserve paragraph structure
+    #Split by double newline to preserve paragraph structure
     for raw_para in text.split("\n\n"):
         lines = []
         for raw in raw_para.splitlines():
@@ -251,9 +253,7 @@ def heuristic_filter(text: str) -> str:
     return "\n\n".join(paragraphs)
 
 
-# ============================================================================
 # DEDUPLICATION
-# ============================================================================
 
 def exact_dedup_paragraphs(paragraphs: List[str]) -> List[str]:
     """Remove exact duplicate paragraphs using SHA-1 hashing."""
@@ -320,9 +320,7 @@ def fuzzy_dedup(paragraphs: List[str], threshold: float = 0.8) -> List[str]:
     return kept
 
 
-# ============================================================================
 # PII SCRUBBING
-# ============================================================================
 
 def scrub_pii(text: str) -> str:
     """Comprehensive PII scrubbing with multiple patterns."""
@@ -349,9 +347,8 @@ def scrub_pii(text: str) -> str:
     return text
 
 
-# ============================================================================
+
 # QUALITY FILTERING
-# ============================================================================
 
 def quality_filter(paragraphs: List[str]) -> List[str]:
     """Filter paragraphs based on quality metrics."""
@@ -386,9 +383,7 @@ def quality_filter(paragraphs: List[str]) -> List[str]:
     return kept
 
 
-# ============================================================================
 # STATISTICS AND REPORTING
-# ============================================================================
 
 def calculate_statistics(text: str) -> Dict:
     """Calculate comprehensive statistics about the text."""
@@ -430,9 +425,8 @@ def save_metadata(stats: Dict):
     print(f"[+] Metadata saved: {METADATA_PATH}")
 
 
-# ============================================================================
+
 # MAIN PIPELINE
-# ============================================================================
 
 def download_hf_dataset(max_chars: int = 1_000_000_000):
     """Download and stream a subset of FineWeb-Edu from HuggingFace."""

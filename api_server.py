@@ -72,6 +72,28 @@ class AvailableModelsResponse(BaseModel):
     current_model: Optional[str]
     available_models: list[str]
 
+class ChatMessage(BaseModel):
+    role: str = Field(..., description="'user' or 'assistant'")
+    content: str = Field(..., min_length=1, max_length=4000)
+
+class ChatRequest(BaseModel):
+    messages: list[ChatMessage] = Field(..., description="Full conversation history")
+    system_prompt: str = Field(
+        default="You are Bard, a wise and eloquent AI assistant deeply versed in the works of William Shakespeare. You speak with the grace and insight of a scholar of the Elizabethan era, yet you are warm, engaging, and helpful.",
+        max_length=1000
+    )
+    max_tokens: int = Field(default=300, ge=1, le=1000)
+    temperature: float = Field(default=0.75, ge=0.01, le=2.0)
+    top_k: int = Field(default=40, ge=1, le=500)
+    top_p: float = Field(default=0.9, ge=0.0, le=1.0)
+    repetition_penalty: float = Field(default=1.05, ge=1.0, le=3.0)
+
+class ChatResponse(BaseModel):
+    response: str
+    tokens_generated: int
+    time_seconds: float
+    model_used: Optional[str]
+
 # --- Global State ---
 model = None
 tokenizer_instance = None
@@ -93,10 +115,28 @@ def load_model_and_tokenizer(force_ckpt_name: str = None):
         if ckpt_path.exists():
             logger.info(f"Loading checkpoint: {ckpt_path}")
             ckpt = torch.load(ckpt_path, map_location="cpu", weights_only=False)
-            model_cfg = ckpt["config"]
+            
+            # SFT/DPO checkpoints may not contain the config to save space, 
+            # so we fallback to best.pt's config
+            model_cfg = ckpt.get("config")
+            if model_cfg is None:
+                base_ckpt_path = CHECKPOINT_DIR / "best.pt"
+                if not base_ckpt_path.exists():
+                    base_ckpt_path = CHECKPOINT_DIR / "last.pt"
+                base_ckpt = torch.load(base_ckpt_path, map_location="cpu", weights_only=False)
+                model_cfg = base_ckpt["config"]
+
             model = ShakespeareGPT(model_cfg)
             model.load_state_dict(ckpt["model_state_dict"])
-            model.eval().to(device)
+            try:
+                model.eval().to(device)
+            except (torch.cuda.OutOfMemoryError, RuntimeError) as e:
+                if "out of memory" in str(e).lower():
+                    logger.warning("CUDA Out of Memory! Falling back to CPU for inference.")
+                    device = torch.device("cpu")
+                    model.eval().to(device)
+                else:
+                    raise
             loaded_model_name = ckpt_name
             break
     else:
@@ -335,6 +375,222 @@ async def stream_generate(req: GenerateRequest) -> AsyncGenerator[str, None]:
         "tokens_per_second": round(token_count / elapsed, 2) if elapsed > 0 else 0
     })
     yield f"data: {final}\n\n"
+
+@app.post("/chat", response_model=ChatResponse)
+async def chat(req: ChatRequest, request: Request):
+    """
+    Multi-turn chat endpoint.
+
+    Automatically selects the correct prompt format based on the loaded model:
+    - SFT / fine-tuned model (sft_model.pt, dpo_model.pt): uses the structured
+      chat template <|system|>...<|user|>...<|assistant|> that the model was
+      trained on during fine-tuning.
+    - Base / pre-trained model (best.pt, last.pt): uses a natural few-shot
+      prompt format that mirrors text the model has seen during pre-training.
+      Sampling is also tightened (lower temperature, lower top-p) to prevent
+      the base model from drifting into hallucination.
+    """
+    client_ip = request.client.host
+    if not check_rate_limit(client_ip):
+        raise HTTPException(status_code=429, detail="Rate limit exceeded")
+    if model is None:
+        raise HTTPException(status_code=503, detail="Model not loaded")
+
+    eos_id = tokenizer_instance.token_to_id("[EOS]") or 2
+
+    # --- Determine whether the loaded model is fine-tuned or base ---
+    is_sft_model = loaded_model_name is not None and any(
+        tag in loaded_model_name.lower() for tag in ("sft", "dpo", "ft", "fine")
+    )
+
+    stop_seqs: list[str] = []
+
+    if is_sft_model:
+        # ==============================================================
+        # SFT FORMAT
+        # The model has been trained on natural dialogue markers.
+        # ==============================================================
+        parts = [f"System: {req.system_prompt}\n"]
+        for msg in req.messages:
+            if msg.role == "user":
+                parts.append(f"\nUser: {msg.content}\n")
+            elif msg.role == "assistant":
+                parts.append(f"\nBard: {msg.content}\n")
+        parts.append("\nBard: ")
+        full_prompt = "".join(parts)
+        stop_seqs   = ["\nUser:", "System:", "[EOS]"]
+
+        # Use caller-supplied sampling params (SFT model is well-behaved)
+        temperature       = req.temperature
+        top_k             = req.top_k
+        top_p             = req.top_p
+        repetition_penalty = req.repetition_penalty
+
+    else:
+        # ==============================================================
+        # BASE MODEL FORMAT (few-shot natural language)
+        # The base model was never shown special tokens during
+        # pre-training. Instead we use a Q&A style that looks like text
+        # the model has already seen, and tighten sampling so it stays
+        # on-topic rather than generating random historical narratives.
+        # ==============================================================
+
+        # Build a few-shot preamble from conversation history so the model
+        # understands the dialogue pattern via in-context learning
+        BARD_NAME = "Bard"
+        USER_NAME = "Human"
+        NEWLINE   = "\n"
+
+        lines = [
+            f"The following is a conversation between a human and {BARD_NAME}, "
+            f"a knowledgeable and eloquent assistant specialising in the works "
+            f"of William Shakespeare and Elizabethan literature.",
+            f"",
+            f"{BARD_NAME} always answers directly, concisely, and in an educated "
+            f"Shakespearean style. {BARD_NAME} does not invent family histories, "
+            f"dates, or people. If unsure, {BARD_NAME} says so gracefully.",
+            f"",
+        ]
+
+        for msg in req.messages:
+            if msg.role == "user":
+                lines.append(f"{USER_NAME}: {msg.content}")
+            elif msg.role == "assistant":
+                lines.append(f"{BARD_NAME}: {msg.content}")
+
+        # Prime generation with the assistant's name so the model
+        # continues from that position
+        lines.append(f"{BARD_NAME}:")
+        full_prompt = NEWLINE.join(lines)
+
+        # Stop when the model tries to generate the next human turn
+        stop_seqs = [f"\n{USER_NAME}:", f"\n{BARD_NAME}:", "\n\n\n"]
+
+        # Tight sampling for base model to prevent hallucination
+        temperature        = min(req.temperature, 0.65)
+        top_k              = min(req.top_k, 30)
+        top_p              = min(req.top_p, 0.85)
+        repetition_penalty = max(req.repetition_penalty, 1.1)
+
+    # --- Tokenise and generate ---
+    ids = tokenizer_instance.encode(full_prompt).ids
+    max_prompt_len = BLOCK_SIZE - req.max_tokens
+    if len(ids) > max_prompt_len:
+        ids = ids[-max_prompt_len:]
+
+    idx = torch.tensor([ids], dtype=torch.long, device=device)
+
+    if device.type == "cuda":
+        torch.cuda.synchronize()
+    t0 = time.time()
+
+    generated_text = ""
+    token_count    = 0
+
+    def detect_repetition_loop(text: str, ngram: int = 4, threshold: int = 3) -> bool:
+        """
+        Returns True if any n-gram phrase appears more than `threshold` times.
+        This catches the degenerate loop the base model falls into when the
+        repetition penalty is insufficient to escape a probability basin.
+        """
+        words  = text.lower().split()
+        if len(words) < ngram * threshold:
+            return False
+        counts: dict = {}
+        for i in range(len(words) - ngram + 1):
+            key = " ".join(words[i:i + ngram])
+            counts[key] = counts.get(key, 0) + 1
+            if counts[key] >= threshold:
+                return True
+        return False
+
+    def trim_repetition(text: str) -> str:
+        """
+        Remove the looping suffix from a degenerate output.
+        Finds the first repeated 4-gram and truncates everything after
+        its second appearance so the response ends cleanly.
+        """
+        words = text.split()
+        seen: dict = {}
+        for i in range(len(words) - 3):
+            key = " ".join(words[i:i + 4]).lower()
+            if key in seen:
+                # Truncate at the second occurrence of the repeated phrase
+                return " ".join(words[:seen[key] + 4]).strip()
+            seen[key] = i
+        return text
+
+    for token in model.generate_stream(
+        idx,
+        max_new_tokens=req.max_tokens,
+        temperature=temperature,
+        top_k=top_k,
+        top_p=top_p,
+        repetition_penalty=repetition_penalty,
+        eos_token_id=eos_id,
+    ):
+        token_str       = tokenizer_instance.decode([token])
+        generated_text += token_str
+        token_count    += 1
+
+        # Stop on chat control tokens
+        if any(stop in generated_text for stop in stop_seqs):
+            for stop in stop_seqs:
+                generated_text = generated_text.split(stop)[0]
+            break
+
+        # Stop on repetition collapse (base model safety net)
+        if token_count > 40 and detect_repetition_loop(generated_text):
+            generated_text = trim_repetition(generated_text)
+            break
+
+    if device.type == "cuda":
+        torch.cuda.synchronize()
+    elapsed = time.time() - t0
+
+    # If response is too short or empty (base model gave up), return a graceful fallback
+    response_text = generated_text.strip()
+    if not response_text or len(response_text.split()) < 3:
+        if not is_sft_model:
+            response_text = (
+                "Forgive me, good traveller — my training is still in progress "
+                "and I am not yet fully versed in the art of conversation. "
+                "Run `python sft.py` to complete my instruction fine-tuning, "
+                "then load `sft_model.pt` in the Model Selection to unlock my "
+                "full conversational abilities."
+            )
+
+    return ChatResponse(
+        response=response_text,
+        tokens_generated=token_count,
+        time_seconds=round(elapsed, 3),
+        model_used=loaded_model_name
+    )
+
+
+@app.get("/sft/status")
+async def get_sft_status():
+    """Return SFT training status by reading the latest SFT log."""
+    sft_log = Path("logs/sft_metrics.jsonl")
+    sft_ckpt = CHECKPOINT_DIR / "sft_model.pt"
+    sft_data = CHECKPOINT_DIR.parent / "data" / "sft_shakespeare.jsonl"
+
+    status = {
+        "sft_model_exists": sft_ckpt.exists(),
+        "sft_data_exists": sft_data.exists(),
+        "sft_data_path": str(sft_data),
+        "sft_checkpoint_size_mb": round(sft_ckpt.stat().st_size / 1024 / 1024, 2) if sft_ckpt.exists() else 0,
+        "latest_metrics": []
+    }
+    if sft_log.exists():
+        with open(sft_log, "r") as f:
+            for line in f.readlines()[-20:]:
+                try:
+                    status["latest_metrics"].append(json.loads(line))
+                except:
+                    pass
+    return status
+
 
 # Serve the web UI
 @app.get("/", response_class=HTMLResponse)

@@ -1,11 +1,15 @@
 """
-dataset.py - Production-Grade Phase 3: Dataset Splitting & Structuring
+@author    : github.com/stanlley-locke
+@website   : https://stanlleylocke.dev 
+           : https://stanlley.me
+@repo      : project_bard
+@desc      : Dataset Splitting & Structuring
 Features:
   - Configurable stride/overlap for sliding window context (better learning)
   - Data integrity validation (checks for out-of-bounds tokens)
   - Detailed split statistics and verification
   - Optimized memory-mapped reading with efficient PyTorch tensor conversion
-  - Robust DataLoader with persistent workers for faster epoch transitions
+  - DataLoader with persistent workers for faster epoch transitions
 """
 import numpy as np
 import torch

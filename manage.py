@@ -26,13 +26,14 @@ def interactive_menu():
         print("="*50)
         print("1. Run Data Pipeline (Download & Clean)")
         print("2. Train Tokenizer (Build Vocab)")
-        print("3. Train Model (Start/Resume Training)")
-        print("4. Start API Server (FastAPI)")
-        print("5. Launch Interactive Chat (CLI)")
-        print("6. Run Model Evaluation")
-        print("7. Exit")
+        print("3. Train Model (Pre-Training, Start/Resume)")
+        print("4. Fine-Tune Model (SFT + DPO)")
+        print("5. Start API Server (FastAPI)")
+        print("6. Launch Interactive Chat (CLI)")
+        print("7. Run Model Evaluation")
+        print("8. Exit")
         
-        choice = input("\nEnter your choice (1-7): ").strip()
+        choice = input("\nEnter your choice (1-8): ").strip()
         
         if choice == '1':
             run_script("data_pipeline.py")
@@ -41,16 +42,18 @@ def interactive_menu():
         elif choice == '3':
             run_script("train.py")
         elif choice == '4':
+            run_script("sft.py")
+        elif choice == '5':
             print("\n[*] Starting API Server on http://0.0.0.0:8000")
             try:
                 subprocess.run([sys.executable, "api_server.py"])
             except KeyboardInterrupt:
                 pass
-        elif choice == '5':
-            run_script("chat.py")
         elif choice == '6':
-            run_script("evaluate.py")
+            run_script("chat.py")
         elif choice == '7':
+            run_script("evaluate.py")
+        elif choice == '8':
             print("Goodbye!")
             break
         else:
@@ -58,7 +61,7 @@ def interactive_menu():
 
 def main():
     parser = argparse.ArgumentParser(description="Project Bard CLI")
-    parser.add_argument('command', nargs='?', choices=['data', 'tokenize', 'train', 'serve', 'chat', 'eval', 'menu'], 
+    parser.add_argument('command', nargs='?', choices=['data', 'tokenize', 'train', 'sft', 'serve', 'chat', 'eval', 'menu'], 
                         help="Command to run (leave blank for interactive menu)")
     args = parser.parse_args()
 
@@ -70,6 +73,8 @@ def main():
         run_script("tokenizer.py")
     elif args.command == 'train':
         run_script("train.py")
+    elif args.command == 'sft':
+        run_script("sft.py")
     elif args.command == 'serve':
         subprocess.run([sys.executable, "api_server.py"])
     elif args.command == 'chat':

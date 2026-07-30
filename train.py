@@ -1,5 +1,9 @@
 """
-train.py - Production-Grade T4-optimized training
+@author    : github.com/stanlley-locke
+@website   : https://stanlleylocke.dev 
+           : https://stanlley.me
+@repo      : project_bard
+@desc      : T4-optimized training loop
 Features:
   - float16 mixed precision (T4-native)
   - Gradient accumulation (effective batch = 64)
@@ -15,14 +19,15 @@ import time
 import torch
 import signal
 import gc
-from torch.amp import autocast, GradScaler
+from torch.amp import GradScaler, autocast
 
 from config import (
     DEVICE, DTYPE, LEARNING_RATE, WEIGHT_DECAY, BETA1, BETA2,
     GRAD_CLIP, WARMUP_STEPS, MAX_STEPS, MIN_LR_RATIO,
     LOG_INTERVAL, EVAL_INTERVAL, SAVE_INTERVAL, CHECKPOINT_DIR, SEED,
+    LOG_INTERVAL, EVAL_INTERVAL, SAVE_INTERVAL, CHECKPOINT_DIR, SEED,
     BATCH_SIZE, GRAD_ACCUM_STEPS, VOCAB_SIZE, USE_WANDB,
-    WANDB_PROJECT, WANDB_ENTITY, BLOCK_SIZE, LOG_DIR
+    WANDB_PROJECT, WANDB_ENTITY, BLOCK_SIZE, LOG_DIR, EVAL_ITERS
 )
 from model import ShakespeareGPT, ModelConfig, count_parameters
 from dataset import get_dataloader, split_data
@@ -60,7 +65,9 @@ def evaluate(model: ShakespeareGPT, device: torch.device, dtype: torch.dtype) ->
     for split in ("train", "val"):
         dl = get_dataloader(split, batch_size=BATCH_SIZE, shuffle=False)
         losses = []
-        for x, y in dl:
+        for i, (x, y) in enumerate(dl):
+            if i >= EVAL_ITERS:
+                break
             x, y = x.to(device, non_blocking=True), y.to(device, non_blocking=True)
             with autocast(device_type=device.type, dtype=dtype):
                 model_out = model(x, y)
@@ -166,7 +173,8 @@ def train():
     
     if resume_path.exists():
         print(f"[*] Found existing checkpoint at {resume_path}. Resuming training...")
-        checkpoint = torch.load(resume_path, map_location=device, weights_only=False)
+        # Load to CPU first to avoid OOM when bitsandbytes deepcopies the optimizer state
+        checkpoint = torch.load(resume_path, map_location="cpu", weights_only=False)
         model.load_state_dict(checkpoint["model_state_dict"])
         optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
         start_step = checkpoint["step"]
@@ -195,8 +203,9 @@ def train():
         for pg in optimizer.param_groups:
             pg["lr"] = lr
 
-        # Gradient accumulation loop
         for accum_step in range(GRAD_ACCUM_STEPS):
+            if shutdown_requested:
+                break
             try:
                 x, y = next(data_iter)
             except StopIteration:
