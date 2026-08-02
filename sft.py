@@ -204,7 +204,8 @@ def merge_lora_weights(model: nn.Module) -> nn.Module:
 
 # ---------------------------------------------------------------------------
 # Synthetic Dataset (auto-generated if no JSONL file is found)
-# --------------------------------------------------------------------------def generate_synthetic_sft_data(output_path: Path, num_examples: int = 500) -> int:
+# ---------------------------------------------------------------------------
+def generate_synthetic_sft_data(output_path: Path, num_examples: int = 5000) -> int:
     """
     Generates a diverse synthetic instruction dataset covering multiple personas
     and task types (General QA, Coding, Creative, Shakespeare).
@@ -279,8 +280,7 @@ def merge_lora_weights(model: nn.Module) -> nn.Module:
             f.write(json.dumps(record) + "\n")
             
     print(f"[+] Generated {len(data)} diverse synthetic SFT examples -> {output_path}")
-    return len(data) -> {output_path}")
-    return count
+    return len(data)
 
 
 # ---------------------------------------------------------------------------
@@ -435,16 +435,20 @@ class SFTDataset(Dataset):
         # The tokenizer post-processor automatically adds [BOS] and [EOS].
         # We must strip the [EOS] from prefix_ids so it matches the start of full_ids,
         # otherwise the mask length is wrong and the model is trained to see [EOS] mid-sequence.
-        eos_id = self.tokenizer.token_to_id("[EOS]")
-        if prefix_ids and prefix_ids[-1] == eos_id:
-            prefix_ids = prefix_ids[:-1]
+        prompt_ids   = self.tokenizer.encode(prompt_text).ids
+        response_ids = self.tokenizer.encode(response_text).ids
         
-        # If response ends with our custom END_TOKEN, we can optionally append true EOS
-        # to teach it to halt cleanly.
-        if full_ids and full_ids[-1] != eos_id:
-            full_ids.append(eos_id)
-
-        prompt_len = min(len(prefix_ids), len(full_ids))
+        bos_id = self.tokenizer.token_to_id("[BOS]")
+        eos_id = self.tokenizer.token_to_id("[EOS]")
+        
+        if prompt_ids and prompt_ids[0] == bos_id: prompt_ids = prompt_ids[1:]
+        if prompt_ids and prompt_ids[-1] == eos_id: prompt_ids = prompt_ids[:-1]
+        
+        if response_ids and response_ids[0] == bos_id: response_ids = response_ids[1:]
+        if response_ids and response_ids[-1] == eos_id: response_ids = response_ids[:-1]
+        
+        full_ids = [bos_id] + prompt_ids + response_ids + [eos_id]
+        prompt_len = 1 + len(prompt_ids)
 
         full_ids  = full_ids[:self.max_length]
         input_ids = torch.tensor(full_ids, dtype=torch.long)
@@ -807,16 +811,17 @@ def train_sft():
             is_last_accum = ((accum_idx + 1) % SFT_GRAD_ACCUM == 0) or \
                             (accum_idx + 1 == len(train_loader))
 
-            input_ids = batch["input_ids"].to(device, non_blocking=True)
-            labels    = batch["labels"].to(device, non_blocking=True)
+            input_ids = batch["input_ids"][:, :-1].to(device, non_blocking=True)
+            labels    = batch["labels"][:, 1:].to(device, non_blocking=True)
 
             t0 = time.time()
             with autocast(device_type=device.type, dtype=dtype):
                 model_out = model(input_ids)
                 logits = model_out["logits"] if isinstance(model_out, dict) else model_out[0]
 
-                shift_logits = logits[:, :-1, :].contiguous()
-                shift_labels = labels[:, 1:].contiguous()
+                # The logits and labels are already shifted in the batch tensors
+                shift_logits = logits.contiguous()
+                shift_labels = labels.contiguous()
 
                 # Response-only cross-entropy (IGNORE_INDEX positions are excluded)
                 loss = F.cross_entropy(
@@ -826,7 +831,7 @@ def train_sft():
                 ) / SFT_GRAD_ACCUM
 
             scaler.scale(loss).backward()
-            epoch_loss += loss.item() * SFT_GRAD_ACCUM
+            epoch_loss += loss.item()
 
             if is_last_accum:
                 scaler.unscale_(optimizer)
@@ -987,17 +992,22 @@ class DPODataset(Dataset):
             f"{USER_TOKEN}{prompt}{END_TOKEN}"
             f"{ASSISTANT_TOKEN}"
         )
-        full_ids   = self.tokenizer.encode(prompt_text + response + END_TOKEN).ids
-        prefix_ids = self.tokenizer.encode(prompt_text).ids
+        prompt_ids   = self.tokenizer.encode(prompt_text).ids
+        response_ids = self.tokenizer.encode(response + END_TOKEN).ids
         
+        bos_id = self.tokenizer.token_to_id("[BOS]")
         eos_id = self.tokenizer.token_to_id("[EOS]")
-        if prefix_ids and prefix_ids[-1] == eos_id:
-            prefix_ids = prefix_ids[:-1]
-        if full_ids and full_ids[-1] != eos_id:
-            full_ids.append(eos_id)
-            
+        
+        if prompt_ids and prompt_ids[0] == bos_id: prompt_ids = prompt_ids[1:]
+        if prompt_ids and prompt_ids[-1] == eos_id: prompt_ids = prompt_ids[:-1]
+        
+        if response_ids and response_ids[0] == bos_id: response_ids = response_ids[1:]
+        if response_ids and response_ids[-1] == eos_id: response_ids = response_ids[:-1]
+        
+        full_ids = [bos_id] + prompt_ids + response_ids + [eos_id]
+        prompt_len = 1 + len(prompt_ids)
+        
         full_ids = full_ids[:self.max_length]
-        prompt_len = min(len(prefix_ids), len(full_ids))
         input_ids  = torch.tensor(full_ids, dtype=torch.long)
         labels     = input_ids.clone()
         labels[:prompt_len] = IGNORE_INDEX
