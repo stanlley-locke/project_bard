@@ -23,7 +23,7 @@ from torch.amp import GradScaler, autocast
 
 from config import (
     DEVICE, DTYPE, LEARNING_RATE, WEIGHT_DECAY, BETA1, BETA2,
-    GRAD_CLIP, WARMUP_STEPS, MAX_STEPS, MIN_LR_RATIO,
+    GRAD_CLIP, WARMUP_STEPS, MAX_STEPS, MIN_LR_RATIO, TARGET_LOSS,
     LOG_INTERVAL, EVAL_INTERVAL, SAVE_INTERVAL, CHECKPOINT_DIR, SEED,
     LOG_INTERVAL, EVAL_INTERVAL, SAVE_INTERVAL, CHECKPOINT_DIR, SEED,
     BATCH_SIZE, GRAD_ACCUM_STEPS, VOCAB_SIZE, USE_WANDB,
@@ -307,6 +307,13 @@ def train():
                 msg = f"[+] New best model saved: {ckpt_path}"
                 if pbar: pbar.write(msg)
                 else: print(msg)
+                
+                # Check for target loss early stopping
+                if best_val_loss <= TARGET_LOSS:
+                    msg = f"[+] Target loss of {TARGET_LOSS} achieved ({best_val_loss:.4f}). Stopping training successfully!"
+                    if pbar: pbar.write(msg)
+                    else: print(msg)
+                    shutdown_requested = True
             else:
                 steps_without_improvement += EVAL_INTERVAL
                 if steps_without_improvement >= EARLY_STOPPING_PATIENCE:

@@ -126,18 +126,22 @@ def load_model_and_tokenizer(force_ckpt_name: str = None):
                 base_ckpt = torch.load(base_ckpt_path, map_location="cpu", weights_only=False)
                 model_cfg = base_ckpt["config"]
 
-            model = ShakespeareGPT(model_cfg)
-            model.load_state_dict(ckpt["model_state_dict"])
+            temp_model = ShakespeareGPT(model_cfg)
+            temp_model.load_state_dict(ckpt["model_state_dict"])
             try:
-                model.eval().to(device)
+                temp_model.eval().to(device)
             except (torch.cuda.OutOfMemoryError, RuntimeError) as e:
                 if "out of memory" in str(e).lower():
                     logger.warning("CUDA Out of Memory! Falling back to CPU for inference.")
                     device = torch.device("cpu")
-                    model.eval().to(device)
+                    temp_model.eval().to(device)
                 else:
                     raise
+            
+            # Assignment to global state only after successful loading and device transfer
+            model = temp_model
             loaded_model_name = ckpt_name
+            logger.info(f"Model loaded on {device} with {count_parameters(model):,} parameters")
             break
     else:
         if force_ckpt_name:
@@ -566,6 +570,135 @@ async def chat(req: ChatRequest, request: Request):
         time_seconds=round(elapsed, 3),
         model_used=loaded_model_name
     )
+
+
+@app.post("/chat_stream")
+async def chat_stream(req: ChatRequest, request: Request):
+    from fastapi.responses import StreamingResponse
+    client_ip = request.client.host
+    if not check_rate_limit(client_ip):
+        raise HTTPException(status_code=429, detail="Rate limit exceeded")
+    if model is None:
+        raise HTTPException(status_code=503, detail="Model not loaded")
+
+    eos_id = tokenizer_instance.token_to_id("[EOS]") or 2
+    is_sft_model = loaded_model_name is not None and any(tag in loaded_model_name.lower() for tag in ("sft", "dpo", "ft", "fine"))
+    stop_seqs: list[str] = []
+
+    if is_sft_model:
+        parts = [f"System: {req.system_prompt}\n"]
+        for msg in req.messages:
+            if msg.role == "user":
+                parts.append(f"\nUser: {msg.content}\n")
+            elif msg.role == "assistant":
+                parts.append(f"\nBard: {msg.content}\n")
+        parts.append("\nBard: ")
+        full_prompt = "".join(parts)
+        stop_seqs = ["\nUser:", "System:", "[EOS]"]
+        temperature = req.temperature
+        top_k = req.top_k
+        top_p = req.top_p
+        repetition_penalty = req.repetition_penalty
+    else:
+        BARD_NAME = "Bard"
+        USER_NAME = "Human"
+        NEWLINE = "\n"
+        lines = [
+            f"The following is a conversation between a human and {BARD_NAME}, ",
+            f"a knowledgeable and eloquent assistant specialising in the works ",
+            f"of William Shakespeare and Elizabethan literature.\n\n",
+            f"{BARD_NAME} always answers directly, concisely, and in an educated ",
+            f"Shakespearean style. {BARD_NAME} does not invent family histories, ",
+            f"dates, or people. If unsure, {BARD_NAME} says so gracefully.\n\n",
+        ]
+        for msg in req.messages:
+            if msg.role == "user":
+                lines.append(f"{USER_NAME}: {msg.content}")
+            elif msg.role == "assistant":
+                lines.append(f"{BARD_NAME}: {msg.content}")
+        lines.append(f"{BARD_NAME}:")
+        full_prompt = NEWLINE.join(lines)
+        stop_seqs = [f"\n{USER_NAME}:", f"\n{BARD_NAME}:", "\n\n\n"]
+        temperature = min(req.temperature, 0.65)
+        top_k = min(req.top_k, 30)
+        top_p = min(req.top_p, 0.85)
+        repetition_penalty = max(req.repetition_penalty, 1.1)
+
+    ids = tokenizer_instance.encode(full_prompt).ids
+    max_prompt_len = BLOCK_SIZE - req.max_tokens
+    if len(ids) > max_prompt_len:
+        ids = ids[-max_prompt_len:]
+
+    idx = torch.tensor([ids], dtype=torch.long, device=device)
+
+    async def event_generator():
+        generated_text = ""
+        token_count = 0
+        t0 = time.time()
+        
+        def detect_repetition_loop(text: str, ngram: int = 4, threshold: int = 3) -> bool:
+            words = text.lower().split()
+            if len(words) < ngram * threshold: return False
+            counts = {}
+            for i in range(len(words) - ngram + 1):
+                key = " ".join(words[i:i + ngram])
+                counts[key] = counts.get(key, 0) + 1
+                if counts[key] >= threshold: return True
+            return False
+
+        def trim_repetition(text: str) -> str:
+            words = text.split()
+            seen = {}
+            for i in range(len(words) - 3):
+                key = " ".join(words[i:i + 4]).lower()
+                if key in seen: return " ".join(words[:seen[key] + 4]).strip()
+                seen[key] = i
+            return text
+
+        for token in model.generate_stream(
+            idx, max_new_tokens=req.max_tokens, temperature=temperature,
+            top_k=top_k, top_p=top_p, repetition_penalty=repetition_penalty,
+            eos_token_id=eos_id,
+        ):
+            token_str = tokenizer_instance.decode([token])
+            generated_text += token_str
+            token_count += 1
+            
+            should_break = False
+            for stop in stop_seqs:
+                if stop in generated_text:
+                    token_str = token_str.replace(stop, "")
+                    should_break = True
+                    break
+                    
+            if token_count > 40 and detect_repetition_loop(generated_text):
+                should_break = True
+
+            data = json.dumps({
+                "token": token_str,
+                "token_count": token_count,
+                "model_used": loaded_model_name,
+                "done": should_break
+            })
+            yield f"data: {data}\n\n"
+            await asyncio.sleep(0)
+            
+            if should_break:
+                break
+                
+        elapsed = time.time() - t0
+        data = json.dumps({
+            "token": "",
+            "token_count": token_count,
+            "model_used": loaded_model_name,
+            "done": True,
+            "time_seconds": round(elapsed, 3)
+        })
+        yield f"data: {data}\n\n"
+
+    from fastapi.responses import StreamingResponse
+    return StreamingResponse(event_generator(), media_type="text/event-stream")
+
 
 
 @app.get("/sft/status")

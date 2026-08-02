@@ -49,3 +49,5 @@ results_*.jsonl
 # OS
 .DS_Store
 Thumbs.db
+
+ ngrok http --url=coy-precollapsable-leland.ngrok-free.dev 8000

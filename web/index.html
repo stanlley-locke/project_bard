@@ -999,16 +999,17 @@
             const container = document.getElementById('chat-messages');
             const div = document.createElement('div');
             div.style.cssText = 'display:flex; gap:12px; align-items:flex-start;';
-            const metaText = timeInfo ? `<div style="font-size:0.72rem; color:var(--text-muted); margin-top:8px;">${timeInfo}</div>` : '';
+            const metaText = timeInfo ? `<div class="message-meta" style="font-size:0.72rem; color:var(--text-muted); margin-top:8px;">${timeInfo}</div>` : `<div class="message-meta" style="font-size:0.72rem; color:var(--text-muted); margin-top:8px;"></div>`;
             div.innerHTML = `
                 <div style="width:36px; height:36px; border-radius:50%; background:linear-gradient(135deg,#7c3aed,#4338ca); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:0.85rem; flex-shrink:0;">B</div>
                 <div style="max-width:75%; background:var(--bg-panel); border:1px solid var(--border-color); border-radius:12px 12px 12px 2px; padding:14px 18px;">
                     <div style="font-size:0.82rem; color:#a78bfa; margin-bottom:6px; font-weight:500;">Bard</div>
-                    <div style="font-size:0.92rem; line-height:1.6; color:var(--text-main); white-space:pre-wrap;">${escapeHTML(text)}</div>
+                    <div class="message-content" style="font-size:0.92rem; line-height:1.6; color:var(--text-main); white-space:pre-wrap;">${escapeHTML(text)}</div>
                     ${metaText}
                 </div>`;
             container.appendChild(div);
             container.scrollTop = container.scrollHeight;
+            return div.querySelector('.message-content');
         }
 
         function escapeHTML(str) {
@@ -1052,7 +1053,7 @@
             setTypingVisible(true);
 
             try {
-                const res = await fetch('/chat', {
+                const res = await fetch('/chat_stream', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -1066,21 +1067,60 @@
                     })
                 });
 
-                setTypingVisible(false);
-
                 if (!res.ok) {
+                    setTypingVisible(false);
                     const err = await res.json();
                     appendBardMessage(`[Error: ${err.detail || 'Unknown error'}]`, null);
                     return;
                 }
 
-                const data = await res.json();
-                const response = data.response || '(No response generated)';
-                const timeInfo = `${data.tokens_generated} tokens · ${data.time_seconds}s · via ${data.model_used || 'unknown'}`;
+                setTypingVisible(false);
+                
+                // Create a new message bubble for streaming
+                const contentDiv = appendBardMessage('', null);
+                let fullResponse = "";
+                let finalData = null;
 
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder("utf-8");
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+
+                    const chunk = decoder.decode(value, { stream: true });
+                    const lines = chunk.split('\n\n');
+
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            try {
+                                const data = JSON.parse(line.substring(6));
+                                if (data.token) {
+                                    fullResponse += data.token;
+                                    contentDiv.textContent = fullResponse;
+                                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                                }
+                                finalData = data;
+                            } catch (e) {
+                                console.error('Error parsing SSE data:', e);
+                            }
+                        }
+                    }
+                }
+
+                const response = fullResponse || '(No response generated)';
+                const timeInfo = `${finalData.token_count} tokens · ${finalData.time_seconds}s · via ${finalData.model_used || 'unknown'}`;
+                
                 // Add to history
                 chatHistory.push({ role: 'assistant', content: response });
-                appendBardMessage(response, timeInfo);
+                
+                // Update time info in the UI (which appendBardMessage skipped during streaming)
+                const metaDiv = contentDiv.parentElement.parentElement.querySelector('.message-meta');
+                if (metaDiv) {
+                    metaDiv.textContent = 'Bard · ' + timeInfo;
+                }
+
+                const data = finalData;
 
                 // Update model badge and warning banner based on model type
                 if (data.model_used) {

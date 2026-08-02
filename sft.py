@@ -68,10 +68,10 @@ IGNORE_INDEX    = -100        # PyTorch ignores this label index in cross-entrop
 
 # SFT-specific hyperparameters (can be overridden via environment variables)
 SFT_BATCH_SIZE      = int(os.environ.get("BARD_SFT_BATCH_SIZE", "1"))
-SFT_GRAD_ACCUM      = int(os.environ.get("BARD_SFT_GRAD_ACCUM", "8"))   # effective batch = 8
+SFT_GRAD_ACCUM      = int(os.environ.get("BARD_SFT_GRAD_ACCUM", "16"))   # effective batch = 8
 SFT_EARLY_STOP      = int(os.environ.get("BARD_SFT_EARLY_STOP", "3"))   # epochs without improvement
 SFT_USE_LORA        = os.environ.get("BARD_SFT_LORA", "true").lower() == "true"
-LORA_RANK           = int(os.environ.get("BARD_LORA_RANK", "16"))
+LORA_RANK           = int(os.environ.get("BARD_LORA_RANK", "64"))
 LORA_ALPHA          = float(os.environ.get("BARD_LORA_ALPHA", "32"))
 LORA_DROPOUT        = float(os.environ.get("BARD_LORA_DROPOUT", "0.05"))
 

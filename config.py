@@ -135,7 +135,8 @@ BETA2 = 0.95
 GRAD_CLIP = 1.0
 
 WARMUP_STEPS = 200
-MAX_STEPS = 2500
+MAX_STEPS = 7500
+TARGET_LOSS = 1.2          
 MIN_LR_RATIO = 0.1         
 
 LOG_INTERVAL = 1           # Log every step
@@ -163,7 +164,7 @@ SFT_DATA_PATH = DATA_DIR / "sft_shakespeare.jsonl"
 DPO_DATA_PATH = DATA_DIR / "dpo_shakespeare.jsonl"
 
 SFT_EPOCHS = 10
-SFT_LR = 2e-4
+SFT_LR = 1e-4
 DPO_LR = 5e-6
 DPO_BETA = 0.1
 
